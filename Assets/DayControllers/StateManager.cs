@@ -46,9 +46,9 @@ public class StateManager : MonoBehaviour
     {
         DeactivateAllDayControllers();
 
-        if (currentDay >= 1 && currentDay <= dayControllers.Length)
+        if (currentDay >= 0 && currentDay <= dayControllers.Length)
         {
-            var controller = dayControllers[currentDay - 1]; // ÀÎµ¦½º Á¶Á¤
+            var controller = dayControllers[currentDay];
 
             if (controller != null)
             {

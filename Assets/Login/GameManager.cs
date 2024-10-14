@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private int currentDay = 0;
-    public string currentTask = "Intro";
+    public string currentTask = "Start";
     public Dictionary<string, bool> gameState = new Dictionary<string, bool>();
 
     private FirestoreController firestoreController;
@@ -45,15 +45,17 @@ public class GameManager : MonoBehaviour
         LoadDayController(currentDay);
     }
 
+    //각 Task 완료시 호출
     public void CompleteTask()
     {
         if (currentDayController != null)
         {
             currentDayController.CompleteTask(currentTask);
         }
-
+        //Day의 Task를 완료했을시
         if (currentDayController != null && currentDayController.IsDayComplete(currentTask))
         {
+            Debug.Log($"{currentDay} : 완료");
             currentDay++;
             SaveGame();
             LoadNextDay();
@@ -125,7 +127,7 @@ public class GameManager : MonoBehaviour
     private DayController GetCurrentDayController()
     {
         // DayController를 배열로 관리하도록 수정
-        return stateManager.dayControllers[currentDay - 1]; // 인덱스 조정
+        return stateManager.dayControllers[currentDay];
     }
     public int GetCurrentDay()
     {

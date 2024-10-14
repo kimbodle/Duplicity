@@ -87,13 +87,13 @@ public class FirestoreController : MonoBehaviour
                 else
                 {
                     Debug.Log("저장된 게임 상태가 없습니다.");
-                    onGameStateLoaded(0, "Intro", new Dictionary<string, bool>()); // 기본값 설정
+                    onGameStateLoaded(0, "Start", new Dictionary<string, bool>()); // 기본값 설정
                 }
             }
             else
             {
                 Debug.LogError("게임 상태 불러오기 실패: " + task.Exception);
-                onGameStateLoaded(0, "Intro", new Dictionary<string, bool>()); // 오류 시 기본값 설정
+                onGameStateLoaded(0, "Start", new Dictionary<string, bool>()); // 오류 시 기본값 설정
             }
         });
     }
