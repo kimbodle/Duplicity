@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+<string name="gcm_defaultSenderId" translatable="false">720012080248</string>
+<string name="google_storage_bucket" translatable="false">duplicity-o117.appspot.com</string>
+<string name="project_id" translatable="false">duplicity-o117</string>
+<string name="google_api_key" translatable="false">AIzaSyBHvnlEN4sJVLnZcAsrdoFUxYTsrjuphKo</string>
+<string name="google_crash_reporting_api_key" translatable="false">AIzaSyBHvnlEN4sJVLnZcAsrdoFUxYTsrjuphKo</string>
+<string name="google_app_id" translatable="false">1:720012080248:android:e2c1ebc1dde69d7879e98d</string>
+</resources>
