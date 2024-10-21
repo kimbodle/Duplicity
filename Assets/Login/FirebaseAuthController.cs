@@ -75,10 +75,22 @@ public class FirebaseAuthController : MonoBehaviour
 
     void InitializeFirebase()
     {
-        auth = FirebaseAuth.DefaultInstance;
-        firestoreController = FindObjectOfType<FirestoreController>();
-        auth.StateChanged += AuthStateChanged;
-        AuthStateChanged(this, null);
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+            var dependencyStatus = task.Result;
+            if (dependencyStatus == Firebase.DependencyStatus.Available)
+            {
+                // Firebase가 사용 가능할 때 FirebaseAuth를 초기화합니다.
+                auth = FirebaseAuth.DefaultInstance;
+                firestoreController = FirestoreController.Instance;
+                auth.StateChanged += AuthStateChanged;
+                AuthStateChanged(this, null);
+            }
+            else
+            {
+                Debug.LogError(System.String.Format(
+                    "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+            }
+        });
     }
 
     void AuthStateChanged(object sender, System.EventArgs eventArgs)

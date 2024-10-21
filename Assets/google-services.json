@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720012080248",
+    "project_id": "duplicity-o117",
+    "storage_bucket": "duplicity-o117.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720012080248:android:e2c1ebc1dde69d7879e98d",
+        "android_client_info": {
+          "package_name": "com.biggle.duplicity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHvnlEN4sJVLnZcAsrdoFUxYTsrjuphKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
