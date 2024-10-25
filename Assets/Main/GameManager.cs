@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private FirestoreController firestoreController;
     private FirebaseAuthController authController;
-    private DayController currentDayController;
+    [SerializeField]private DayController currentDayController;
     private StateManager stateManager;
 
     private void Awake()
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
             currentDay++;
             SaveGame();
             LoadNextDay();
+            currentDayController = GetCurrentDayController();
         }
         else
         {

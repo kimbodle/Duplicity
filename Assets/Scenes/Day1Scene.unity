@@ -485,6 +485,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8027348823080476199, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125593705982984641, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f880e657fb15b2846bebfc93f26f764d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -769,9 +777,9 @@ MonoBehaviour:
   choiceButton2: {fileID: 1244472349}
   soundEffect: {fileID: 0}
   cutsceneImages:
-  - {fileID: 21300000, guid: 984d041e3a6f26f4db4909340e5c3974, type: 3}
-  - {fileID: 21300000, guid: de406a7ce9771804280c93f91f203ba6, type: 3}
-  - {fileID: 21300000, guid: beafa2dd8d0cd2f4ba5f759a92864d35, type: 3}
+  - {fileID: 21300000, guid: d4c0d38233416f64c87e38695825e136, type: 3}
+  - {fileID: 21300000, guid: e1aaf42344737db45b8928f709e56ac0, type: 3}
+  - {fileID: 21300000, guid: ee4ab366dfa922f4a9be9add517e56d6, type: 3}
   typingSpeed: 0.05
 --- !u!1 &1031147860
 GameObject:

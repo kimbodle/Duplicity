@@ -150,11 +150,17 @@ public class Day1CutsceneController : MonoBehaviour
                 else
                 {
                     dialogueText.text = "";
-                    StartCoroutine(TypeDialogue("그래 일단 연구소로 돌아가서 중요한 물품들을 챙기고 얼른 여기를 떠나자"));
-                    day1Controller.CompleteTask("Day1CutScene");
-                    GameManager.Instance.CompleteTask();
+                    StartCoroutine(CompleteTaskWithDialogue("그래 일단 연구소로 돌아가서 중요한 물품들을 챙기고 얼른 여기를 떠나자"));
                 }
             }
         }
+    }
+    private IEnumerator CompleteTaskWithDialogue(string dialogue)
+    {
+        //yield return StartCoroutine(TypeDialogue(dialogue)); // 타이핑 완료될 때까지 대기
+        yield return StartCoroutine(TypeDialogue(dialogue));
+        yield return new WaitForSeconds(2f);
+        day1Controller.CompleteTask("Day1CutScene");
+        GameManager.Instance.CompleteTask();
     }
 }
