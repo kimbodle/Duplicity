@@ -493,6 +493,7 @@ MonoBehaviour:
   dayControllers:
   - {fileID: 817039620}
   - {fileID: 1258817950}
+  - {fileID: 201515803}
 --- !u!4 &206392353
 Transform:
   m_ObjectHideFlags: 0
@@ -4071,6 +4072,7 @@ MonoBehaviour:
   dayIntroCanvas: {fileID: 136721192}
   daySprites:
   - {fileID: 21300000, guid: c27435f0db6c13f458e0954808b9a7de, type: 3}
+  - {fileID: 21300000, guid: 440f18d07a98e6d468074076b7a9480d, type: 3}
   dayIntroImage: {fileID: 1650703083}
 --- !u!4 &2105747470
 Transform:
