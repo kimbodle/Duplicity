@@ -21,6 +21,11 @@ public class UIManager : MonoBehaviour
     //public InventoryUI inventoryUI;
     public Button inventoryUIButton;
 
+    public GameObject dayIntroCanvas;
+    public List<Sprite> daySprites; // Inspector에서 순서대로 추가: 0 -> Day 1, 1 -> Day 2, 등
+    public Image dayIntroImage;
+    private Dictionary<int, Sprite> daySpriteDictionary;
+
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +53,7 @@ public class UIManager : MonoBehaviour
         mapIconButton.onClick.AddListener(ToggleMapUI);
         inventoryUIButton.onClick.AddListener(ToggleInventoryUI);
         */
+        InitializeDaySprites();
     }
 
     public void OpenLoginUI()
@@ -72,5 +78,35 @@ public class UIManager : MonoBehaviour
     public void ToggleInventoryUI()
     {
         inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
+    }
+
+    private void InitializeDaySprites()
+    {
+        daySpriteDictionary = new Dictionary<int, Sprite>();
+
+        for (int i = 0; i < daySprites.Count; i++)
+        {
+            daySpriteDictionary.Add(i+1, daySprites[i]);
+        }
+    }
+    public void DisplayDayIntro(int currentDay)
+    {
+        if(currentDay == 0) { return; }
+        if (daySpriteDictionary.TryGetValue(currentDay, out Sprite daySprite))
+        {
+            dayIntroCanvas.SetActive(true);
+            dayIntroImage.sprite = daySprite;
+            StartCoroutine(DisplayDayIntroCoroutine());
+        }
+        else
+        {
+            Debug.LogWarning($"이미지가 없는 Day: {currentDay}");
+        }
+    }
+
+    private IEnumerator DisplayDayIntroCoroutine()
+    {
+        yield return new WaitForSeconds(3f); // 예시로 3초 대기
+        dayIntroCanvas.SetActive(false);
     }
 }

@@ -82,13 +82,12 @@ public class GameManager : MonoBehaviour
         currentTask = task;
         gameState = loadedGameState;
 
-
+        UIManager.Instance.DisplayDayIntro(currentDay);
         string sceneName = "Day" + currentDay + "Scene";
         SceneManager.LoadScene(sceneName);
         // StateManager에서 DayController 활성화
         stateManager.ActivateDayController(currentDay);
         currentDayController = GetCurrentDayController();
-
         // 씬이 로드되면 OnSceneLoaded에서 LoadDayController 호출
     }
 
@@ -121,6 +120,7 @@ public class GameManager : MonoBehaviour
         gameState.Clear(); //gameState[nextSceneName] = true;
         //InitializeGameState(currentDay, currentTask, gameState);
         SaveGame();
+        UIManager.Instance.DisplayDayIntro(currentDay);
         SceneManager.LoadScene(nextSceneName);
     }
 
