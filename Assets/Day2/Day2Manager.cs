@@ -32,18 +32,19 @@ public class Day2Manager : MonoBehaviour
         {
             interactionManager.isInteraction = true;
             missionTimer.isMissionActive = true;
-            dialogIndex++;
         }
 
         if (dialogIndex == 1)
         {
             //지도 활성화
             Debug.Log("지도 활성화");
+            UIManager.Instance.OpenMapIcon();
         }
 
     }
     public void CompleteItemCollected()
     {
+        dialogIndex++;
         dialogManager.StartDialog(dialog[dialogIndex], characterSprite);
     }
     private void OnDestroy()

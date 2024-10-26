@@ -10,6 +10,7 @@ public abstract class DayController : MonoBehaviour
     public abstract void CompleteTask(string task);
     public abstract bool IsDayComplete(string currentTask);
 
+    public abstract void MapIconClick(string regionName);
     public Dictionary<string, bool> GetGameState()
     {
         return new Dictionary<string, bool>(gameState);

@@ -26,4 +26,9 @@ public class Day1Controller : DayController
         // 모든 Task가 완료되었는지 확인
         return currentTask == "Day1CutScene";
     }
+
+    public override void MapIconClick(string regionName)
+    {
+        throw new System.NotImplementedException();
+    }
 }

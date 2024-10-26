@@ -27,4 +27,8 @@ public class Day0Controller : DayController
         return currentTask == "Intro";
     }
 
+    public override void MapIconClick(string regionName)
+    {
+        throw new System.NotImplementedException();
+    }
 }

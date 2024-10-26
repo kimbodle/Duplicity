@@ -23,7 +23,15 @@ public class Day2Controller : DayController
 
     public override bool IsDayComplete(string currentTask)
     {
-        return currentTask == "MapShleterOpen";
+        return currentTask == "ItemCollected";
     }
 
+    public override void MapIconClick(string regionName)
+    {
+        Debug.Log("MapClick µÆ¾î¿ä");
+        if(regionName == "Shelter")
+        {
+            GameManager.Instance.CompleteTask();
+        }
+    }
 }
