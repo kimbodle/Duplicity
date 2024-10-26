@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class DayController : MonoBehaviour
 {
     protected Dictionary<string, bool> gameState = new Dictionary<string, bool>();
-    protected GameManager gameManager;
+    //protected GameManager gameManager;
 
     public abstract void Initialize(string currentTask);
     public abstract void CompleteTask(string task);
@@ -71,7 +71,8 @@ public abstract class DayController : MonoBehaviour
 
     protected void UpdateCurrentTask(string task)
     {
-        gameManager.currentTask = task;
+        GameManager.Instance.currentTask = task;
         Debug.Log($"currentTask 업데이트: {task}");
+        GameManager.Instance.SaveGame();
     }
 }

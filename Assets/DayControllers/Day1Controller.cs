@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class Day1Controller : DayController
 {
-    private void OnEnable()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
     public override void Initialize(string currentTask)
     {
         //Day1 => Intro Initialize ºÒÇÊ¿ä

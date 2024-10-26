@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Day0Controller : DayController
 {
-    private void OnEnable()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
     public override void Initialize(string currentTask)
     {
         //Day0 => Intro Initialize ºÒÇÊ¿ä

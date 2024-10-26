@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private FirestoreController firestoreController;
     private FirebaseAuthController authController;
-    [SerializeField]private DayController currentDayController;
+    [SerializeField] private DayController currentDayController;
     private StateManager stateManager;
 
     private void Awake()
@@ -45,19 +45,14 @@ public class GameManager : MonoBehaviour
         LoadDayController(currentDay);
     }
 
-    //각 Task 완료시 호출
+    //Day의 Task를 완료 했을 시 따로 호출
     public void CompleteTask()
     {
-        if (currentDayController != null)
-        {
-            currentDayController.CompleteTask(currentTask);
-        }
         //Day의 Task를 완료했을시
         if (currentDayController != null && currentDayController.IsDayComplete(currentTask))
         {
             Debug.Log($"{currentDay} : 완료");
             currentDay++;
-            SaveGame();
             LoadNextDay();
             currentDayController = GetCurrentDayController();
         }
