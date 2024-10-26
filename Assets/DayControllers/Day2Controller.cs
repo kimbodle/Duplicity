@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Day2Controller : DayController
@@ -12,7 +13,7 @@ public class Day2Controller : DayController
 
     public override void CompleteTask(string task)
     {
-        if (task == "FindItem")
+        if (task == "ItemCollected")
         {
             MarkTaskComplete(task);
         }
@@ -22,18 +23,7 @@ public class Day2Controller : DayController
 
     public override bool IsDayComplete(string currentTask)
     {
-        return currentTask == "FindItem";
+        return currentTask == "MapShleterOpen";
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
