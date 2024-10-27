@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Day1CutsceneController : MonoBehaviour
+public class Day1Cutscene : MonoBehaviour
 {
     public Image sceneImage; // 씬에 표시될 이미지
     public TMP_Text dialogueText; // 대사 텍스트
@@ -137,6 +137,12 @@ public class Day1CutsceneController : MonoBehaviour
                 }
                 else
                 {
+                    //EndingManager의 씬로드함수 호출.
+                    //EndingManager안에 currentDay는 그대로, gameState만 초기화하고 firestore에 save하고 씬 로드하면될듯
+                    //TaksHandler에 true 뿐만아니라 false도 관리해야할듯
+                    //EndingManager에서 엔딩 멘트까지 전달
+                    //Endingmanager에서 String 전달에서 case나 if 문을 사용할까?
+                    //아니면 숫자로 할까
                     Debug.Log("Game Over: 나가지 않는다 선택");
                 }
             }

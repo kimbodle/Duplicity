@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Day2Manager : MonoBehaviour
+public class Day2Handler : MonoBehaviour
 {
     public Dialog[] dialog;
     public Sprite characterSprite;

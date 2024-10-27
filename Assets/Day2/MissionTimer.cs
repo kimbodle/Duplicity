@@ -50,6 +50,6 @@ public class MissionTimer : MonoBehaviour
         Debug.Log("Mission Complete");
         // 미션 완료 처리
         FindObjectOfType<Day2Controller>().CompleteTask("ItemCollected");
-        FindObjectOfType<Day2Manager>().CompleteItemCollected();
+        FindObjectOfType<Day2Handler>().CompleteItemCollected();
     }
 }
