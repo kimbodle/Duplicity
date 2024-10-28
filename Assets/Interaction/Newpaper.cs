@@ -6,19 +6,18 @@ public class Newspaper : MonoBehaviour, IInteractable
 {
     //Test 코드
     public string interactionMessage = "Press [E] to look.";
-    //Day1Controller day1Controller;
 
     Renderer newpaper;
 
     private void OnEnable()
     {
         newpaper = GetComponent<Renderer>();
-        //day1Controller = FindObjectOfType<Day1Controller>();
     }
     public void OnInteract()
     {
         newpaper.material.color = Color.red;
-        //day1Controller.CompleteTask("FindItem");
+        //호출방식 변경
+        GameManager.Instance.GetCurrentDayController().CompleteTask("FindItem");
     }
 
     public string GetInteractionMessage()
@@ -28,10 +27,15 @@ public class Newspaper : MonoBehaviour, IInteractable
     public void HandleTask(string taskKey)
     {
         Debug.Log("Newspaper 후속 작업 처리");
-        /*if (taskKey == "FindItem")
+        if (taskKey == "FindItem")
         {
             newpaper.material.color = Color.red;
             Debug.Log("Newspaper 후속 작업 처리");
-        }*/
+        }
+    }
+
+    void IInteractable.ResetTask()
+    {
+        Debug.Log(gameObject.name+"리셋");
     }
 }

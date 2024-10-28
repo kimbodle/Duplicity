@@ -35,4 +35,9 @@ public class CollectedItem : MonoBehaviour, IInteractable
     {
 
     }
+
+    void IInteractable.ResetTask()
+    {
+        Debug.Log("¾ÆÀÌÅÛµé ¾÷µ«µÆÁ®¿è");
+    }
 }

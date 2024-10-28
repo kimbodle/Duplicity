@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
         //싱글톤 인스턴스에서 가져오기
         firestoreController = FirestoreController.Instance;
         authController = FirebaseAuthController.Instance;
@@ -114,13 +113,14 @@ public class GameManager : MonoBehaviour
         string nextSceneName = "Day" + currentDay + "Scene";
         currentTask = "Intro";
         gameState.Clear(); //gameState[nextSceneName] = true;
+        currentTask = "Start";
         //InitializeGameState(currentDay, currentTask, gameState);
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);
         SceneManager.LoadScene(nextSceneName);
     }
 
-    private DayController GetCurrentDayController()
+    public DayController GetCurrentDayController()
     {
         // DayController를 배열로 관리하도록 수정
         return stateManager.dayControllers[currentDay];
@@ -128,5 +128,19 @@ public class GameManager : MonoBehaviour
     public int GetCurrentDay()
     {
         return currentDay;
+    }
+
+    public void GameOver()
+    {
+        gameState.Clear();
+
+        currentTask = "Start";
+
+        // TaskHandler의 상태 초기화
+        currentDayController?.GetTaskHandler()?.ResetTasks(); 
+        
+
+        SaveGame();
+        InitializeGameState(currentDay, currentTask, gameState);
     }
 }

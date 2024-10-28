@@ -4,13 +4,24 @@ using UnityEngine;
 public abstract class DayController : MonoBehaviour
 {
     protected Dictionary<string, bool> gameState = new Dictionary<string, bool>();
-    //protected GameManager gameManager;
+    protected GameManager gameManager;
 
     public abstract void Initialize(string currentTask);
     public abstract void CompleteTask(string task);
     public abstract bool IsDayComplete(string currentTask);
 
     public abstract void MapIconClick(string regionName);
+
+    public TaskHandler GetTaskHandler()
+    {
+        Debug.Log("GetTaskHandler");
+        TaskHandler taskHandler = GetComponent<TaskHandler>();
+        if (taskHandler == null)
+        {
+            return null;
+        }
+        return taskHandler;
+    }
     public Dictionary<string, bool> GetGameState()
     {
         return new Dictionary<string, bool>(gameState);

@@ -15,6 +15,9 @@ public class DialogManager : MonoBehaviour
     public Button nextButton; // 다음 문장 버튼
     public float typingSpeed = 0.05f; // 타이핑 속도 조절 변수
 
+    [Space(10)]
+    public Image playerImage;
+
     private Queue<string> sentences; // 다이얼로그 문장 큐
 
     // 다이얼로그 종료 이벤트
@@ -88,5 +91,11 @@ public class DialogManager : MonoBehaviour
 
         // 다이얼로그 종료 이벤트 호출
         OnDialogEnd?.Invoke();
+    }
+
+    //DayController에서 제한에 따른 메세지 호출
+    public void AdviseMessageDialog(Dialog dialog)
+    {
+        StartDialog(dialog, playerImage.sprite);
     }
 }
