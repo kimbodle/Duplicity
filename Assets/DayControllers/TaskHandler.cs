@@ -29,9 +29,11 @@ public abstract class TaskHandler : MonoBehaviour
     }
     public void ResetTasks()
     {
+
         foreach (var interactable in taskMappings.Values)
         {
             interactable.ResetTask(); // 모든 IInteractable 객체의 ResetTask 호출
         }
+        
     }
 }

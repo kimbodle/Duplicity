@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    
     [SerializeField] private int currentDay = 0;
+    [SerializeField] private DayController currentDayController;
+
     public string currentTask = "Start";
+    public bool isInitializingGameState = false;
     public Dictionary<string, bool> gameState = new Dictionary<string, bool>();
 
     private FirestoreController firestoreController;
     private FirebaseAuthController authController;
-    [SerializeField] private DayController currentDayController;
     private StateManager stateManager;
 
     private void Awake()
@@ -41,7 +43,11 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        LoadDayController(currentDay);
+        if (!isInitializingGameState)
+        {
+            LoadDayController(currentDay);
+        }
+        isInitializingGameState = false;
     }
 
     //Day의 Task를 완료 했을 시 따로 호출
@@ -73,6 +79,8 @@ public class GameManager : MonoBehaviour
     //로그인시 실행
     public void InitializeGameState(int day, string task, Dictionary<string, bool> loadedGameState)
     {
+        isInitializingGameState = true;
+
         currentDay = day;
         currentTask = task;
         gameState = loadedGameState;
@@ -80,6 +88,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.DisplayDayIntro(currentDay);
         string sceneName = "Day" + currentDay + "Scene";
         SceneManager.LoadScene(sceneName);
+
         // StateManager에서 DayController 활성화
         stateManager.ActivateDayController(currentDay);
         currentDayController = GetCurrentDayController();
@@ -112,9 +121,8 @@ public class GameManager : MonoBehaviour
     {
         string nextSceneName = "Day" + currentDay + "Scene";
         currentTask = "Intro";
-        gameState.Clear(); //gameState[nextSceneName] = true;
+        gameState.Clear();
         currentTask = "Start";
-        //InitializeGameState(currentDay, currentTask, gameState);
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);
         SceneManager.LoadScene(nextSceneName);
@@ -130,15 +138,16 @@ public class GameManager : MonoBehaviour
         return currentDay;
     }
 
+    //Onclick 이벤트로 연결
     public void GameOver()
     {
+        EndingManager.Instance.CloseRetryUI();
         gameState.Clear();
 
         currentTask = "Start";
 
         // TaskHandler의 상태 초기화
         currentDayController?.GetTaskHandler()?.ResetTasks(); 
-        
 
         SaveGame();
         InitializeGameState(currentDay, currentTask, gameState);

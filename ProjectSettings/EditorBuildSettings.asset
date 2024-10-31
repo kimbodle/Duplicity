@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day2Scene.unity
     guid: 584403647e2d1da4da20ab7fb5d713a4
+  - enabled: 1
+    path: Assets/Scenes/BadEndingScene.unity
+    guid: d323470124be81444ac04e1997438d26
   m_configObjects: {}

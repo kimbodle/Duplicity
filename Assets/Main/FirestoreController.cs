@@ -82,7 +82,7 @@ public class FirestoreController : MonoBehaviour
                     Dictionary<string, bool> gameState = snapshot.GetValue<Dictionary<string, bool>>("gameState");
                     onGameStateLoaded(currentDay, currentTask, gameState);
                     Debug.Log("저장된 게임 상태 불러오기. 성공");
-                    Debug.Log("현재 Day: " + currentDay + ", 현재 Task: " + currentTask);
+                    Debug.Log("LoadGameState -> 현재 Day: " + currentDay + ", 현재 Task: " + currentTask);
                 }
                 else
                 {

@@ -14,7 +14,7 @@ public abstract class DayController : MonoBehaviour
 
     public TaskHandler GetTaskHandler()
     {
-        Debug.Log("GetTaskHandler");
+        //Debug.Log("GetTaskHandler");
         TaskHandler taskHandler = GetComponent<TaskHandler>();
         if (taskHandler == null)
         {

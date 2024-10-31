@@ -54,8 +54,6 @@ public class StateManager : MonoBehaviour
             {
                 currentDayController = controller;
                 controller.gameObject.SetActive(true);
-                Debug.Log("스테이트매니저의 액티브의 이프문");
-
                 controller.Initialize(currentTask);
             }
         }

@@ -7,7 +7,7 @@ public class Day1Controller : DayController
     public override void Initialize(string currentTask)
     {
         //Day1 => Intro Initialize 불필요
-        Debug.Log("Day1 시작");
+        Debug.Log("Day1Controller");
         //throw new System.NotImplementedException();
     }
     public override void CompleteTask(string task)
