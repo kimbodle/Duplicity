@@ -36,7 +36,7 @@ public class Day0IntroPlay : MonoBehaviour
         Debug.Log("다이얼로그가 종료되었습니다.");
 
         day0controller.CompleteTask("Intro");
-        GameManager.Instance.CompleteTask();
+        GameManager.Instance.CompleteTask("Day1Scene");
     }
 
     private void OnDestroy()

@@ -163,6 +163,6 @@ public class Day1Cutscene : MonoBehaviour
         yield return StartCoroutine(TypeDialogue(dialogue));
         yield return new WaitForSeconds(2f);
         day1Controller.CompleteTask("Day1CutScene");
-        GameManager.Instance.CompleteTask();
+        GameManager.Instance.CompleteTask("Day2Scene");
     }
 }

@@ -7,15 +7,20 @@ public class Day3Controller : DayController
     public override void Initialize(string currentTask)
     {
         Debug.Log("Day3 시작");
+        allRabbitCount = 2;
+        talkRabbitCount = 0;
     }
 
     public override void CompleteTask(string task)
     {
-        if (task == "")
+        if(talkRabbitCount == allRabbitCount)
         {
-            MarkTaskComplete(task);
+            if (task == "TallWithAllRabbit")
+            {
+                MarkTaskComplete(task);
+            }
+            UpdateCurrentTask(task);
         }
-        UpdateCurrentTask(task);
     }
 
     public override bool IsDayComplete(string currentTask)
@@ -29,8 +34,7 @@ public class Day3Controller : DayController
         //아닐 시 DialogueManager의 AdviseMessageDialog 호출
         if (regionName == "Shelter")
         {
-            GameManager.Instance.CompleteTask();
+            GameManager.Instance.CompleteTask("Shelter");
         }
     }
-
 }

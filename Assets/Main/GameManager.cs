@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DayController currentDayController;
 
     public string currentTask = "Start";
+    public string currentScene = "Day0Scene";
     public bool isInitializingGameState = false;
     public Dictionary<string, bool> gameState = new Dictionary<string, bool>();
 
@@ -51,14 +52,14 @@ public class GameManager : MonoBehaviour
     }
 
     //Day의 Task를 완료 했을 시 따로 호출
-    public void CompleteTask()
+    public void CompleteTask(string SceneName)
     {
         //Day의 Task를 완료했을시
         if (currentDayController != null && currentDayController.IsDayComplete(currentTask))
         {
             Debug.Log($"{currentDay} : 완료");
             currentDay++;
-            LoadNextDay();
+            LoadNextDay(SceneName);
             currentDayController = GetCurrentDayController();
         }
         else
@@ -72,22 +73,22 @@ public class GameManager : MonoBehaviour
         if (authController != null && !string.IsNullOrEmpty(authController.uid))
         {
             var currentState = currentDayController?.GetGameState() ?? new Dictionary<string, bool>();
-            firestoreController.SaveGameState(currentDay, currentTask, currentState);
+            firestoreController.SaveGameState(currentDay, currentScene, currentTask, currentState);
         }
     }
 
     //로그인시 실행
-    public void InitializeGameState(int day, string task, Dictionary<string, bool> loadedGameState)
+    public void InitializeGameState(int day, string SceneName, string task, Dictionary<string, bool> loadedGameState)
     {
         isInitializingGameState = true;
 
         currentDay = day;
         currentTask = task;
+        currentScene = SceneName;
         gameState = loadedGameState;
 
         UIManager.Instance.DisplayDayIntro(currentDay);
-        string sceneName = "Day" + currentDay + "Scene";
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneName);
 
         // StateManager에서 DayController 활성화
         stateManager.ActivateDayController(currentDay);
@@ -102,9 +103,9 @@ public class GameManager : MonoBehaviour
         if (authController != null && !string.IsNullOrEmpty(authController.uid))
         {
             //Debug.Log("LoadGame 안 if");
-            firestoreController.LoadGameState((day, task, loadedGameState) =>
+            firestoreController.LoadGameState((day, SceneName,task, loadedGameState) =>
             {
-                InitializeGameState(day, task, loadedGameState);
+                InitializeGameState(day, SceneName, task, loadedGameState);
             });
         }
     }
@@ -117,25 +118,15 @@ public class GameManager : MonoBehaviour
         stateManager.UpdateStateCurrentTask(currentTask);
     }
 
-    private void LoadNextDay()
+    private void LoadNextDay(string SceneName)
     {
-        string nextSceneName = "Day" + currentDay + "Scene";
+        currentScene = SceneName;
         currentTask = "Intro";
         gameState.Clear();
-        currentTask = "Start";
+
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);
-        SceneManager.LoadScene(nextSceneName);
-    }
-
-    public DayController GetCurrentDayController()
-    {
-        // DayController를 배열로 관리하도록 수정
-        return stateManager.dayControllers[currentDay];
-    }
-    public int GetCurrentDay()
-    {
-        return currentDay;
+        SceneManager.LoadScene(currentScene);
     }
 
     //Onclick 이벤트로 연결
@@ -147,9 +138,19 @@ public class GameManager : MonoBehaviour
         currentTask = "Start";
 
         // TaskHandler의 상태 초기화
-        currentDayController?.GetTaskHandler()?.ResetTasks(); 
+        currentDayController?.GetTaskHandler()?.ResetTasks();
 
         SaveGame();
-        InitializeGameState(currentDay, currentTask, gameState);
+        InitializeGameState(currentDay, currentScene, currentTask, gameState);
+    }
+
+    public DayController GetCurrentDayController()
+    {
+        // DayController를 배열로 관리하도록 수정
+        return stateManager.dayControllers[currentDay];
+    }
+    public int GetCurrentDay()
+    {
+        return currentDay;
     }
 }

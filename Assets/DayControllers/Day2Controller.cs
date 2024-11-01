@@ -62,7 +62,7 @@ public class Day2Controller : DayController
         Debug.Log("MapClick µÆ¾î¿ä");
         if(regionName == "Shelter")
         {
-            GameManager.Instance.CompleteTask();
+            GameManager.Instance.CompleteTask("Shelter");
         }
     }
 

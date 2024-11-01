@@ -5,7 +5,8 @@ public abstract class DayController : MonoBehaviour
 {
     protected Dictionary<string, bool> gameState = new Dictionary<string, bool>();
     protected GameManager gameManager;
-
+    public int allRabbitCount = 0;
+    public int talkRabbitCount = 0;
     public abstract void Initialize(string currentTask);
     public abstract void CompleteTask(string task);
     public abstract bool IsDayComplete(string currentTask);

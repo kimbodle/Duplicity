@@ -537,6 +537,7 @@ MonoBehaviour:
   currentDay: 1
   currentDayController: {fileID: 0}
   currentTask: Intro
+  currentScene: Day0Scene
   isInitializingGameState: 0
 --- !u!4 &187376797
 Transform:
@@ -598,6 +599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cb492417fa8c04fb0dbfd5f6ad2792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
 --- !u!114 &201515804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +647,7 @@ MonoBehaviour:
   - {fileID: 817039620}
   - {fileID: 1258817950}
   - {fileID: 201515803}
+  - {fileID: 1384165187}
 --- !u!4 &206392353
 Transform:
   m_ObjectHideFlags: 0
@@ -653,13 +657,14 @@ Transform:
   m_GameObject: {fileID: 206392351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.98717, y: 109.98544, z: -2.7349699}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 817039619}
   - {fileID: 1258817952}
   - {fileID: 201515802}
+  - {fileID: 1384165186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208417035
@@ -1604,6 +1609,7 @@ MonoBehaviour:
   sceneName: MainScene
   regionButton: {fileID: 475218025}
   unlockDay: 10
+  dialogIfIncomplete: []
 --- !u!1 &500003827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,6 +2561,7 @@ MonoBehaviour:
   sceneName: Day1Scene
   regionButton: {fileID: 793153349}
   unlockDay: 0
+  dialogIfIncomplete: []
 --- !u!1 &817039618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b63c627f45b1b42957ee35743e0edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
 --- !u!1 &828862194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3657,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1163377856
@@ -3707,6 +3716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352e36cfde2a984b975d0061ca53e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
 --- !u!4 &1258817952
 Transform:
   m_ObjectHideFlags: 0
@@ -4240,6 +4251,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362348702}
   m_CullTransparentMesh: 1
+--- !u!1 &1384165185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384165186}
+  - component: {fileID: 1384165187}
+  m_Layer: 0
+  m_Name: Day3Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1384165186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384165185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206392353}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1384165187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384165185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c637b6a05dec6704aaef303d5eb39ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
 --- !u!1 &1389524306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,7 +4464,7 @@ MonoBehaviour:
   characterImage: {fileID: 172182270}
   nextButton: {fileID: 239281398}
   typingSpeed: 0.05
-  playerImage: {fileID: 0}
+  playerImage: {fileID: 21300000, guid: f880e657fb15b2846bebfc93f26f764d, type: 3}
 --- !u!4 &1472359262
 Transform:
   m_ObjectHideFlags: 0
@@ -4417,7 +4474,7 @@ Transform:
   m_GameObject: {fileID: 1472359260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.98717, y: 109.98544, z: -2.7349699}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4453,6 +4510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93573d3224f679e4892c47cec3ad676a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndingCanvas: {fileID: 2121733942}
   endingMessageText: {fileID: 1163377855}
   retryButton: {fileID: 1336051507}
 --- !u!4 &1540406510
@@ -4464,7 +4522,7 @@ Transform:
   m_GameObject: {fileID: 1540406508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.884037, y: 60.118053, z: -0.6305877}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5492,7 +5550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2078514522
 Transform:
   m_ObjectHideFlags: 0
@@ -5768,7 +5826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2121733943
 RectTransform:
   m_ObjectHideFlags: 0

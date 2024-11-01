@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance { get; private set; }
+    public GameObject EndingCanvas;
     public TMP_Text endingMessageText;
     public GameObject retryButton;
 
@@ -40,7 +41,7 @@ public class EndingManager : MonoBehaviour
                 Debug.LogError("Unknown ending: " + endingName);
                 break;
         }
-
+        EndingCanvas.SetActive(true);
         // 메세지 표시
         StartCoroutine(ShowEndingMessage(message));
     }
@@ -62,5 +63,6 @@ public class EndingManager : MonoBehaviour
     {
         retryButton.SetActive(false);
         endingMessageText.gameObject.SetActive(false);
+        EndingCanvas.SetActive(false);
     }
 }

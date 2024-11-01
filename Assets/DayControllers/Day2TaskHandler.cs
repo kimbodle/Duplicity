@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Day1TaskHandler : TaskHandler
+public class Day2TaskHandler : TaskHandler
 {
     protected override void InitializeTaskMappings()
     {
