@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Duplicity/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Day0Scene.unity
+    path: Assets/Duplicity/Scenes/Day0Scene.unity
     guid: 6c03845a04120a348bf2ad90371d8a66
   - enabled: 1
-    path: Assets/Scenes/Day1Scene.unity
+    path: Assets/Duplicity/Scenes/Day1Scene.unity
     guid: c72e23768a27ae14fbac1ce580500302
   - enabled: 1
-    path: Assets/Scenes/Day2Scene.unity
+    path: Assets/Duplicity/Scenes/LaboratoryScene.unity
     guid: 584403647e2d1da4da20ab7fb5d713a4
   - enabled: 1
-    path: Assets/Scenes/BadEndingScene.unity
+    path: Assets/Duplicity/Scenes/BadEndingScene.unity
     guid: d323470124be81444ac04e1997438d26
   - enabled: 1
-    path: Assets/Scenes/ShelterScene.unity
+    path: Assets/Duplicity/Scenes/ShelterScene.unity
     guid: 412216b04a88f6d469ecb73763c04dc0
   - enabled: 1
-    path: Assets/Scenes/LibraryScene.unity
+    path: Assets/Duplicity/Scenes/LibraryScene.unity
     guid: 5114a449edfac9b4a9eaba696b46e8ca
   m_configObjects: {}

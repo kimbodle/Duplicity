@@ -1,0 +1,1082 @@
+fileFormatVersion: 2
+guid: 42190046616d4524baf6db9035e9d34c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Day3Enviroment_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1670
+        width: 538
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af2c9444abe521498419da56cc394b2
+      internalID: -2007934369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_1
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 1872
+        width: 257
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cc865a8c9c38945a8e720b42b3fe88
+      internalID: 673866420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_2
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1875
+        width: 223
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b6b18d1292c69429f0ef50ed7fc216
+      internalID: -408337108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_3
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 1448
+        width: 121
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd105b62b7730e14fbd238933dc38d18
+      internalID: 668847512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_5
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1463
+        width: 134
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70175304682bc1439c2ecd8bc24c7cb
+      internalID: -1950841143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_6
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1277
+        width: 374
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c870a490cc55ee34eaba10e0cb07f01a
+      internalID: 1630430362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_8
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1357
+        width: 934
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31300cddfe06e0749aacdaee950d9209
+      internalID: -263070972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1104
+        width: 123
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd4b5e52218b894ab3fa8b97e6b0a82
+      internalID: -271699393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_14
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1254
+        width: 870
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0526ef889e7e34ba5fd72e92c01587
+      internalID: 2032034554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_15
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 1148
+        width: 200
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fd12a4082a5cd4198b95cce88c8898
+      internalID: -76832795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1152
+        width: 83
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79de12498d7406443a4d496336382ef0
+      internalID: 1393252487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_18
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1150
+        width: 83
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9c58cbf64f0d5458afa5d25b573a4d
+      internalID: 649664335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_19
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1152
+        width: 84
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692a6083863f8014185709c28edd8a5e
+      internalID: -685771877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_28
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1146
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cad50f4b75f8bf478a22f8304ac4d71
+      internalID: -821094056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_30
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 963
+        width: 192
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3e8afcf55ca8843867860a3ac71a66
+      internalID: 271399736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_32
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 580
+        width: 88
+        height: 538
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b259198b03af51e4b82b4e0adbb54d25
+      internalID: -2012524155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_36
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 947
+        width: 189
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af28630fae7f8cc48a255cfdf02ea896
+      internalID: 1278998687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_42
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 947
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56533aaf8bf2136409e04ba7c25640c3
+      internalID: 1622949117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_45
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 810
+        width: 194
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb17ec9751540c4f89764d158c42ad3
+      internalID: 104361554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_52
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 750
+        width: 189
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6eb362bb4d80943a0cc01ae8c228bb
+      internalID: 320097685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_57
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 736
+        width: 605
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8badf23f9096c54cbed009a6cb225e2
+      internalID: 2141138643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_66
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 744
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af87fde76b9103645aca5cec31a7601b
+      internalID: 934479566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_72
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 450
+        width: 371
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24abcc60b4ef48499c46c7b6502d3f0
+      internalID: -727511167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_87
+      rect:
+        serializedVersion: 2
+        x: 1488
+        y: 433
+        width: 448
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f204addbaab10dd45a25325a9682d0a9
+      internalID: 772143417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_91
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 438
+        width: 192
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0910c971540f4944cb087264f0aee180
+      internalID: 1033800646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_96
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 282
+        width: 921
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e69f28791cf2140bc8558d05c5f5f3
+      internalID: 1741904756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_107
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 53
+        width: 448
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8116e0bb31cd0a4439763aa58e18e460
+      internalID: -281071132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_110
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 150
+        width: 922
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce71b47e6fe045e4085641038e37333a
+      internalID: 25090290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_114
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 156
+        width: 91
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03295a51c0859cc4387c0802de16d0eb
+      internalID: -1115856402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_115
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 154
+        width: 97
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed192ce9cc789c49a8e5fccc3c37185
+      internalID: -1624910890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_117
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 58
+        width: 448
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5713c3542b44cd49adf8a177afe5bdf
+      internalID: 1368397597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_118
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 137
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29a01525cd15b54c96dedc803546edf
+      internalID: -204564769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_121
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 24
+        width: 922
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c01bf49e6565094aaa2e607cab2bea2
+      internalID: 982033957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_122
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 0
+        width: 31
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184fc00757de50c44907b498c92e7f3a
+      internalID: 252020352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_7
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 1660
+        width: 127
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e8e4cccad014742be8c84bdc597382
+      internalID: 1138883708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_9
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 1643
+        width: 133
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351b462e14ed8f0468d72097d88a4362
+      internalID: -282604267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_4
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1678
+        width: 937
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee5d152ead560b4aa1f72a06961322b
+      internalID: -1820367767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_10
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 530
+        width: 87
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3ab11373691da488170a48a8df828b
+      internalID: 1842309799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Day3Enviroment_11
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 522
+        width: 116
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57720a923f1630d46b7c9511cd581cdd
+      internalID: 1434196639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Day3Enviroment_0: -2007934369
+      Day3Enviroment_1: 673866420
+      Day3Enviroment_10: 1842309799
+      Day3Enviroment_100: -754032484
+      Day3Enviroment_101: 1886735370
+      Day3Enviroment_102: 875307367
+      Day3Enviroment_103: 1834864943
+      Day3Enviroment_104: 521284967
+      Day3Enviroment_105: -59358165
+      Day3Enviroment_106: -1940932783
+      Day3Enviroment_107: -281071132
+      Day3Enviroment_108: -974999655
+      Day3Enviroment_109: -1056854762
+      Day3Enviroment_11: 1434196639
+      Day3Enviroment_110: 25090290
+      Day3Enviroment_111: 284815771
+      Day3Enviroment_112: 1820367960
+      Day3Enviroment_113: -2008385366
+      Day3Enviroment_114: -1115856402
+      Day3Enviroment_115: -1624910890
+      Day3Enviroment_116: -71949534
+      Day3Enviroment_117: 1368397597
+      Day3Enviroment_118: -204564769
+      Day3Enviroment_119: 699784870
+      Day3Enviroment_12: -1459285750
+      Day3Enviroment_120: -260085391
+      Day3Enviroment_121: 982033957
+      Day3Enviroment_122: 252020352
+      Day3Enviroment_13: -271699393
+      Day3Enviroment_14: 2032034554
+      Day3Enviroment_15: -76832795
+      Day3Enviroment_16: -1261124768
+      Day3Enviroment_17: 1393252487
+      Day3Enviroment_18: 649664335
+      Day3Enviroment_19: -685771877
+      Day3Enviroment_2: -408337108
+      Day3Enviroment_20: -2048718290
+      Day3Enviroment_21: -1896726284
+      Day3Enviroment_22: 628586221
+      Day3Enviroment_23: -261034360
+      Day3Enviroment_24: 212822122
+      Day3Enviroment_25: -51579401
+      Day3Enviroment_26: -1635020638
+      Day3Enviroment_27: 197392551
+      Day3Enviroment_28: -821094056
+      Day3Enviroment_29: 489066358
+      Day3Enviroment_3: 668847512
+      Day3Enviroment_30: 271399736
+      Day3Enviroment_31: -1482105825
+      Day3Enviroment_32: -2012524155
+      Day3Enviroment_33: -66652901
+      Day3Enviroment_34: -936779528
+      Day3Enviroment_35: 475759890
+      Day3Enviroment_36: 1278998687
+      Day3Enviroment_37: 614493073
+      Day3Enviroment_38: 1455643651
+      Day3Enviroment_39: -1129479155
+      Day3Enviroment_4: -1820367767
+      Day3Enviroment_40: -778908279
+      Day3Enviroment_41: -479221025
+      Day3Enviroment_42: 1622949117
+      Day3Enviroment_43: -1880058655
+      Day3Enviroment_44: 241529480
+      Day3Enviroment_45: 104361554
+      Day3Enviroment_46: -395972685
+      Day3Enviroment_47: 345766530
+      Day3Enviroment_48: 122024576
+      Day3Enviroment_49: 106859469
+      Day3Enviroment_5: -1950841143
+      Day3Enviroment_50: 1977015827
+      Day3Enviroment_51: 2051282057
+      Day3Enviroment_52: 320097685
+      Day3Enviroment_53: -1414179042
+      Day3Enviroment_54: 2106184744
+      Day3Enviroment_55: -872665363
+      Day3Enviroment_56: 1686260574
+      Day3Enviroment_57: 2141138643
+      Day3Enviroment_58: 1056330029
+      Day3Enviroment_59: -1028305991
+      Day3Enviroment_6: 1630430362
+      Day3Enviroment_60: 331060378
+      Day3Enviroment_61: 461118215
+      Day3Enviroment_62: -1558406790
+      Day3Enviroment_63: -1106309779
+      Day3Enviroment_64: 882027091
+      Day3Enviroment_65: -1115511061
+      Day3Enviroment_66: 934479566
+      Day3Enviroment_67: 1254333432
+      Day3Enviroment_68: -1004239377
+      Day3Enviroment_69: -2091804378
+      Day3Enviroment_7: 1138883708
+      Day3Enviroment_70: -1485663304
+      Day3Enviroment_71: 1858757077
+      Day3Enviroment_72: -727511167
+      Day3Enviroment_73: 698772991
+      Day3Enviroment_74: 605971493
+      Day3Enviroment_75: -1417114057
+      Day3Enviroment_76: -878200899
+      Day3Enviroment_77: 1170329378
+      Day3Enviroment_78: -316507557
+      Day3Enviroment_79: 424401114
+      Day3Enviroment_8: -263070972
+      Day3Enviroment_80: 10938705
+      Day3Enviroment_81: -191649385
+      Day3Enviroment_82: -1862757083
+      Day3Enviroment_83: -1237335023
+      Day3Enviroment_84: -1741017080
+      Day3Enviroment_85: 974541192
+      Day3Enviroment_86: -1795167537
+      Day3Enviroment_87: 772143417
+      Day3Enviroment_88: -1765179029
+      Day3Enviroment_89: -482210388
+      Day3Enviroment_9: -282604267
+      Day3Enviroment_90: 1818346106
+      Day3Enviroment_91: 1033800646
+      Day3Enviroment_92: 1688799461
+      Day3Enviroment_93: 1571660612
+      Day3Enviroment_94: 457665606
+      Day3Enviroment_95: -1014024043
+      Day3Enviroment_96: 1741904756
+      Day3Enviroment_97: -404812497
+      Day3Enviroment_98: 695125869
+      Day3Enviroment_99: -550619775
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
