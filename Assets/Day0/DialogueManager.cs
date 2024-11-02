@@ -94,8 +94,15 @@ public class DialogManager : MonoBehaviour
     }
 
     //DayController에서 제한에 따른 메세지 호출
-    public void AdviseMessageDialog(Dialog dialog)
+    public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
-        StartDialog(dialog, playerImage);
+        if(adviseMessageDialogNumber == 0)
+        {
+            StartDialog(new Dialog { sentences = new[] { "피난묘들과 조금 더 대화를 나눠보자." } }, playerImage);
+        }
+        else
+        {
+            StartDialog(new Dialog { sentences = new[] { "아직 여기서 해야 할 일이 더 남았어! 차근차근 꼼꼼히 조사해보자." } }, playerImage);
+        }
     }
 }

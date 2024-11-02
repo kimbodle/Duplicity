@@ -1605,8 +1605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cb699231aa9664793a778ef64d7ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionName: Library
-  sceneName: MainScene
+  regionName: LibraryScene
+  sceneName: LibraryScene
   regionButton: {fileID: 475218025}
   unlockDay: 10
   dialogIfIncomplete: []
@@ -2557,8 +2557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cb699231aa9664793a778ef64d7ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionName: Shelter
-  sceneName: Day1Scene
+  regionName: ShelterScene
+  sceneName: ShelterScene
   regionButton: {fileID: 793153349}
   unlockDay: 0
   dialogIfIncomplete: []
@@ -3969,7 +3969,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &1319061607 stripped
 MonoBehaviour:
@@ -5190,7 +5190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1982236564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2105747469}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToggleMapUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1982236564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5550,7 +5562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2078514522
 Transform:
   m_ObjectHideFlags: 0

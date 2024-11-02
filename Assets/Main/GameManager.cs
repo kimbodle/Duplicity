@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         isInitializingGameState = false;
     }
 
-    //Day의 Task를 완료 했을 시 따로 호출
+    //Day의 모든 Task를 완료 했을 시 따로 호출
     public void CompleteTask(string SceneName)
     {
         //Day의 Task를 완료했을시
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         // StateManager에서 DayController 활성화
         stateManager.ActivateDayController(currentDay);
         currentDayController = GetCurrentDayController();
-        // 씬이 로드되면 OnSceneLoaded에서 LoadDayController 호출
+        currentDayController.SetGameState(gameState);
     }
 
 

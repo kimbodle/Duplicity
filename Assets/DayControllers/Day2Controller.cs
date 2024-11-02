@@ -22,7 +22,9 @@ public class Day2Controller : DayController
         }
 
         // GameManager에서 gameState를 가져와 사용
-        gameState = gameManager.gameState;
+        //엥 이건 틀린 것 같음 이미 DayController에 정의 되어있음
+        //gameState = gameManager.gameState;
+
         //taskHandler = GetComponent<TaskHandler>();
 
         // Task 진행 상황 로드
@@ -60,9 +62,9 @@ public class Day2Controller : DayController
     public override void MapIconClick(string regionName)
     {
         Debug.Log("MapClick 됐어요");
-        if(regionName == "Shelter")
+        if(regionName == "ShelterScene") 
         {
-            GameManager.Instance.CompleteTask("Shelter");
+            GameManager.Instance.CompleteTask("ShelterScene");
         }
     }
 

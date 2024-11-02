@@ -24,7 +24,7 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateMapRegions();
+        //UpdateMapRegions();
     }
 
     // 모든 지역 아이콘 상태 업데이트

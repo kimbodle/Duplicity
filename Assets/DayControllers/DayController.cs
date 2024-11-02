@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class DayController : MonoBehaviour
 {
@@ -31,6 +32,15 @@ public abstract class DayController : MonoBehaviour
     public void SetGameState(Dictionary<string, bool> state)
     {
         gameState = new Dictionary<string, bool>(state);
+        Debug.Log("gameState 초기화");
+        foreach (var taskKey in gameState.Keys)
+        {
+            if (gameState[taskKey])
+            {
+                Debug.Log($"현재 {taskKey}가 있음.");
+            }
+
+        }
     }
 
     // Task 진행 상황 불러오기
@@ -85,6 +95,8 @@ public abstract class DayController : MonoBehaviour
     protected void UpdateCurrentTask(string task)
     {
         GameManager.Instance.currentTask = task;
+        GameManager.Instance.currentScene = SceneManager.GetActiveScene().name;
+
         Debug.Log($"currentTask 업데이트: {task}");
         GameManager.Instance.SaveGame();
     }

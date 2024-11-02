@@ -43,10 +43,10 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         LoginUI.SetActive(false);
-        mapIconButton.gameObject.SetActive(false);
         mapUI.SetActive(false);
+        mapIconButton.gameObject.SetActive(false);
 
-        mapIconButton.onClick.AddListener(ToggleMapUI);
+        //mapIconButton.onClick.AddListener(ToggleMapUI);
         InitializeDaySprites();
     }
 
