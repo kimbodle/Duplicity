@@ -93,7 +93,13 @@ public class DialogManager : MonoBehaviour
         OnDialogEnd?.Invoke();
     }
 
-    //DayController에서 제한에 따른 메세지 호출
+    //Player 혼잣말
+    public void PlayerMessageDialog(Dialog dialog)
+    {
+        StartDialog(dialog, playerImage);
+    }
+
+    //DayController에서 제한에 따라 메세지 호출
     public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
         if(adviseMessageDialogNumber == 0)

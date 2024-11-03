@@ -492,7 +492,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 19
   m_TargetDisplay: 0
 --- !u!114 &172182270 stripped
 MonoBehaviour:
@@ -5947,6 +5947,7 @@ MonoBehaviour:
   mapRegions:
   - {fileID: 793153352}
   - {fileID: 475218028}
+  - {fileID: 1427277750}
 --- !u!1 &2082763998
 GameObject:
   m_ObjectHideFlags: 0
@@ -6188,6 +6189,7 @@ MonoBehaviour:
   daySprites:
   - {fileID: 21300000, guid: c27435f0db6c13f458e0954808b9a7de, type: 3}
   - {fileID: 21300000, guid: 440f18d07a98e6d468074076b7a9480d, type: 3}
+  - {fileID: 21300000, guid: 59c10f71ee85c594caa054f9ad5b15d0, type: 3}
 --- !u!4 &2105747470
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class MapRegion : MonoBehaviour
     private void Start()
     {
         regionButton.onClick.AddListener(OnRegionClicked);
-        Debug.Log("맵리전 스타트???????????");
+        //Debug.Log("맵리전 스타트???????????");
         //어떤 이유에서인지, Start임에도 불구하고 씬전환하고 mapIcon을 클릭했을때 이게 뜬다 왜지
         //UpdateRegionStatus(); // 초기 상태 업데이트
     }

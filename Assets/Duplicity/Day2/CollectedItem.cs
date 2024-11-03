@@ -6,6 +6,7 @@ public class CollectedItem : MonoBehaviour, IInteractable
 {
     public string interactionMessage = "Press [E] to look.";
 
+    // µð¹ö±ë¿ë
     private void OnMouseDown()
     {
         CompletCollectItem();

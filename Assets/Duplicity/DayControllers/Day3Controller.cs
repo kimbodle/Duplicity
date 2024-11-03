@@ -14,24 +14,10 @@ public class Day3Controller : DayController
 
         //맵 아이콘 띄워주기
         UIManager.Instance.OpenMapIcon();
+        MapManager.Instance.InitializeMapRegions();
 
-        
-
-        //후속 처리
-        if (HasTalkWithAllRabbit())
-        {
-            UIManager.Instance.OpenMapIcon();
-            MapManager.Instance.UnlockRegion("LibraryScene");
-            MapManager.Instance.UnlockRegion("ShelterScene");
-            MapManager.Instance.UnlockRegion("LaboratoryScene");
-        }
-        else
-        {
-            MapManager.Instance.LockRegion("LibraryScene");
-            //시작하는 곳
-            MapManager.Instance.LockRegion("ShelterScene");
-            MapManager.Instance.LockRegion("LaboratoryScene");
-        }
+        MapManager.Instance.UnlockRegion("LibraryScene");
+        MapManager.Instance.UnlockRegion("ShelterScene");
     }
 
     public override void CompleteTask(string task)
@@ -42,8 +28,6 @@ public class Day3Controller : DayController
             if (task == "TallWithAllRabbit")
             {
                 MarkTaskComplete(task);
-                MapManager.Instance.UnlockRegion("LibraryScene");
-                MapManager.Instance.UnlockRegion("LaboratoryScene");
             }
         }
         if (task == "Day3ComputerUnlock")
@@ -62,52 +46,52 @@ public class Day3Controller : DayController
 
     public override void MapIconClick(string regionName)
     {
-        if (regionName == "LibraryScene")
+        if (SceneManager.GetActiveScene().name != regionName)
         {
-            //모든 피난묘와 대화했으면
-            if (HasTalkWithAllRabbit()) //talkRabbitCount < allRabbitCount
+            if (regionName == "LibraryScene")
             {
-                if(SceneManager.GetActiveScene().name == regionName)
-                {
-                    Debug.Log("현재 씬");
-                    //SceneManager.LoadScene("LibraryScene");
-                }
-                else
+                //모든 피난묘와 대화했으면
+                if (HasTalkWithAllRabbit()) //talkRabbitCount < allRabbitCount
                 {
                     StateManager.Instance.LoadSubScene(regionName);
                 }
+                else
+                {
+                    DialogManager.Instance.AdviseMessageDialog(0);
+                }
             }
-            else
+            if (regionName == "ShelterScene")
             {
-                DialogManager.Instance.AdviseMessageDialog(0);
+                //아직 모든 task 를 안끝냈으면
+                if (IsDayComplete(GameManager.Instance.currentTask))
+                {
+                    //NextDay(Day4) & 피난처로 이동
+                    GameManager.Instance.CompleteTask("ShelterScene");
+                }
+                else
+                {
+                    DialogManager.Instance.AdviseMessageDialog(1);
+                }
             }
-        }
-        if (regionName == "ShelterScene")
-        {
-            //아직 모든 task 를 안끝냈으면
-            if (IsDayComplete(GameManager.Instance.currentTask))
-            {
-                //NextDay(Day4) & 피난처로 이동
-                GameManager.Instance.CompleteTask("ShelterScene");
-            }
-            else
-            {
-                DialogManager.Instance.AdviseMessageDialog(1);
-            }
-        }
-        if (regionName == "LaboratoryScene")
-        {
-            //아직 모든 task 를 안끝냈으면
-            if (IsDayComplete(GameManager.Instance.currentTask))
+            if (regionName == "LaboratoryScene")
             {
                 DialogManager.Instance.AdviseMessageDialog(1);
-                //연구실 이동
-                //StateManager.Instance.LoadSubScene(regionName);
+                //지역 이동할 곳이 아님
+                if (IsDayComplete(GameManager.Instance.currentTask))
+                {
+                    DialogManager.Instance.AdviseMessageDialog(1);
+                    //연구실 이동
+                    //StateManager.Instance.LoadSubScene(regionName);
+                }
+                else
+                {
+                    //연구실로 이동
+                }
             }
-            else
-            {
-                
-            }
+        }
+        else
+        {
+            Debug.Log("지금 있는 곳");
         }
     }
     //task가 gameState에 있는지 확인

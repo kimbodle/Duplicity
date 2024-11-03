@@ -7,6 +7,7 @@ public class Poster : MonoBehaviour, IInteractable
 {
     public BigPanelDisplay bigPanelDisplay;
     public Sprite assignedImage; // 이 포스터에 할당된 이미지
+    public Dialog dialog;
 
     public string interactionMessage = "포스터가 부착되어 있다.";
 
@@ -22,6 +23,15 @@ public class Poster : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         bigPanelDisplay.ShowPanel(assignedImage);
+        if(dialog != null)
+        {
+            DialogManager.Instance.PlayerMessageDialog(dialog);
+        }
+        else
+        {
+            return;
+        }
+        
     }
 
     public void ResetTask()

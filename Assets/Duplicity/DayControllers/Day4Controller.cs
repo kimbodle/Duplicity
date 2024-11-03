@@ -9,7 +9,7 @@ public class Day4Controller : DayController
     public override void Initialize(string currentTask)
     {
         //Day3 후속 처리 필요 없음
-        Debug.Log("Day3 시작");
+        Debug.Log("Day4 시작");
         allRabbitCount = 2;
         talkRabbitCount = 0;
 
