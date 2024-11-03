@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4aef521535dab1e42862a9eab879271d
+guid: 553206274ee0a1f4aaa34888ad0b97d1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 3
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,10 +126,10 @@ TextureImporter:
       name: Day2Enviroment_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1717
-        width: 310
-        height: 138
+        x: 87
+        y: 1725
+        width: 261
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 550404d719efc6045b2067ef2e43aa22
-      internalID: 1587303699
+      spriteID: a57294a5b63004d429996f10e13326f6
+      internalID: -1734992171
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: Day2Enviroment_1
       rect:
         serializedVersion: 2
-        x: 411
-        y: 1706
-        width: 314
-        height: 134
+        x: 414
+        y: 1712
+        width: 303
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f600d994cfb75f42853fef582e72875
-      internalID: 1321635877
+      spriteID: b4f02a13938b40b4f97485ae2f10034e
+      internalID: -1507377761
       vertices: []
       indices: 
       edges: []
@@ -168,10 +168,10 @@ TextureImporter:
       name: Day2Enviroment_2
       rect:
         serializedVersion: 2
-        x: 844
-        y: 1549
-        width: 209
-        height: 332
+        x: 861
+        y: 1563
+        width: 173
+        height: 297
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6332ba0475989b4a9c0268c524e4802
-      internalID: 1906169157
+      spriteID: 9204ca5ad970b8a46a052734d5b5c5e6
+      internalID: 1338865707
       vertices: []
       indices: 
       edges: []
@@ -189,10 +189,10 @@ TextureImporter:
       name: Day2Enviroment_3
       rect:
         serializedVersion: 2
-        x: 1232
-        y: 1594
-        width: 421
-        height: 224
+        x: 1235
+        y: 1608
+        width: 402
+        height: 197
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc61f8f418fc5443bef91fcd3ec32ee
-      internalID: 85459268
+      spriteID: f2b92d9cb50cf4d4490d661b64c76c49
+      internalID: -604055526
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
       name: Day2Enviroment_4
       rect:
         serializedVersion: 2
-        x: 1814
-        y: 1646
-        width: 545
-        height: 206
+        x: 1800
+        y: 1647
+        width: 560
+        height: 194
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76aa76d24f6abcc4d90c7ae5e1d19afe
-      internalID: -64781672
+      spriteID: 4e91502d8712b8b4aa4c95fe1a81fe25
+      internalID: 667138559
       vertices: []
       indices: 
       edges: []
@@ -231,10 +231,10 @@ TextureImporter:
       name: Day2Enviroment_5
       rect:
         serializedVersion: 2
-        x: 2389
-        y: 1359
-        width: 197
-        height: 414
+        x: 2399
+        y: 1384
+        width: 170
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69e423408f76e6c4d82bb520a703025f
-      internalID: -1719416387
+      spriteID: 65c8c6742002ec341a89c38fc15f4fce
+      internalID: 1914129973
       vertices: []
       indices: 
       edges: []
@@ -252,10 +252,10 @@ TextureImporter:
       name: Day2Enviroment_6
       rect:
         serializedVersion: 2
-        x: 1952
-        y: 1016
-        width: 411
-        height: 343
+        x: 1956
+        y: 1034
+        width: 404
+        height: 297
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c20e673d7f65eb5499d11b74a9d7d7ed
-      internalID: 612022212
+      spriteID: 7b599a9861e989841b72c3361e59e2f6
+      internalID: 777958025
       vertices: []
       indices: 
       edges: []
@@ -273,10 +273,10 @@ TextureImporter:
       name: Day2Enviroment_7
       rect:
         serializedVersion: 2
-        x: 72
-        y: 1184
-        width: 630
-        height: 220
+        x: 2087
+        y: 774
+        width: 319
+        height: 175
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e806c5ef38dad944386d3afe93e313d6
-      internalID: 379595443
+      spriteID: 1e2ae55770ac1fb4d86114872094374c
+      internalID: -471997151
       vertices: []
       indices: 
       edges: []
@@ -294,10 +294,10 @@ TextureImporter:
       name: Day2Enviroment_8
       rect:
         serializedVersion: 2
-        x: 975
-        y: 1169
-        width: 365
-        height: 265
+        x: 1818
+        y: 630
+        width: 174
+        height: 344
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ab37bff826632e47bd6e114aa775ac3
-      internalID: 1521678969
+      spriteID: e829b348ef6c0fe40b27544a6a6ca0e6
+      internalID: -1340204770
       vertices: []
       indices: 
       edges: []
@@ -315,10 +315,10 @@ TextureImporter:
       name: Day2Enviroment_9
       rect:
         serializedVersion: 2
-        x: 1422
-        y: 1245
-        width: 422
-        height: 157
+        x: 1942
+        y: 406
+        width: 611
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 436281d621d527d4cbed3bceb1d3e5ae
-      internalID: 1830257025
+      spriteID: 42f78bcdfc74aa34091320544d0a17c8
+      internalID: 2003992919
       vertices: []
       indices: 
       edges: []
@@ -336,10 +336,10 @@ TextureImporter:
       name: Day2Enviroment_10
       rect:
         serializedVersion: 2
-        x: 1799
-        y: 607
-        width: 220
-        height: 373
+        x: 1442
+        y: 357
+        width: 186
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,8 +347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bcb3f350dfed1242bc8da457714f6d5
-      internalID: -1913674882
+      spriteID: ba828cd50f4da1d43b748b98c9eb65fc
+      internalID: -1243761796
       vertices: []
       indices: 
       edges: []
@@ -357,10 +357,10 @@ TextureImporter:
       name: Day2Enviroment_11
       rect:
         serializedVersion: 2
-        x: 1627
-        y: 921
-        width: 83
-        height: 168
+        x: 1763
+        y: 471
+        width: 77
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58e98e25ec8b0c541adb3e9636729d17
-      internalID: 2089094297
+      spriteID: cbd29de3e71e8be40a39825c73325fd5
+      internalID: -1322147115
       vertices: []
       indices: 
       edges: []
@@ -378,10 +378,10 @@ TextureImporter:
       name: Day2Enviroment_12
       rect:
         serializedVersion: 2
-        x: 1527
-        y: 932
-        width: 89
-        height: 149
+        x: 1127
+        y: 492
+        width: 511
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50b0682bffdec82429af70d2194f96f9
-      internalID: 661998773
+      spriteID: 4d31d8703d0a636459b891620ba1a569
+      internalID: 1272144790
       vertices: []
       indices: 
       edges: []
@@ -399,10 +399,10 @@ TextureImporter:
       name: Day2Enviroment_13
       rect:
         serializedVersion: 2
-        x: 1411
-        y: 932
-        width: 112
-        height: 149
+        x: 1379
+        y: 726
+        width: 120
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,8 +410,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf638062b130dfa49a3976492e84cacb
-      internalID: 1845633848
+      spriteID: c04621c2c9300e4419b1c4c3af33efd6
+      internalID: -526245593
       vertices: []
       indices: 
       edges: []
@@ -420,10 +420,10 @@ TextureImporter:
       name: Day2Enviroment_14
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 943
-        width: 112
-        height: 149
+        x: 1202
+        y: 739
+        width: 123
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,8 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d87bfbd76814224e9faf0b56381661a
-      internalID: 1129253002
+      spriteID: 4f0659e98feaf4341a36a1008ce74be9
+      internalID: -1544729695
       vertices: []
       indices: 
       edges: []
@@ -441,10 +441,10 @@ TextureImporter:
       name: Day2Enviroment_15
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 898
-        width: 157
-        height: 202
+        x: 1036
+        y: 151
+        width: 522
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8113b5441ff5224b919093f86bd20fc
-      internalID: 1669114409
+      spriteID: 302d8ddc16b465943870c37889be0600
+      internalID: 1019509297
       vertices: []
       indices: 
       edges: []
@@ -462,10 +462,10 @@ TextureImporter:
       name: Day2Enviroment_16
       rect:
         serializedVersion: 2
-        x: 878
-        y: 481
-        width: 194
-        height: 645
+        x: 698
+        y: 121
+        width: 197
+        height: 346
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,8 +473,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1db43e57570c3fd46910d716be04b05b
-      internalID: 855317933
+      spriteID: 77204242683ba02479eef2554d809ba3
+      internalID: 540295538
       vertices: []
       indices: 
       edges: []
@@ -483,10 +483,10 @@ TextureImporter:
       name: Day2Enviroment_17
       rect:
         serializedVersion: 2
-        x: 31
-        y: 947
-        width: 832
-        height: 198
+        x: 191
+        y: 141
+        width: 330
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,8 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d458b452752e84e409cda29591836815
-      internalID: 163596327
+      spriteID: 8ec38b055f0c993479f9eafa391131dc
+      internalID: -82745819
       vertices: []
       indices: 
       edges: []
@@ -504,10 +504,10 @@ TextureImporter:
       name: Day2Enviroment_18
       rect:
         serializedVersion: 2
-        x: 102
-        y: 578
-        width: 455
-        height: 328
+        x: 601
+        y: 520
+        width: 161
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,8 +515,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 126bf04af2cbb2343af4b7a5099ba282
-      internalID: -1726522251
+      spriteID: a243545dc5408d547a658d76ebaf6360
+      internalID: -1882119181
       vertices: []
       indices: 
       edges: []
@@ -525,10 +525,10 @@ TextureImporter:
       name: Day2Enviroment_19
       rect:
         serializedVersion: 2
-        x: 538
-        y: 757
-        width: 138
-        height: 130
+        x: 570
+        y: 772
+        width: 85
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,8 +536,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ba72c7645261c64bb4d78f3ea6d1e4f
-      internalID: -1870274035
+      spriteID: ebbfed2f78103984c845bd342c47a764
+      internalID: 1496646767
       vertices: []
       indices: 
       edges: []
@@ -546,10 +546,10 @@ TextureImporter:
       name: Day2Enviroment_20
       rect:
         serializedVersion: 2
-        x: 591
-        y: 510
-        width: 171
-        height: 209
+        x: 167
+        y: 597
+        width: 353
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,8 +557,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c93dce564251bc45955272e4d677161
-      internalID: -1744834445
+      spriteID: d990944746277354ea86fb980a00de2c
+      internalID: 270476363
       vertices: []
       indices: 
       edges: []
@@ -567,10 +567,10 @@ TextureImporter:
       name: Day2Enviroment_21
       rect:
         serializedVersion: 2
-        x: 165
-        y: 130
-        width: 377
-        height: 321
+        x: 79
+        y: 969
+        width: 765
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -578,8 +578,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7af59f08e3510dd4e894c3b44cdd1bdf
-      internalID: -324652409
+      spriteID: b18390d599942274da1f39fedbce1625
+      internalID: 236305402
       vertices: []
       indices: 
       edges: []
@@ -588,10 +588,10 @@ TextureImporter:
       name: Day2Enviroment_22
       rect:
         serializedVersion: 2
-        x: 669
-        y: 108
-        width: 246
-        height: 365
+        x: 926
+        y: 490
+        width: 111
+        height: 603
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,8 +599,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c49683b3234df57429586f6d9169d937
-      internalID: -1239842643
+      spriteID: 67783107203739b46bb6a24c21abb052
+      internalID: -1854826976
       vertices: []
       indices: 
       edges: []
@@ -609,10 +609,10 @@ TextureImporter:
       name: Day2Enviroment_23
       rect:
         serializedVersion: 2
-        x: 1019
-        y: 141
-        width: 549
-        height: 202
+        x: 75
+        y: 1208
+        width: 616
+        height: 194
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -620,8 +620,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccc2078abddaabe489d719a8cb8ca363
-      internalID: -1243788837
+      spriteID: 655ee9bb4e992e34484a9c55ca3e9176
+      internalID: -259265582
       vertices: []
       indices: 
       edges: []
@@ -630,10 +630,10 @@ TextureImporter:
       name: Day2Enviroment_24
       rect:
         serializedVersion: 2
-        x: 1430
-        y: 346
-        width: 212
-        height: 135
+        x: 996
+        y: 1182
+        width: 337
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -641,8 +641,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4685462005726f940a7f18d8a9fecef4
-      internalID: -801303202
+      spriteID: 2cbc44a8d91ed0f40b70be2ccc29d237
+      internalID: 646395619
       vertices: []
       indices: 
       edges: []
@@ -651,10 +651,10 @@ TextureImporter:
       name: Day2Enviroment_25
       rect:
         serializedVersion: 2
-        x: 1751
-        y: 458
-        width: 93
-        height: 112
+        x: 1422
+        y: 1247
+        width: 406
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -662,8 +662,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ef085cb103ab54caf0e35984137dd0
-      internalID: -660965804
+      spriteID: a51c61e5fe046ab408713b1699cbc7f1
+      internalID: -1496605540
       vertices: []
       indices: 
       edges: []
@@ -672,10 +672,10 @@ TextureImporter:
       name: Day2Enviroment_26
       rect:
         serializedVersion: 2
-        x: 1922
-        y: 391
-        width: 645
-        height: 146
+        x: 1127
+        y: 913
+        width: 136
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,8 +683,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb50ebea4d60ab245a846db25a434f7c
-      internalID: 1355806371
+      spriteID: d51ce676f55c6af4ca0d154a4a9e3eeb
+      internalID: -597361090
       vertices: []
       indices: 
       edges: []
@@ -693,10 +693,10 @@ TextureImporter:
       name: Day2Enviroment_27
       rect:
         serializedVersion: 2
-        x: 1646
-        y: 85
-        width: 351
-        height: 269
+        x: 1325
+        y: 970
+        width: 76
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -704,8 +704,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c636ea96f8c8104f881fcefbfa1b1be
-      internalID: 9485062
+      spriteID: 01797e1d1228c654a8c32282fcbfc862
+      internalID: -1291992956
       vertices: []
       indices: 
       edges: []
@@ -714,10 +714,10 @@ TextureImporter:
       name: Day2Enviroment_28
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 727
-        width: 138
-        height: 130
+        x: 1431
+        y: 962
+        width: 69
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -725,8 +725,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfa44ff2c9a1e514fba67d09095ae484
-      internalID: -952981368
+      spriteID: a32ed197b207605458d3f18c53b22d8e
+      internalID: 2015824181
       vertices: []
       indices: 
       edges: []
@@ -735,10 +735,10 @@ TextureImporter:
       name: Day2Enviroment_29
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 708
-        width: 138
-        height: 164
+        x: 1540
+        y: 954
+        width: 65
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -746,8 +746,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24d47780dd852dd4281158d97044ad3f
-      internalID: -1254515326
+      spriteID: 14915269c7bf5d949ad10782d0d0103f
+      internalID: -1203963703
       vertices: []
       indices: 
       edges: []
@@ -756,10 +756,10 @@ TextureImporter:
       name: Day2Enviroment_30
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 481
-        width: 534
-        height: 227
+        x: 1640
+        y: 940
+        width: 51
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -767,8 +767,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e84eeef0fd3beea43beccc304c1daac3
-      internalID: 1746287466
+      spriteID: 0bcd79de7ad95534099397f79bae5113
+      internalID: -1832998394
       vertices: []
       indices: 
       edges: []
@@ -784,37 +784,37 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Day2Enviroment_0: 1587303699
-      Day2Enviroment_1: 1321635877
-      Day2Enviroment_10: -1913674882
-      Day2Enviroment_11: 2089094297
-      Day2Enviroment_12: 661998773
-      Day2Enviroment_13: 1845633848
-      Day2Enviroment_14: 1129253002
-      Day2Enviroment_15: 1669114409
-      Day2Enviroment_16: 855317933
-      Day2Enviroment_17: 163596327
-      Day2Enviroment_18: -1726522251
-      Day2Enviroment_19: -1870274035
-      Day2Enviroment_2: 1906169157
-      Day2Enviroment_20: -1744834445
-      Day2Enviroment_21: -324652409
-      Day2Enviroment_22: -1239842643
-      Day2Enviroment_23: -1243788837
-      Day2Enviroment_24: -801303202
-      Day2Enviroment_25: -660965804
-      Day2Enviroment_26: 1355806371
-      Day2Enviroment_27: 9485062
-      Day2Enviroment_28: -952981368
-      Day2Enviroment_29: -1254515326
-      Day2Enviroment_3: 85459268
-      Day2Enviroment_30: 1746287466
-      Day2Enviroment_4: -64781672
-      Day2Enviroment_5: -1719416387
-      Day2Enviroment_6: 612022212
-      Day2Enviroment_7: 379595443
-      Day2Enviroment_8: 1521678969
-      Day2Enviroment_9: 1830257025
+      Day2Enviroment_0: -1734992171
+      Day2Enviroment_1: -1507377761
+      Day2Enviroment_10: -1243761796
+      Day2Enviroment_11: -1322147115
+      Day2Enviroment_12: 1272144790
+      Day2Enviroment_13: -526245593
+      Day2Enviroment_14: -1544729695
+      Day2Enviroment_15: 1019509297
+      Day2Enviroment_16: 540295538
+      Day2Enviroment_17: -82745819
+      Day2Enviroment_18: -1882119181
+      Day2Enviroment_19: 1496646767
+      Day2Enviroment_2: 1338865707
+      Day2Enviroment_20: 270476363
+      Day2Enviroment_21: 236305402
+      Day2Enviroment_22: -1854826976
+      Day2Enviroment_23: -259265582
+      Day2Enviroment_24: 646395619
+      Day2Enviroment_25: -1496605540
+      Day2Enviroment_26: -597361090
+      Day2Enviroment_27: -1291992956
+      Day2Enviroment_28: 2015824181
+      Day2Enviroment_29: -1203963703
+      Day2Enviroment_3: -604055526
+      Day2Enviroment_30: -1832998394
+      Day2Enviroment_4: 667138559
+      Day2Enviroment_5: 1914129973
+      Day2Enviroment_6: 777958025
+      Day2Enviroment_7: -471997151
+      Day2Enviroment_8: -1340204770
+      Day2Enviroment_9: 2003992919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
