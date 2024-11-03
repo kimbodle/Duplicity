@@ -16,3 +16,4 @@ MonoBehaviour:
   - Hello
   - Intro
   - testing
+  isPlayerSpeaking: 010101
