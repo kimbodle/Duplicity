@@ -14,11 +14,13 @@ public class DialogManager : MonoBehaviour
     public Image characterImage; // 캐릭터 이미지
     public Button nextButton; // 다음 문장 버튼
     public float typingSpeed = 0.05f; // 타이핑 속도 조절 변수
+    public Dialog[] advissMessages;
 
     [Space(10)]
     public Sprite playerImage; // 플레이어 이미지
 
     private Queue<(string sentence, bool isPlayerSpeaking)> sentenceQueue; // 화자 정보를 포함한 문장 큐
+    private bool isTyping = false; // 코루틴 실행 여부를 나타내는 변수
 
     // 다이얼로그 종료 이벤트
     public event Action OnDialogEnd;
@@ -53,7 +55,6 @@ public class DialogManager : MonoBehaviour
 
         for (int i = 0; i < dialog.sentences.Length; i++)
         {
-            // 문장과 화자 정보를 큐에 삽입
             bool isPlayerSpeaking = i < dialog.isPlayerSpeaking.Length && dialog.isPlayerSpeaking[i];
             sentenceQueue.Enqueue((dialog.sentences[i], isPlayerSpeaking));
         }
@@ -64,6 +65,12 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        // 코루틴이 실행 중이면 클릭이 무시됨
+        if (isTyping)
+        {
+            return;
+        }
+
         if (sentenceQueue.Count == 0)
         {
             EndDialog();
@@ -80,7 +87,10 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator TypeSentence(string sentence)
     {
+        isTyping = true; // 코루틴 시작 시 true로 설정
         dialogText.text = "";
+        nextButton.gameObject.SetActive(false); // 타이핑 중에는 버튼 비활성화
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogText.text += letter;
@@ -88,33 +98,34 @@ public class DialogManager : MonoBehaviour
         }
 
         nextButton.gameObject.SetActive(true); // 문장이 끝나면 버튼 활성화
+        isTyping = false; // 코루틴 종료 시 false로 설정
     }
 
     private void EndDialog()
     {
         dialogPanel.SetActive(false);
         nextButton.gameObject.SetActive(false); // 다이얼로그 종료 후 버튼 비활성화
+        isTyping = false; // 다이얼로그 종료 시에도 false로 설정
 
         // 다이얼로그 종료 이벤트 호출
         OnDialogEnd?.Invoke();
     }
 
-    // Player 혼잣말 메서드
     public void PlayerMessageDialog(Dialog dialog)
     {
         StartDialog(dialog, playerImage);
     }
 
-    // DayController에서 제한에 따라 메세지 호출
     public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
         if (adviseMessageDialogNumber == 0)
         {
-            StartDialog(new Dialog { sentences = new[] { "피난묘들과 조금 더 대화를 나눠보자." } }, playerImage);
+            StartDialog(advissMessages[0], playerImage);
         }
-        else
+        else if (adviseMessageDialogNumber == 1)
         {
-            StartDialog(new Dialog { sentences = new[] { "아직 여기서 해야 할 일이 더 남았어! 차근차근 꼼꼼히 조사해보자." } }, playerImage);
+            StartDialog(advissMessages[1], playerImage);
+
         }
     }
 }

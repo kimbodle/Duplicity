@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79e4b443f8cf3864a9789036c485d345, type: 3}
-  m_Name: clockDialog
+  m_Name: D3_TWR
   m_EditorClassIdentifier: 
   sentences:
-  - "\uC624\uB298\uC740 7\uC6D4 12\uC77C \uAE08\uC694\uC77C\uC774\uB124"
-  isPlayerSpeaking: 01
+  - "\uD53C\uB09C\uBB18\uB4E4\uACFC \uB300\uD654 \uD560 \uC218 \uC788\uB294 \uB300\uD654\uB294
+    \uC5EC\uAE30\uAE4C\uC9C0\uC778 \uAC83 \uAC19\uC544."
+  - "\uC7A5\uC18C\uB97C \uC62E\uACA8 \uC804\uC7C1\uC5D0 \uAD00\uD55C \uB2E8\uC11C\uB97C
+    \uB354 \uCC3E\uC544\uBCF4\uC790."
+  isPlayerSpeaking: 0000
