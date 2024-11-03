@@ -20,7 +20,7 @@ public class Day2Controller : DayController
             Debug.LogError("GameManager is null");
             return;
         }
-
+        MapManager.Instance.InitializeMapRegions();
         // GameManager에서 gameState를 가져와 사용
         //엥 이건 틀린 것 같음 이미 DayController에 정의 되어있음
         //gameState = gameManager.gameState;
@@ -43,6 +43,7 @@ public class Day2Controller : DayController
 
             case "FindItem":
                 MarkTaskComplete("FindItem");
+                MapManager.Instance.UnlockRegion("ShelterScene");
                 break;
 
             default:
