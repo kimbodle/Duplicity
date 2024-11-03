@@ -19,8 +19,11 @@ public class DialogManager : MonoBehaviour
     [Space(10)]
     public Sprite playerImage; // 플레이어 이미지
 
+    private Queue<(Dialog dialog, Sprite characterSprite)> dialogQueue; // 대기 중인 다이얼로그 큐
     private Queue<(string sentence, bool isPlayerSpeaking)> sentenceQueue; // 화자 정보를 포함한 문장 큐
     private bool isTyping = false; // 코루틴 실행 여부를 나타내는 변수
+    private bool isDialogActive = false; // 다이얼로그 활성 상태를 추적하는 변수
+    private Sprite currentCharacterSprite; // 현재 대화 중인 캐릭터 이미지
 
     // 다이얼로그 종료 이벤트
     public event Action OnDialogEnd;
@@ -41,6 +44,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        dialogQueue = new Queue<(Dialog, Sprite)>();
         sentenceQueue = new Queue<(string, bool)>();
         dialogPanel.SetActive(false);
         nextButton.onClick.AddListener(DisplayNextSentence); // 버튼 클릭 이벤트 추가
@@ -49,9 +53,19 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog, Sprite characterSprite)
     {
+        // 다이얼로그가 진행 중이면 큐에 저장
+        if (isDialogActive || isTyping)
+        {
+            dialogQueue.Enqueue((dialog, characterSprite));
+            return;
+        }
+
+        // 다이얼로그 시작
+        isDialogActive = true;
         dialogPanel.SetActive(true);
+        currentCharacterSprite = characterSprite; // 현재 캐릭터 이미지를 저장
+        characterImage.sprite = characterSprite; // 다이얼로그 시작 시 캐릭터 이미지 설정
         sentenceQueue.Clear();
-        characterImage.sprite = characterSprite; // 기본 캐릭터 이미지 설정
 
         for (int i = 0; i < dialog.sentences.Length; i++)
         {
@@ -80,7 +94,7 @@ public class DialogManager : MonoBehaviour
         (string sentence, bool isPlayerSpeaking) = sentenceQueue.Dequeue();
 
         // 화자에 따라 캐릭터 이미지를 설정
-        characterImage.sprite = isPlayerSpeaking ? playerImage : characterImage.sprite;
+        characterImage.sprite = isPlayerSpeaking ? playerImage : currentCharacterSprite;
 
         StartCoroutine(TypeSentence(sentence));
     }
@@ -106,9 +120,17 @@ public class DialogManager : MonoBehaviour
         dialogPanel.SetActive(false);
         nextButton.gameObject.SetActive(false); // 다이얼로그 종료 후 버튼 비활성화
         isTyping = false; // 다이얼로그 종료 시에도 false로 설정
+        isDialogActive = false; // 다이얼로그가 종료되면 비활성 상태로 설정
 
         // 다이얼로그 종료 이벤트 호출
         OnDialogEnd?.Invoke();
+
+        // 대기 중인 다이얼로그가 있으면 자동으로 시작
+        if (dialogQueue.Count > 0)
+        {
+            (Dialog nextDialog, Sprite nextSprite) = dialogQueue.Dequeue();
+            StartDialog(nextDialog, nextSprite);
+        }
     }
 
     public void PlayerMessageDialog(Dialog dialog)
@@ -118,14 +140,13 @@ public class DialogManager : MonoBehaviour
 
     public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
-        if (adviseMessageDialogNumber == 0)
+        if (adviseMessageDialogNumber < advissMessages.Length)
         {
-            StartDialog(advissMessages[0], playerImage);
+            StartDialog(advissMessages[adviseMessageDialogNumber], playerImage);
         }
-        else if (adviseMessageDialogNumber == 1)
+        else
         {
-            StartDialog(advissMessages[1], playerImage);
-
+            Debug.LogWarning("유효하지 않은 조언 메시지 인덱스입니다.");
         }
     }
 }
