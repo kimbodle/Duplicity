@@ -36,6 +36,14 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    public void InitializeMapRegions()
+    {
+        foreach (var region in mapRegions)
+        {
+            region.Lock();
+        }
+    }
+
     // 특정 지역 활성화
     public void UnlockRegion(string regionName)
     {
