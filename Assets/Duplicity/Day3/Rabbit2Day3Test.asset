@@ -15,3 +15,4 @@ MonoBehaviour:
   sentences:
   - rabbit2 test
   - Day3
+  isPlayerSpeaking: 0001

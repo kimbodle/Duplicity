@@ -16,9 +16,9 @@ public class DialogManager : MonoBehaviour
     public float typingSpeed = 0.05f; // 타이핑 속도 조절 변수
 
     [Space(10)]
-    public Sprite playerImage;
+    public Sprite playerImage; // 플레이어 이미지
 
-    private Queue<string> sentences; // 다이얼로그 문장 큐
+    private Queue<(string sentence, bool isPlayerSpeaking)> sentenceQueue; // 화자 정보를 포함한 문장 큐
 
     // 다이얼로그 종료 이벤트
     public event Action OnDialogEnd;
@@ -39,7 +39,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        sentences = new Queue<string>();
+        sentenceQueue = new Queue<(string, bool)>();
         dialogPanel.SetActive(false);
         nextButton.onClick.AddListener(DisplayNextSentence); // 버튼 클릭 이벤트 추가
         nextButton.gameObject.SetActive(false); // 버튼을 처음에는 비활성화
@@ -48,12 +48,14 @@ public class DialogManager : MonoBehaviour
     public void StartDialog(Dialog dialog, Sprite characterSprite)
     {
         dialogPanel.SetActive(true);
-        sentences.Clear();
-        characterImage.sprite = characterSprite; // 캐릭터 이미지 설정
+        sentenceQueue.Clear();
+        characterImage.sprite = characterSprite; // 기본 캐릭터 이미지 설정
 
-        foreach (string sentence in dialog.sentences)
+        for (int i = 0; i < dialog.sentences.Length; i++)
         {
-            sentences.Enqueue(sentence);
+            // 문장과 화자 정보를 큐에 삽입
+            bool isPlayerSpeaking = i < dialog.isPlayerSpeaking.Length && dialog.isPlayerSpeaking[i];
+            sentenceQueue.Enqueue((dialog.sentences[i], isPlayerSpeaking));
         }
 
         nextButton.gameObject.SetActive(false); // 버튼 비활성화
@@ -62,13 +64,17 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (sentenceQueue.Count == 0)
         {
             EndDialog();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        (string sentence, bool isPlayerSpeaking) = sentenceQueue.Dequeue();
+
+        // 화자에 따라 캐릭터 이미지를 설정
+        characterImage.sprite = isPlayerSpeaking ? playerImage : characterImage.sprite;
+
         StartCoroutine(TypeSentence(sentence));
     }
 
@@ -93,16 +99,16 @@ public class DialogManager : MonoBehaviour
         OnDialogEnd?.Invoke();
     }
 
-    //Player 혼잣말
+    // Player 혼잣말 메서드
     public void PlayerMessageDialog(Dialog dialog)
     {
         StartDialog(dialog, playerImage);
     }
 
-    //DayController에서 제한에 따라 메세지 호출
+    // DayController에서 제한에 따라 메세지 호출
     public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
-        if(adviseMessageDialogNumber == 0)
+        if (adviseMessageDialogNumber == 0)
         {
             StartDialog(new Dialog { sentences = new[] { "피난묘들과 조금 더 대화를 나눠보자." } }, playerImage);
         }
