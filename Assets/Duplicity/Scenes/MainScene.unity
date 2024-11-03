@@ -6140,6 +6140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRabbitCount: 0
   talkRabbitCount: 0
+  dialog:
+  - {fileID: 11400000, guid: ed420e5544c07394d820ff36d9da26ad, type: 2}
 --- !u!4 &2084900475
 Transform:
   m_ObjectHideFlags: 0
@@ -6196,6 +6198,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c27435f0db6c13f458e0954808b9a7de, type: 3}
   - {fileID: 21300000, guid: 440f18d07a98e6d468074076b7a9480d, type: 3}
   - {fileID: 21300000, guid: 59c10f71ee85c594caa054f9ad5b15d0, type: 3}
+  - {fileID: 21300000, guid: f98c2a8d4aeeb8740b161d472ee94ea9, type: 3}
 --- !u!4 &2105747470
 Transform:
   m_ObjectHideFlags: 0

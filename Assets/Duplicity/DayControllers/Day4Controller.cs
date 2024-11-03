@@ -5,33 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Day4Controller : DayController
 {
+    public Dialog[] dialog;
+    bool isFirst = false;
     //다시 연구소
     public override void Initialize(string currentTask)
     {
-        //Day3 후속 처리 필요 없음
-        Debug.Log("Day4 시작");
-        allRabbitCount = 2;
-        talkRabbitCount = 0;
-
-        //맵 아이콘 띄워주기
-        UIManager.Instance.OpenMapIcon();
-
-        
-
-        //후속 처리
-        if (HasTalkWithAllRabbit())
+        if (isFirst == false)
         {
+            //Day4 후속 처리 필요 없음
+            Debug.Log("Day4 시작");
+            allRabbitCount = 2;
+            talkRabbitCount = 0;
+
+            //맵 아이콘 띄워주기
             UIManager.Instance.OpenMapIcon();
+            MapManager.Instance.InitializeMapRegions();
+
             MapManager.Instance.UnlockRegion("LibraryScene");
             MapManager.Instance.UnlockRegion("ShelterScene");
             MapManager.Instance.UnlockRegion("LaboratoryScene");
-        }
-        else
-        {
-            MapManager.Instance.LockRegion("LibraryScene");
-            //시작하는 곳
-            MapManager.Instance.LockRegion("ShelterScene");
-            MapManager.Instance.LockRegion("LaboratoryScene");
         }
     }
 
@@ -43,8 +35,7 @@ public class Day4Controller : DayController
             if (task == "TallWithAllRabbit")
             {
                 MarkTaskComplete(task);
-                MapManager.Instance.UnlockRegion("LibraryScene");
-                MapManager.Instance.UnlockRegion("LaboratoryScene");
+                DialogManager.Instance.PlayerMessageDialog(dialog[0]);
             }
         }
         if (task == "Day3ComputerUnlock")
@@ -65,23 +56,7 @@ public class Day4Controller : DayController
     {
         if (regionName == "LibraryScene")
         {
-            //모든 피난묘와 대화했으면
-            if (HasTalkWithAllRabbit()) //talkRabbitCount < allRabbitCount
-            {
-                if(SceneManager.GetActiveScene().name == regionName)
-                {
-                    Debug.Log("현재 씬");
-                    //SceneManager.LoadScene("LibraryScene");
-                }
-                else
-                {
-                    StateManager.Instance.LoadSubScene(regionName);
-                }
-            }
-            else
-            {
-                DialogManager.Instance.AdviseMessageDialog(0);
-            }
+            DialogManager.Instance.AdviseMessageDialog(1);
         }
         if (regionName == "ShelterScene")
         {
@@ -98,16 +73,21 @@ public class Day4Controller : DayController
         }
         if (regionName == "LaboratoryScene")
         {
-            //아직 모든 task 를 안끝냈으면
-            if (IsDayComplete(GameManager.Instance.currentTask))
+            if (HasTalkWithAllRabbit()) //talkRabbitCount < allRabbitCount
             {
-                DialogManager.Instance.AdviseMessageDialog(1);
-                //연구실 이동
-                //StateManager.Instance.LoadSubScene(regionName);
+                if (SceneManager.GetActiveScene().name == regionName)
+                {
+                    Debug.Log("현재 씬");
+                    //SceneManager.LoadScene("LibraryScene");
+                }
+                else
+                {
+                    StateManager.Instance.LoadSubScene(regionName);
+                }
             }
             else
             {
-                
+                DialogManager.Instance.AdviseMessageDialog(0);
             }
         }
     }
