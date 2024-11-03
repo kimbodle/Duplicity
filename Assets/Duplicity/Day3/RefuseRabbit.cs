@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class RefuseRabbit : MonoBehaviour
 {
-    public Dialog[] dialog; // 해당 캐릭터의 다이얼로그
+    public Dialog dialog; // 해당 캐릭터의 다이얼로그
     public Sprite characterSprite; // 해당 캐릭터의 이미지
 
     private bool isTalk= false;
 
-    private int dialogCount = 0;
     private DialogManager dialogManager;
     private DayController dayController;
     private Button interactionButton; // UI Button을 참조
@@ -19,7 +18,6 @@ public class RefuseRabbit : MonoBehaviour
     private void Start()
     {
         dialogManager = DialogManager.Instance;
-        dialogCount = FindObjectOfType<ShelterController>().dialogCount;
         dayController = FindObjectOfType<DayController>();
         
         interactionButton = GetComponent<Button>();
@@ -38,7 +36,7 @@ public class RefuseRabbit : MonoBehaviour
     {
         if (dialogManager != null)
         {
-            dialogManager.StartDialog(dialog[dialogCount], characterSprite);
+            dialogManager.StartDialog(dialog, characterSprite);
             if (isTalk == false)
             {
                 dayController.talkRabbitCount++;

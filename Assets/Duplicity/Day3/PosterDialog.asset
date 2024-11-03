@@ -15,3 +15,4 @@ MonoBehaviour:
   sentences:
   - "\uB9AC\uC820..?"
   - "\uC774\uAC8C \uBC8C\uC368 \uC784\uC0C1\uC2DC\uD5D8\uC744 \uC2DC\uC791\uD588\uB2E4\uACE0?"
+  isPlayerSpeaking: 0101

@@ -5,19 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Day3Controller : DayController
 {
+    public Dialog[] dialog;
+    bool isFirst = false;
     public override void Initialize(string currentTask)
     {
-        //Day3 후속 처리 필요 없음
-        Debug.Log("Day3 시작");
-        allRabbitCount = 2;
-        talkRabbitCount = 0;
+        if(isFirst == false)
+        {
+            //Day3 후속 처리 필요 없음
+            Debug.Log("Day3 시작");
+            allRabbitCount = 2;
+            talkRabbitCount = 0;
 
-        //맵 아이콘 띄워주기
-        UIManager.Instance.OpenMapIcon();
-        MapManager.Instance.InitializeMapRegions();
+            //맵 아이콘 띄워주기
+            UIManager.Instance.OpenMapIcon();
+            MapManager.Instance.InitializeMapRegions();
 
-        MapManager.Instance.UnlockRegion("LibraryScene");
-        MapManager.Instance.UnlockRegion("ShelterScene");
+            MapManager.Instance.UnlockRegion("LibraryScene");
+            MapManager.Instance.UnlockRegion("ShelterScene");
+
+            //Dialog
+            DialogManager.Instance.PlayerMessageDialog(dialog[0]);
+
+            isFirst = true;
+        }
+        
     }
 
     public override void CompleteTask(string task)
@@ -28,6 +39,7 @@ public class Day3Controller : DayController
             if (task == "TallWithAllRabbit")
             {
                 MarkTaskComplete(task);
+                DialogManager.Instance.PlayerMessageDialog(dialog[1]);
             }
         }
         if (task == "Day3ComputerUnlock")
