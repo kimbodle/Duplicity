@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6c53d0f3f2c74a3498b36c0584fc65d7
+guid: b7c634cb66e050b4b9741bcf4eef19b3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icons_0
+      name: MapIcons 1_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 40
-        width: 170
-        height: 113
+        x: 163
+        y: 452
+        width: 573
+        height: 447
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d16738c68df00df489a9f0c1c65fb377
-      internalID: -1085457443
+      spriteID: 749d9c0a6d73a944e975a15054fa082f
+      internalID: -1151055410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Icons_1
+      name: MapIcons 1_1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 22
-        width: 131
-        height: 149
+        x: 1049
+        y: 511
+        width: 371
+        height: 344
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c721ecd6387f134c9c1eb66d4edc807
-      internalID: 1965666105
+      spriteID: cccb22e1c6148a646b45f929397cc564
+      internalID: 1418356125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapIcons 1_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 54
+        width: 369
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdb90f4a3cbb6848b4bd035d9b4cd78
+      internalID: 688146365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapIcons 1_3
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 72
+        width: 394
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c431d33cf7b9a8a4dba2aec80e868732
+      internalID: 646475474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapIcons 1_4
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 68
+        width: 383
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4710fe7ada3408c4494d052b898d5112
+      internalID: 971935029
       vertices: []
       indices: 
       edges: []
@@ -175,8 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Icons_0: -1085457443
-      Icons_1: 1965666105
+      MapIcons 1_0: -1151055410
+      MapIcons 1_1: 1418356125
+      MapIcons 1_2: 688146365
+      MapIcons 1_3: 646475474
+      MapIcons 1_4: 971935029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
