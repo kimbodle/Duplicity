@@ -38,7 +38,7 @@ public class Day4Controller : DayController
                 DialogManager.Instance.PlayerMessageDialog(dialog[0]);
             }
         }
-        if (task == "Day3ComputerUnlock")
+        if (task == "비밀연구소에 들어가서 확인함")
         {
             MarkTaskComplete(task);
             UpdateCurrentTask(task);
@@ -49,7 +49,7 @@ public class Day4Controller : DayController
     public override bool IsDayComplete(string currentTask)
     {
         //gameState에 존재하는 키값으로 파악
-        return gameState.ContainsKey("Day3ComputerUnlock") && gameState["Day3ComputerUnlock"];
+        return gameState.ContainsKey("비밀연구소에 들어가서 확인함") && gameState["비밀연구소에 들어가서 확인함"];
     }
 
     public override void MapIconClick(string regionName)

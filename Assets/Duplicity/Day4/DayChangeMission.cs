@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DayChangeMission : MonoBehaviour, IMission
 {
     public Button dayButton;
-    public Text dayText;
+    public TMP_Text dayText;
     private string[] days = { "월요일", "화요일", "수요일", "목요일", "금요일" };
     private int currentDayIndex = 0;
 

@@ -27,8 +27,7 @@ public class SecretlabDoor : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        Debug.Log("미션시작");
-        ///HandleClick();
+        HandleClick();
     }
 
     public void ResetTask()
@@ -51,12 +50,12 @@ public class SecretlabDoor : MonoBehaviour, IInteractable
             objectRenderer.material.color = new Color(newRedValue, currentColor.g, currentColor.b);
         }
 
-        if (clickCount == requiredClicks)
+        if (clickCount % requiredClicks == 0)
         {
             // 클릭 횟수가 7번이면 보안 시스템의 missionstart 메서드 실행
             if (securitySystem != null)
             {
-                //securitySystem.missionstart();
+                securitySystem.SecuritySystemMissionStart();
                 Debug.Log("미션시작");
             }
         }

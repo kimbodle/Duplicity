@@ -7,13 +7,14 @@ public class InputFieldMission : MonoBehaviour, IMission
     public TMP_InputField[] inputFields; // 각 네모 칸의 InputField 배열
     public Button checkButton; // 빨간 버튼
     public string correctWord = "NIGHT"; // 정답 단어
-    public TMP_Text missionStatusText; // 서브 미션 통과 상태를 표시할 Text (옵션)
+    public GameObject missionStatusText; // 서브 미션 통과 상태를 표시할 Text (옵션)
 
     public bool IsMissionCompleted { get; private set; }
 
     public void Initialize()
     {
         IsMissionCompleted = false;
+        missionStatusText.SetActive(false);
         checkButton.onClick.AddListener(CheckMission);
     }
 
@@ -35,7 +36,8 @@ public class InputFieldMission : MonoBehaviour, IMission
             Debug.Log("입력 필드 서브 미션 통과!");
             if (missionStatusText != null)
             {
-                missionStatusText.text = "Clear!";
+                //missionStatusText.text = "Clear!";
+                missionStatusText.SetActive(true);
             }
         }
         else

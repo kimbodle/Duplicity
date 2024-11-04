@@ -1,15 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class SecuritySystem : MonoBehaviour
 {
     public MonoBehaviour[] missionBehaviours; // 각 서브 미션 컴포넌트 배열
     private IMission[] missions; // 내부적으로 IMission 인터페이스로 변환
+    [Space(10)]
+    public GameObject securitySystemPanel;
     public Button finalButton;
-    public Text timerText;
+    public TMP_Text timerText;
+    public Button closeButton;
+
     private float timeLimit = 77f;
     private bool missionCompleted = false;
+    private bool isStart = true;
 
     void Start()
     {
@@ -20,9 +26,23 @@ public class SecuritySystem : MonoBehaviour
             missions[i] = missionBehaviours[i] as IMission;
             missions[i].Initialize();
         }
-
+        securitySystemPanel.SetActive(false);
         finalButton.onClick.AddListener(CheckFinalMission);
-        StartCoroutine(StartTimer());
+        
+    }
+
+    public void SecuritySystemMissionStart()
+    {
+        if (isStart)
+        {
+            securitySystemPanel.SetActive(true);
+            StartCoroutine(StartTimer());
+            isStart=false;
+        }
+        else
+        {
+            securitySystemPanel.SetActive(true);
+        }
     }
 
     private IEnumerator StartTimer()
@@ -38,7 +58,8 @@ public class SecuritySystem : MonoBehaviour
         if (!missionCompleted)
         {
             Debug.Log("시간 초과! 미션 실패");
-            // 실패 처리 로직
+
+            EndingManager.Instance.LoadEnding("BadEnding", "보안 시스템 해킹 실패");
         }
     }
 
@@ -56,5 +77,10 @@ public class SecuritySystem : MonoBehaviour
         Debug.Log("전체 보안 시스템 해킹 미션 성공!");
         missionCompleted = true;
         // 전체 미션 성공 처리
+    }
+
+    public void OnCloseButton()
+    {
+        securitySystemPanel.SetActive(false);
     }
 }
