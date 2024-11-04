@@ -6,17 +6,17 @@ public class Day2Handler : MonoBehaviour
 {
     public Dialog[] dialog;
     public Sprite characterSprite;
+    public GameObject missionTimer;
     private int dialogIndex = 0;
 
     InteractionManager interactionManager;
-    MissionTimer missionTimer;
-    DialogManager dialogManager;
+
+    private DialogManager dialogManager;
 
     void Start()
     {
         dialogManager = DialogManager.Instance;
         interactionManager= FindObjectOfType<InteractionManager>();
-        missionTimer = FindObjectOfType<MissionTimer>();
 
         //다이얼로그 0
         dialogManager.StartDialog(dialog[dialogIndex], characterSprite);
@@ -31,7 +31,8 @@ public class Day2Handler : MonoBehaviour
         if(dialogIndex == 0)
         {
             interactionManager.isInteraction = true;
-            missionTimer.isMissionActive = true;
+            missionTimer.GetComponent<MissionTimer>().isMissionActive = true;
+            missionTimer.SetActive(true);
         }
 
         if (dialogIndex == 1)
