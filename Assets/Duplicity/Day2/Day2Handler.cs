@@ -39,7 +39,7 @@ public class Day2Handler : MonoBehaviour
         {
             //지도 활성화
             Debug.Log("지도 활성화");
-            UIManager.Instance.OpenMapIcon();
+            UIManager.Instance.ActiveMapIcon();
             MapManager.Instance.UnlockRegion("ShelterScene");
         }
 
