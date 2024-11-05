@@ -18,7 +18,7 @@ public class Day4Controller : DayController
             talkRabbitCount = 0;
 
             //¸Ê ¾ÆÀÌÄÜ ¶ç¿öÁÖ±â
-            UIManager.Instance.OpenMapIcon();
+            UIManager.Instance.ActiveMapIcon();
             MapManager.Instance.InitializeMapRegions();
 
             MapManager.Instance.UnlockRegion("LibraryScene");

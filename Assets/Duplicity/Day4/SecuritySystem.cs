@@ -80,6 +80,7 @@ public class SecuritySystem : MonoBehaviour
 
         Debug.Log("전체 보안 시스템 해킹 미션 성공!");
         missionCompleted = true;
+        OnCloseButton();
         fadeManager.StartFadeOut(secretLab.SecretLabDisplay);
     }
 
