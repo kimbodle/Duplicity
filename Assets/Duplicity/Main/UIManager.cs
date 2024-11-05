@@ -17,15 +17,16 @@ public class UIManager : MonoBehaviour
 
 
     [Space(10)] //인벤토리
-    public GameObject inventoryCanvas; // 인벤토리 UI 패널
-    //public InventoryUI inventoryUI;
-    public Button inventoryUIButton;
+    public GameObject inventoryManager;
+    public Button inventoryIconButton;
+    public GameObject inventoryUI;
 
     [Space(10)] //Day
     public GameObject dayIntroCanvas;
     public Image dayIntroImage;
     public List<Sprite> daySprites; // Inspector에서 순서대로 추가: 0 -> Day 1, 1 -> Day 2, 등
     private Dictionary<int, Sprite> daySpriteDictionary;
+
 
     private void Awake()
     {
@@ -44,6 +45,8 @@ public class UIManager : MonoBehaviour
     {
         LoginUI.SetActive(false);
         mapUI.SetActive(false);
+        DeactivateInventory();
+        inventoryUI.SetActive(false);
         mapIconButton.gameObject.SetActive(false);
 
         //mapIconButton.onClick.AddListener(ToggleMapUI);
@@ -59,7 +62,7 @@ public class UIManager : MonoBehaviour
     {
         LoginUI.SetActive(false);
     }
-    public void OpenMapIcon()
+    public void ActiveMapIcon()
     {
         mapIconButton.gameObject.SetActive(true);
     }
@@ -67,15 +70,22 @@ public class UIManager : MonoBehaviour
     {
         mapUI.SetActive(!mapUI.activeSelf);
     }
-    /*public void ToggleInventoryUI()
-    {
-        inventoryUI.ToggleInventory();
-    }*/
 
-    // 인벤토리 창을 열고 닫는 함수
-    public void ToggleInventoryUI()
+    public void ActiveInventory()
     {
-        inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
+        inventoryManager.gameObject.SetActive(true);
+        inventoryIconButton.gameObject.SetActive(true);
+    }
+
+    public void DeactivateInventory()
+    {
+        inventoryManager.gameObject.SetActive(false);
+        inventoryIconButton.gameObject.SetActive(false);
+    }
+
+    public void TogglInventoryUI()
+    {
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
     private void InitializeDaySprites()
