@@ -13,6 +13,12 @@ public class SecretLab : MonoBehaviour
     public void SecretLabDisplay()
     {
         secretLab.SetActive(true);
+        GameManager.Instance.GetCurrentDayController().CompleteTask("SecretLabOpen");
         DialogManager.Instance.PlayerMessageDialog(dialog);
+    }
+
+    public void OnClickCloseButton()
+    {
+        secretLab.SetActive(false);
     }
 }
