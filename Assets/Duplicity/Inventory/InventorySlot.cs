@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -48,6 +49,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         icon.sprite = null;
         icon.enabled = false;
         icon.color = originalColor; // 선택 해제 상태로 복귀
+        DeselectSlot();
         hasBeenSelected = false; // 슬롯 비우기 시 선택 상태 초기화
     }
 
@@ -60,6 +62,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 if (item.canViewDetails)
                 {
                     ShowItemDetails();
+                    DeselectSlot();
                 }
                 else
                 {
@@ -114,6 +117,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         else
         {
             eventData.pointerDrag = null; // 드래그를 취소
+            DeselectSlot();
         }
     }
 
@@ -125,6 +129,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
 
+    /*
     public void OnEndDrag(PointerEventData eventData)
     {
         if (item != null && isSelected)
@@ -138,5 +143,38 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 DeselectSlot();
             }
         }
+    }*/
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (item != null && isSelected)
+        {
+            canvasGroup.blocksRaycasts = true;
+
+            // Raycast로 다른 캔버스의 드롭존 탐색
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            bool dropSucceeded = false;
+
+            foreach (var result in results)
+            {
+                DropZone dropZone = result.gameObject.GetComponent<DropZone>();
+                if (dropZone != null)
+                {
+                    dropZone.OnDrop(eventData);
+                    dropSucceeded = true;
+                    break;
+                }
+            }
+
+            // 드롭이 실패했을 때 원래 위치로 복구
+            if (!dropSucceeded)
+            {
+                rectTransform.anchoredPosition = originalPosition;
+                DeselectSlot();
+            }
+        }
     }
+
+
 }

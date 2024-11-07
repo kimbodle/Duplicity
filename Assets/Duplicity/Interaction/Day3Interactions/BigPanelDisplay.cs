@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class BigPanelDisplay : MonoBehaviour
 {
+    [Header("Day4")]
     public GameObject bigPosterPanel;
     public Image bigPosterImage;
 
+    [Header("Day5")]
+    [SerializeField] private PhotoItem currentPhotoItem;
     private void Start()
     {
         bigPosterPanel.SetActive(false);
@@ -18,10 +21,27 @@ public class BigPanelDisplay : MonoBehaviour
         bigPosterPanel.SetActive(true);
     }
 
+    public void ShowPhotoPanel(Sprite image, PhotoItem photoItem)
+    {
+        bigPosterImage.sprite = image;
+        bigPosterPanel.SetActive(true);
+        currentPhotoItem = photoItem;
+    }
+
     //OnClick 이벤트 연결
     public void HidePanel()
     {
         bigPosterPanel.SetActive(false);
+    }
+
+    public void HideAndDestroy()
+    {
+        bigPosterPanel.SetActive(false);
+        if (currentPhotoItem != null)
+        {
+            Destroy(currentPhotoItem.gameObject); // 현재 PhotoItem 오브젝트 파괴
+            currentPhotoItem = null; // 참조 제거
+        }
     }
 }
 

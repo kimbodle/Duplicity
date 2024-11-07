@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Frame : MonoBehaviour
 {
     public Image frameImage;
+    public PhotoMissionManager photoMissionManager;
     private Item currentItem;
 
     public void SetPhoto(Item item)

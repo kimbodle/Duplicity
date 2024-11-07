@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Duplicity/Scenes/LibraryScene.unity
     guid: 5114a449edfac9b4a9eaba696b46e8ca
+  - enabled: 1
+    path: Assets/Duplicity/Scenes/DreamScene.unity
+    guid: 3ba50110c2abeba4ca12ec5fd1b7c108
   m_configObjects: {}

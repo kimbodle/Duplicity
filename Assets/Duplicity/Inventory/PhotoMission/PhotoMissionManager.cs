@@ -4,7 +4,15 @@ public class PhotoMissionManager : MonoBehaviour
 {
     public Frame[] frames;
     public Item[] correctOrder;
-    public InventoryManager inventoryManager;
+    private InventoryManager inventoryManager;
+
+    private void Start()
+    {
+        //if(inventoryManager != null)
+        //{
+        //    inventoryManager = FindObjectOfType<InventoryManager>();
+        //}
+    }
 
     public void CheckFrames()
     {
@@ -30,10 +38,15 @@ public class PhotoMissionManager : MonoBehaviour
             {
                 if (frame.HasPhoto())
                 {
-                    inventoryManager.AddItemToInventory(frame.GetCurrentItem());
+                    InventoryManager.Instance.AddItemToInventory(frame.GetCurrentItem());
                     frame.ResetFrame(); // 액자 초기화
                 }
             }
         }
+    }
+
+    public void OnCloseButton()
+    {
+        gameObject.SetActive(false);
     }
 }
