@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e4b443f8cf3864a9789036c485d345, type: 3}
+  m_Name: D5_photo2
+  m_EditorClassIdentifier: 
+  sentences:
+  - "\u2026"
+  - "\uC774\uAC74 \uC9C0\uAE08 \uB0B4 \uBAA8\uC2B5\uC774\uC796\uC544? \uC544\uB2C8\uC9C0..\n\uC774\uC81C
+    \uB2E4\uC2DC\uB294 \uBCFC \uC218 \uC5C6\uB294 \uB0B4 \uBAA8\uC2B5\uC778 \uAC74\uAC00\u2026"
+  isPlayerSpeaking: 0101

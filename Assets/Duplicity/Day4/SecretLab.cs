@@ -3,7 +3,9 @@ using UnityEngine;
 public class SecretLab : MonoBehaviour
 {
     public GameObject secretLab;
-    public Dialog dialog;
+    public Dialog enterSecretDialog;
+    public Dialog documentAfterDialog;
+    //private bool isFirst;
 
     void Start()
     {
@@ -14,11 +16,13 @@ public class SecretLab : MonoBehaviour
     {
         secretLab.SetActive(true);
         GameManager.Instance.GetCurrentDayController().CompleteTask("SecretLabOpen");
-        DialogManager.Instance.PlayerMessageDialog(dialog);
+        DialogManager.Instance.PlayerMessageDialog(enterSecretDialog);
     }
 
     public void OnClickCloseButton()
     {
         secretLab.SetActive(false);
+        DialogManager.Instance.PlayerMessageDialog(documentAfterDialog);
+        
     }
 }

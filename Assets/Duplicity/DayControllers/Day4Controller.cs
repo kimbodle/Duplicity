@@ -63,8 +63,8 @@ public class Day4Controller : DayController
             //아직 모든 task 를 안끝냈으면
             if (IsDayComplete(GameManager.Instance.currentTask))
             {
-                //NextDay(Day4) & 피난처로 이동
-                GameManager.Instance.CompleteTask("ShelterScene");
+                //NextDay(Day5) & 꿈속으로 이동
+                GameManager.Instance.CompleteTask("DreamScene");
             }
             else
             {

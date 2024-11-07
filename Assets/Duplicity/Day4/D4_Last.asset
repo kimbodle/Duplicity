@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e4b443f8cf3864a9789036c485d345, type: 3}
+  m_Name: D4_Last
+  m_EditorClassIdentifier: 
+  sentences:
+  - "\uB0B4\uAC00 \uC5F0\uAD6C\uD558\uACE0 \uC788\uB358 \uB9AC\uC820\uC774 \uC0DD\uCCB4
+    \uBCD1\uAE30\uB97C\n\uB9CC\uB4E4\uAE30 \uC704\uD55C \uBAA9\uC801\uC73C\uB85C
+    \uC4F0\uC600\uB2E4\uB294\uAC70\uC9C0..?"
+  - "\uB0B4 \uC5F0\uAD6C \uB54C\uBB38\uC5D0 \uC804\uC7C1\uC774 \uC77C\uC5B4\uB09C\uAC78\uAE4C?"
+  - "\uACB0\uAD6D \uB098 \uB54C\uBB38\uC5D0\u2026"
+  - "\uB0B4\uAC00 \uB9CC\uB09C \uD53C\uB09C\uBB18\uB4E4\uC758 \uB0A8\uD3B8, \uC544\uB4E4\uC774\u2026"
+  - "\u2026"
+  isPlayerSpeaking: 0101010101

@@ -45,8 +45,11 @@ public class UIManager : MonoBehaviour
     {
         LoginUI.SetActive(false);
         mapUI.SetActive(false);
+
+        //비활성화 해놓으면 아이콘 위치 버그로 게임 오브젝트 활성화로 시작
         DeactivateInventory();
         inventoryUI.SetActive(false);
+
         mapIconButton.gameObject.SetActive(false);
 
         //mapIconButton.onClick.AddListener(ToggleMapUI);
@@ -73,13 +76,14 @@ public class UIManager : MonoBehaviour
 
     public void ActiveInventory()
     {
-        inventoryManager.gameObject.SetActive(true);
+        Debug.Log("인벤토리 활성화");
+        inventoryManager.SetActive(true);
         inventoryIconButton.gameObject.SetActive(true);
     }
 
     public void DeactivateInventory()
     {
-        inventoryManager.gameObject.SetActive(false);
+        inventoryManager.SetActive(false);
         inventoryIconButton.gameObject.SetActive(false);
     }
 

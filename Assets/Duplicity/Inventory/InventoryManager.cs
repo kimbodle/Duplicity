@@ -33,6 +33,15 @@ public class InventoryManager : MonoBehaviour
         Debug.Log("Inventory is full!");
     }
 
+    public void ClearAllItemSlot()
+    {
+        foreach (var slot in slots)
+        {
+            slot.ClearSlot();
+        }
+        Debug.Log("Inventory 전부 비움!");
+    }
+
     public void ShowDetailPanel(Item item)
     {
         if (detailPanel != null && item.canViewDetails)

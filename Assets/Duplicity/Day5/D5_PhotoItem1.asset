@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d24a9e2e03ba94db225506192c57d5, type: 3}
+  m_Name: D5_PhotoItem1
+  m_EditorClassIdentifier: 
+  itemName: "\uC5F0\uAD6C \uAC00\uC871 \uC0AC\uC9C4"
+  itemIcon: {fileID: 21300000, guid: e0d6e34bdd609bf44ad4da133d4ec623, type: 3}
+  canViewDetails: 1
+  itemDescription: "\uC606\uC5D0 \uC5C4\uB9C8 \uC544\uBE60\uAC00 \uC5F0\uAD6C\uD558\uACE0
+    \uC544\uC774\uAC00 \uD568\uAED8 \uC0B4\uC9DD \uBCF4\uC774\uB294 \uC0AC\uC9C4"
