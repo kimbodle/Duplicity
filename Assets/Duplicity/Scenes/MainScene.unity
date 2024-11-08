@@ -672,6 +672,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f1bb2be8be5636f4bb9d0bac47cefef9, type: 2}
   - {fileID: 11400000, guid: f1bb2be8be5636f4bb9d0bac47cefef9, type: 2}
   - {fileID: 11400000, guid: f1bb2be8be5636f4bb9d0bac47cefef9, type: 2}
+  PhotoMissionPanel: {fileID: 0}
+  WallCrackPanel: {fileID: 0}
+  SecretNotePanel: {fileID: 0}
 --- !u!4 &163453612
 Transform:
   m_ObjectHideFlags: 0
@@ -1135,6 +1138,7 @@ Transform:
   - {fileID: 1384165186}
   - {fileID: 2084900475}
   - {fileID: 708888967}
+  - {fileID: 488839741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208417035
@@ -2080,6 +2084,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473748120}
   m_CullTransparentMesh: 1
+--- !u!1 &488839740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488839741}
+  - component: {fileID: 488839742}
+  m_Layer: 0
+  m_Name: Day6Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &488839741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488839740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206392353}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488839742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488839740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeeb57e86ebbe714f8bd136ce2790f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
 --- !u!1 &500003827
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,7 +5153,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1319061607 stripped
 MonoBehaviour:

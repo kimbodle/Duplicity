@@ -14,11 +14,6 @@ public class Day5Controller : DayController
         UIManager.Instance.ActiveInventory();
         //아이콘 버그로 start때 임시활성화
         UIManager.Instance.TogglInventoryUI();
-
-
-        //맵 아이콘 띄워주기
-        UIManager.Instance.ActiveMapIcon();
-        MapManager.Instance.InitializeMapRegions();
     }
 
     public override void CompleteTask(string task)
@@ -38,12 +33,7 @@ public class Day5Controller : DayController
     }
 
     public override void MapIconClick(string regionName)
-    {
-        
-    }
-    //task가 gameState에 있는지 확인
-    private bool HasTalkWithAllRabbit()
-    {
-        return gameState.ContainsKey("TallWithAllRabbit") && gameState["TallWithAllRabbit"];
+    { 
+
     }
 }
