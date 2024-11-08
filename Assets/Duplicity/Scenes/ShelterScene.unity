@@ -325,7 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52be7a2f97e562742a112318c6650031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogCount: 0
   DayCanvas:
   - {fileID: 187403700}
   - {fileID: 1000705848}
@@ -884,13 +883,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606398262}
+  - component: {fileID: 606398263}
   m_Layer: 0
   m_Name: Day6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &606398262
 Transform:
   m_ObjectHideFlags: 0
@@ -909,6 +909,23 @@ Transform:
   - {fileID: 142062357}
   m_Father: {fileID: 30570418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &606398263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606398261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dcf4f92f53fc7488de1dd2f9b15da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChoicePanel: {fileID: 2086172997}
+  choiceButton1: {fileID: 1660136548}
+  choiceButton2: {fileID: 2037940821}
+  BadendingDialog: {fileID: 11400000, guid: 2cb15d9544d79b34cb244810e3de7b2b, type: 2}
+  OpenRegenDialog: {fileID: 11400000, guid: 09edb931dbb66714eb21e530e9e861f4, type: 2}
 --- !u!1 &810481679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1558,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7064585744473830464, guid: c7670a63ffdab044ba82ffe080549fe5, type: 3}
   m_PrefabInstance: {fileID: 1660136546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660136548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1692540871518893781, guid: c7670a63ffdab044ba82ffe080549fe5, type: 3}
+  m_PrefabInstance: {fileID: 1660136546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1847197563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2217,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7064585744473830464, guid: c7670a63ffdab044ba82ffe080549fe5, type: 3}
   m_PrefabInstance: {fileID: 2037940819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037940821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1692540871518893781, guid: c7670a63ffdab044ba82ffe080549fe5, type: 3}
+  m_PrefabInstance: {fileID: 2037940819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2086172995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2200,6 +2239,10 @@ PrefabInstance:
     - target: {fileID: 1914711571630520788, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_Name
       value: Choice Dialogue Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914711571630520788, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6365204662834143328, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_Pivot.x
@@ -2296,6 +2339,11 @@ PrefabInstance:
 --- !u!224 &2086172996 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2347734255483184216, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+  m_PrefabInstance: {fileID: 2086172995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2086172997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1914711571630520788, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
   m_PrefabInstance: {fileID: 2086172995}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

@@ -7,8 +7,8 @@ public class Day6Controller : DayController
 {
     public override void Initialize(string currentTask)
     {
-        //Day5
-        Debug.Log("Day5 시작");
+        //Day6
+        Debug.Log("Day6 시작");
         allRabbitCount = 3;
         talkRabbitCount = 0;
 

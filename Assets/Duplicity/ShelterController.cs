@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShelterController : MonoBehaviour
 {
-    public int dialogCount = 0;
     private int currentDay = 0;
     [SerializeField] private GameObject[] DayCanvas;
 
@@ -12,13 +11,6 @@ public class ShelterController : MonoBehaviour
     {
         currentDay = GameManager.Instance.GetCurrentDay();
         ActivateCurrentDayCanvas();
-
-        switch (currentDay)
-        {
-            case 3:
-                dialogCount = 0;
-                break;
-        }
     }
 
     private void ActivateCurrentDayCanvas()
@@ -33,11 +25,18 @@ public class ShelterController : MonoBehaviour
         }
 
         // currentDay에 맞는 Canvas만 활성화
-        if (currentDay >= 3)
+        if (currentDay == 3 && currentDay == 4)
         {
             if (DayCanvas[currentDay - 3] != null)
             {
                 DayCanvas[currentDay - 3].SetActive(true);
+            }
+        }
+        else if(currentDay == 6)
+        {
+            if (DayCanvas[2] != null)
+            {
+                DayCanvas[2].SetActive(true);
             }
         }
         else
