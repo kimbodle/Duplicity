@@ -11,6 +11,12 @@ public class Frame : MonoBehaviour
     {
         currentItem = item;
         frameImage.sprite = item.itemIcon;
+
+        // PhotoMissionManager¿¡ ¾Ë¸²
+        if (photoMissionManager != null)
+        {
+            photoMissionManager.OnPhotoPlaced();
+        }
     }
 
     public void ResetFrame()

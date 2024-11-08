@@ -41,6 +41,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         // 아이콘의 위치를 원래 위치로 되돌림
         rectTransform.anchoredPosition = originalPosition;
+        DeselectSlot();
     }
 
     public void ClearSlot()
@@ -62,12 +63,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 if (item.canViewDetails)
                 {
                     ShowItemDetails();
-                    DeselectSlot();
                 }
-                else
-                {
-                    DeselectSlot();
-                }
+                DeselectSlot();
             }
             else
             {
@@ -112,7 +109,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         // 아이템이 선택되었고 이전에 한 번 이상 선택된 상태에서만 드래그 가능
         if (item != null && isSelected && hasBeenSelected)
         {
-            canvasGroup.blocksRaycasts = false;
+            canvasGroup.blocksRaycasts = false; // 드래그 중 클릭 비활성화
+            rectTransform.SetAsLastSibling(); // 드래그할 때 이미지가 최상위로 표시되도록 설정
         }
         else
         {
@@ -172,7 +170,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             {
                 rectTransform.anchoredPosition = originalPosition;
                 DeselectSlot();
+                canvasGroup.blocksRaycasts = true; // 원래 클릭 가능 상태로 복원
             }
+
+            // 드래그 종료 시 선택 상태 초기화
+            isSelected = false;
+            hasBeenSelected = false; // 드래그 후 선택 상태 해제
         }
     }
 
