@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Day6DialogSelection : MonoBehaviour
 {
-    public TMP_Text dialogueText; // 대사 텍스트
+    public GameObject ChoicePanel;
     public Button choiceButton1; // 선택지 1 버튼
     public Button choiceButton2; // 선택지 2 버튼
     [Space(10)]
@@ -20,6 +20,7 @@ public class Day6DialogSelection : MonoBehaviour
         choiceButton2.onClick.AddListener(() => OnChoiceClick(2)); // 선택지 2 클릭 시
 
         // 선택지 버튼 초기 비활성화
+        ChoicePanel.SetActive(false);
         choiceButton1.gameObject.SetActive(false);
         choiceButton2.gameObject.SetActive(false);
     }
@@ -27,7 +28,8 @@ public class Day6DialogSelection : MonoBehaviour
     // 외부에서 호출하여 선택지 버튼 표시
     public void ShowChoices()
     {
-        SetChoices("주변을 돌아보지 못한 내 잘못이야.", "그런데 난 정말 몰랐어. 이게 정말 모두 다 내 잘못이야?");
+        ChoicePanel.SetActive(true);
+        SetChoices("그런데 난 정말 몰랐어. 이게 정말 모두 다 내 잘못이야?","주변을 돌아보지 못한 내 잘못이야.");
     }
 
     private void SetChoices(string choice1, string choice2)
@@ -41,6 +43,7 @@ public class Day6DialogSelection : MonoBehaviour
     // 선택지 버튼 클릭 처리
     private void OnChoiceClick(int choice)
     {
+        ChoicePanel.SetActive(false);
         if (choice == 1)
         {
             Debug.Log("엔딩");
