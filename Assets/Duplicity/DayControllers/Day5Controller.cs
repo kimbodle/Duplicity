@@ -12,7 +12,9 @@ public class Day5Controller : DayController
     {
         //Day5 피난묘 대화 x
         UIManager.Instance.ActiveInventory();
-        
+        //아이콘 버그로 start때 임시활성화
+        UIManager.Instance.TogglInventoryUI();
+
 
         //맵 아이콘 띄워주기
         UIManager.Instance.ActiveMapIcon();
@@ -21,17 +23,7 @@ public class Day5Controller : DayController
 
     public override void CompleteTask(string task)
     {
-        //아직 수정 x
-        if (allRabbitCount == talkRabbitCount)
-        {
-            //중간 저장x
-            if (task == "TallWithAllRabbit")
-            {
-                MarkTaskComplete(task);
-                DialogManager.Instance.PlayerMessageDialog(dialog[0]);
-            }
-        }
-        if (task == "SecretLabOpen")
+        if (task == "WakeUp")
         {
             MarkTaskComplete(task);
             UpdateCurrentTask(task);
@@ -42,7 +34,7 @@ public class Day5Controller : DayController
     public override bool IsDayComplete(string currentTask)
     {
         //gameState에 존재하는 키값으로 파악
-        return gameState.ContainsKey("SecretLabOpen") && gameState["SecretLabOpen"];
+        return gameState.ContainsKey("WakeUp") && gameState["WakeUp"];
     }
 
     public override void MapIconClick(string regionName)

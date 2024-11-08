@@ -24,14 +24,18 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var slot in slots)
         {
+            Debug.Log(slot.gameObject.name);
+            // 슬롯이 비어 있는지 확인
             if (slot.item == null)
             {
                 slot.AddItem(item);
+                Debug.Log($"Added {item.itemName} to inventory slot.");
                 return;
             }
         }
         Debug.Log("Inventory is full!");
     }
+
 
     public void ClearAllItemSlot()
     {

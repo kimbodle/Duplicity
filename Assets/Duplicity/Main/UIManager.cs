@@ -46,7 +46,6 @@ public class UIManager : MonoBehaviour
         LoginUI.SetActive(false);
         mapUI.SetActive(false);
 
-        //비활성화 해놓으면 아이콘 위치 버그로 게임 오브젝트 활성화로 시작
         DeactivateInventory();
         inventoryUI.SetActive(false);
 

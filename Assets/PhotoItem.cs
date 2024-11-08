@@ -22,11 +22,11 @@ public class PhotoItem : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         bigPanelDisplay.ShowPhotoPanel(assignedImage, this);
+        InventoryManager.Instance.AddItemToInventory(photoItem);
         if (playerDialog != null)
         {
             DialogManager.Instance.PlayerMessageDialog(playerDialog);
             hallucination.StartHallucinationDialog(halluciantionDialog);
-            InventoryManager.Instance.AddItemToInventory(photoItem);
         }
         else
         {
