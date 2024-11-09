@@ -9,7 +9,7 @@ public class FlashSkill : MonoBehaviour
     public LayerMask guardLayer; // 경비병 레이어
 
     //OnClick 이벤트 연결
-    private void UseFlashSkill()
+    public void UseFlashSkill()
     {
         flashEffect.SetActive(true); // 플래시 이펙트 활성화
         Collider2D[] guardsInRange = Physics2D.OverlapCircleAll(transform.position, flashRange, guardLayer);
