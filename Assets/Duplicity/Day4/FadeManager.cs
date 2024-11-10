@@ -15,6 +15,7 @@ public class FadeManager : MonoBehaviour
     public void StartFadeOut(System.Action onFadeOutComplete)
     {
         fadeImage.gameObject.SetActive(true); // 페이드 시작 시 활성화
+
         StartCoroutine(FadeOutCoroutine(onFadeOutComplete));
     }
 
@@ -27,6 +28,9 @@ public class FadeManager : MonoBehaviour
         }
 
         onFadeOutComplete?.Invoke();
+
+        // 페이드 아웃이 끝난 후 자동으로 페이드 인 시작
+        StartFadeIn();
     }
 
     public void StartFadeIn(System.Action onFadeInComplete = null)
