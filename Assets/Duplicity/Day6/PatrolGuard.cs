@@ -129,8 +129,7 @@ public class PatrolGuard : MonoBehaviour
     private void TriggerGameOver()
     {
         Debug.Log("게임 오버");
-        // 게임 오버 엔딩 처리 로직 추가
-        // GameManager.Instance.TriggerEnding("CaughtEnding");
+        //EndingManager.Instance.LoadEnding("GameOver", "잠입 실패", 5);
     }
 
     public void StunGuard()

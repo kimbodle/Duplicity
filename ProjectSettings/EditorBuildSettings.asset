@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Duplicity/Scenes/LaboratoryScene.unity
     guid: 584403647e2d1da4da20ab7fb5d713a4
   - enabled: 1
-    path: Assets/Duplicity/Scenes/BadEndingScene.unity
+    path: Assets/Duplicity/Scenes/GameOverScene.unity
     guid: d323470124be81444ac04e1997438d26
   - enabled: 1
     path: Assets/Duplicity/Scenes/ShelterScene.unity

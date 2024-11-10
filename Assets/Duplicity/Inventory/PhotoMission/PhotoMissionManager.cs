@@ -9,12 +9,12 @@ public class PhotoMissionManager : MonoBehaviour
     public GameObject PhotoMissionPanel;
     public GameObject WallCrackPanel;
     public GameObject SecretNotePanel;
-
-    private InventoryManager inventoryManager;
+    [Space(10)]
+    private PhotoMissionTimer timer;
 
     private void Start()
     {
-        inventoryManager = InventoryManager.Instance;
+        timer = GetComponent<PhotoMissionTimer>();
         WallCrackPanel.SetActive(false);
         SecretNotePanel.SetActive(false);
     }
@@ -63,6 +63,7 @@ public class PhotoMissionManager : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Photos are in the correct order!");
+            timer.CompleteMission();
             WallCrackPanel.SetActive(true);
         }
         else

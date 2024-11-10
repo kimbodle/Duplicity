@@ -63,7 +63,7 @@ public class SecuritySystem : MonoBehaviour
         if (!missionCompleted)
         {
             Debug.Log("시간 초과! 미션 실패");
-            EndingManager.Instance.LoadEnding("BadEnding", "보안 시스템 해킹 실패");
+            EndingManager.Instance.LoadEnding("GameOver", "보안 시스템 해킹 실패", 3);
         }
     }
 

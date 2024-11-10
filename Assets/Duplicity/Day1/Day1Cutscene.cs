@@ -138,7 +138,7 @@ public class Day1Cutscene : MonoBehaviour
                 else
                 {
                     Debug.Log("Game Over: 나가지 않는다 선택");
-                    EndingManager.Instance.LoadEnding("BadEnding", "나가지 않는다");
+                    EndingManager.Instance.LoadEnding("GameOver", "나가지 않는다", 0);
                 }
             }
             else
@@ -147,7 +147,7 @@ public class Day1Cutscene : MonoBehaviour
                 if (choice == 1)
                 {
                     Debug.Log("Game Over: 맞서 싸운다 선택");
-                    EndingManager.Instance.LoadEnding("BadEnding", "맞서 싸운다");
+                    EndingManager.Instance.LoadEnding("GameOver", "맞서 싸운다", 1);
                 }
                 else
                 {

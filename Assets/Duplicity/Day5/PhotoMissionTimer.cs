@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MissionTimer : MonoBehaviour
+public class PhotoMissionTimer : MonoBehaviour
 {
     public float timeLimit = 120f; // 제한 시간 (초)
     public TMP_Text timerText; // 타이머 UI
     public bool isMissionActive = false; // 미션 활성화 상태
 
+    // Update is called once per frame
     void Update()
     {
         if (isMissionActive)
@@ -34,14 +36,12 @@ public class MissionTimer : MonoBehaviour
     void MissionFailed()
     {
         Debug.Log("미션 실패");
-        EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 2);
+        EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 4);
     }
 
     public void CompleteMission()
     {
         isMissionActive = false;
         Debug.Log("미션 성공");
-        FindObjectOfType<Day2Controller>().CompleteTask("ItemCollected");
-        FindObjectOfType<Day2Handler>().CompleteItemCollected();
     }
 }
