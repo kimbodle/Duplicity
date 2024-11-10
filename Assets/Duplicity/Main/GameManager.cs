@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
     //Onclick 이벤트로 연결
     public void GameOver()
     {
-        EndingManager.Instance.CloseRetryUI();
+        //EndingManager.Instance.CloseRetryUI();
         gameState.Clear();
 
         currentTask = "Start";
