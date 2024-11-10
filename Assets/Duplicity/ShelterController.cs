@@ -15,6 +15,7 @@ public class ShelterController : MonoBehaviour
 
     private void ActivateCurrentDayCanvas()
     {
+        Debug.Log(currentDay);
         // 모든 Canvas 비활성화
         foreach (GameObject canvas in DayCanvas)
         {
@@ -25,7 +26,7 @@ public class ShelterController : MonoBehaviour
         }
 
         // currentDay에 맞는 Canvas만 활성화
-        if (currentDay == 3 && currentDay == 4)
+        if (currentDay == 3 || currentDay == 4)
         {
             if (DayCanvas[currentDay - 3] != null)
             {

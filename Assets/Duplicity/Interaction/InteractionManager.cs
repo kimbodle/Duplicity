@@ -48,7 +48,7 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    private void OnInteractButtonClicked()
+    public void OnInteractButtonClicked()
     {
         if (currentInteractable != null)
         {

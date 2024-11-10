@@ -1206,7 +1206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &256224979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7969,21 +7969,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4873391168016877262, guid: 1102e084d2fa4cf44afa4a884c16813c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4873391168016877262, guid: 1102e084d2fa4cf44afa4a884c16813c, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4873391168016877262, guid: 1102e084d2fa4cf44afa4a884c16813c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1516153802}
+      addedObject: {fileID: 1516153804}
   m_SourcePrefab: {fileID: 100100000, guid: 1102e084d2fa4cf44afa4a884c16813c, type: 3}
 --- !u!1 &1442610979
 GameObject:
@@ -8688,7 +8680,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4873391168016877262, guid: 1102e084d2fa4cf44afa4a884c16813c, type: 3}
   m_PrefabInstance: {fileID: 1400640820}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1516153802
+--- !u!114 &1516153804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8700,7 +8692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d521abc801ce84285385886a4dcb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsToCollect: 8
+  itemsToCollect: 3
 --- !u!1 &1516285333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8718,7 +8710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1516285334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10357,7 +10349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1881092545
 Transform:
   m_ObjectHideFlags: 0

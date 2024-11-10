@@ -20,10 +20,15 @@ public class CollectedItem : MonoBehaviour, IInteractable
             player.GetComponent<ItemCollector>().CollectItem();
             Destroy(gameObject); // 아이템을 수집하고 파괴
         }
+        else
+        {
+            Debug.Log("플레이어 못찾음");
+        }
     }
 
     public void OnInteract()
     {
+        Debug.Log("인터렉트함 ㅅㅂ");
         CompletCollectItem();
     }
 
