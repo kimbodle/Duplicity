@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //SaveGame(); //각 Task가 끝날때마다 자동 저장
+            Debug.LogWarning("현재 Day의 모든 CompleteTask를 완료 하지 않음");
         }
     }
 

@@ -38,12 +38,11 @@ public class Day6Controller : DayController
                 MarkTaskComplete(task);
                 UpdateCurrentTask(task);
             }
-
-            if (task == "EnterRegenRepo")
-            {
-                MarkTaskComplete(task);
-                UpdateCurrentTask(task);
-            }
+        }
+        if (task == "EnterRegenRepo")
+        {
+            MarkTaskComplete(task);
+            UpdateCurrentTask(task);
         }
     }
 

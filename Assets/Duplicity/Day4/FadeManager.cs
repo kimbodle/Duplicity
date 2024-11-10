@@ -6,6 +6,7 @@ public class FadeManager : MonoBehaviour
 {
     public Image fadeImage; // 화면을 덮는 검은 이미지
     [SerializeField] private float fadeSpeed = 2f; // 페이드 속도 조절 변수 (기본값 1)
+    [SerializeField] private float fadeSpeed22 = 5f; // 페이드 속도 조절 변수 (기본값 1)
 
     private void Start()
     {
@@ -49,5 +50,20 @@ public class FadeManager : MonoBehaviour
 
         onFadeInComplete?.Invoke();
         fadeImage.gameObject.SetActive(false); // 페이드 인 완료 시 비활성화
+    }
+
+    public void OnlyStartFadeIn()
+    {
+        fadeImage.gameObject.SetActive(true); // 페이드 인 시작 시 활성화
+        StartCoroutine(OnlyFadeInCoroutine()); // 코루틴으로 호출
+    }
+
+    private IEnumerator OnlyFadeInCoroutine()
+    {
+        for (float alpha = 1; alpha >= 0; alpha -= Time.deltaTime * fadeSpeed22)
+        {
+            fadeImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
     }
 }
