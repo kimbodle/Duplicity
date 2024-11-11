@@ -17,6 +17,10 @@ public class EndingImage : MonoBehaviour
         // EndingManager의 엔딩 인덱스와 메시지로 UI 설정
         var endingManager = EndingManager.Instance;
         int endingIndex = endingManager.endingIndex;
+        string endingMessage = endingManager.endingMessage;
+
+        // 엔딩 앨범에 저장 (중복 방지)
+        GameManager.Instance.SaveEnding("Ending", endingIndex);
 
         // 인덱스에 맞는 배경 이미지 설정
         if (endingIndex >= 0 && endingIndex < EndingBackgrounds.Length)

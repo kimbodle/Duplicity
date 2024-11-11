@@ -198,11 +198,11 @@ public class FirebaseAuthController : MonoBehaviour
         firestoreController.LoadGameState(OnGameStateLoaded); //아래 함수를 파라미터로 같이 전달
     }
 
-    private void OnGameStateLoaded(int currentDay, string currentSceneName, string currentTask, Dictionary<string, bool> gameState) //게임매니저의 게임상태 업데이트 함수호출
+    private void OnGameStateLoaded(int currentDay, string currentSceneName, string currentTask, Dictionary<string, bool> gameState, Dictionary<string, bool> endingAlbum) //게임매니저의 게임상태 업데이트 함수호출
     {
         if (gameManager != null)
         {
-            gameManager.InitializeGameState(currentDay, currentSceneName, currentTask, gameState);
+            gameManager.InitializeGameState(currentDay, currentSceneName, currentTask, gameState, endingAlbum);
         }
     }
 
