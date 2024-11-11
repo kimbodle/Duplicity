@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public string currentScene = "Day0Scene";
     public bool isInitializingGameState = false;
     public Dictionary<string, bool> gameState = new Dictionary<string, bool>();
+    //엔딩
+    public Dictionary<string, bool> endingAlbum = new Dictionary<string, bool>();
 
     private FirestoreController firestoreController;
     private FirebaseAuthController authController;
@@ -73,12 +75,39 @@ public class GameManager : MonoBehaviour
         if (authController != null && !string.IsNullOrEmpty(authController.uid))
         {
             var currentState = currentDayController?.GetGameState() ?? new Dictionary<string, bool>();
-            firestoreController.SaveGameState(currentDay, currentScene, currentTask, currentState);
+            firestoreController.SaveGameState(currentDay, currentScene, currentTask, currentState, endingAlbum);
+        }
+    }
+    // 엔딩 앨범 업데이트 및 저장
+    public void SaveEnding(string endingType, int endingIndex)
+    {
+        string endingKey = $"{endingType}_{endingIndex}";
+        if (!endingAlbum.ContainsKey(endingKey) || !endingAlbum[endingKey])
+        {
+            endingAlbum[endingKey] = true;
+            Debug.Log(endingKey);
+            SaveGame();
+            //// UI에 엔딩 이미지 표시
+            //UIManager.Instance.DisplayEndingImage(endingType, endingIndex);
         }
     }
 
     //로그인시 실행
-    public void InitializeGameState(int day, string SceneName, string task, Dictionary<string, bool> loadedGameState)
+    public void LoadGame()
+    {
+        if (authController != null && !string.IsNullOrEmpty(authController.uid))
+        {
+            //Debug.Log("LoadGame 안 if");
+            firestoreController.LoadGameState((day, SceneName, task, loadedGameState, loadedEndingAlbum) =>
+            {
+                InitializeGameState(day, SceneName, task, loadedGameState, loadedEndingAlbum);
+            });
+        }
+    }
+
+    //로그인시 실행
+    public void InitializeGameState(int day, string SceneName, string task,
+        Dictionary<string, bool> loadedGameState, Dictionary<string, bool> loadedEndingAlbum)
     {
         isInitializingGameState = true;
 
@@ -87,6 +116,19 @@ public class GameManager : MonoBehaviour
         currentScene = SceneName;
         gameState = loadedGameState;
 
+        endingAlbum = loadedEndingAlbum;
+
+        foreach (var ending in endingAlbum)
+        {
+            Debug.Log(ending);
+            if (ending.Value)
+            {
+                string[] endingData = ending.Key.Split('_');
+                string endingType = endingData[0];
+                int endingIndex = int.Parse(endingData[1]);
+            }
+        }
+
         UIManager.Instance.DisplayDayIntro(currentDay);
         SceneManager.LoadScene(SceneName);
 
@@ -94,20 +136,6 @@ public class GameManager : MonoBehaviour
         stateManager.ActivateDayController(currentDay);
         currentDayController = GetCurrentDayController();
         currentDayController.SetGameState(gameState);
-    }
-
-
-    //로그인시 실행
-    public void LoadGame()
-    {
-        if (authController != null && !string.IsNullOrEmpty(authController.uid))
-        {
-            //Debug.Log("LoadGame 안 if");
-            firestoreController.LoadGameState((day, SceneName,task, loadedGameState) =>
-            {
-                InitializeGameState(day, SceneName, task, loadedGameState);
-            });
-        }
     }
 
     //씬 전환시 실행
@@ -141,7 +169,24 @@ public class GameManager : MonoBehaviour
         currentDayController?.GetTaskHandler()?.ResetTasks();
 
         SaveGame();
-        InitializeGameState(currentDay, currentScene, currentTask, gameState);
+        InitializeGameState(currentDay, currentScene, currentTask, gameState, endingAlbum);
+    }
+
+    public bool HasSeenEnding(string endingType, int endingIndex)
+    {
+        string endingKey = $"{endingType}_{endingIndex}";
+
+        // 딕셔너리에서 해당 키가 존재하고, 그 값이 true인 경우 해당 엔딩을 본 것으로 처리
+        if (endingAlbum.ContainsKey(endingKey) && endingAlbum[endingKey])
+        {
+            Debug.Log($"{endingKey} 엔딩을 이미 봄.");
+            return true;
+        }
+        else
+        {
+            Debug.Log($"{endingKey} 엔딩을 아직 보지 않았음.");
+            return false;
+        }
     }
 
     public DayController GetCurrentDayController()
