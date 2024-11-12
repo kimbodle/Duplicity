@@ -7,7 +7,7 @@ public class Day5Controller : DayController
 {
     public Dialog[] dialog;
     //bool isFirst = false;
-    //다시 연구소
+    //로라의 꿈 속
     public override void Initialize(string currentTask)
     {
         //Day5 피난묘 대화 x

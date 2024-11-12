@@ -40,6 +40,13 @@ public class ShelterController : MonoBehaviour
                 DayCanvas[2].SetActive(true);
             }
         }
+        else if (currentDay == 8)
+        {
+            if (DayCanvas[3] != null)
+            {
+                DayCanvas[3].SetActive(true);
+            }
+        }
         else
         {
             Debug.LogWarning("유효하지 않은 currentDay or Canvas를 찾을 수 없음");

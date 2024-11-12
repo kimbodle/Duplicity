@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Day8Controller : DayController
+{
+    public Dialog[] dialog;
+    bool isFirst = false;
+
+    public override void Initialize(string currentTask)
+    {
+        //맵 아이콘 띄워주기
+        UIManager.Instance.ActiveMapIcon();
+        MapManager.Instance.InitializeMapRegions();
+        if (isFirst == false)
+        {
+            Debug.Log("Day8 시작");
+            allRabbitCount = 3;
+            talkRabbitCount = 0;
+
+            MapManager.Instance.UnlockRegion("ShelterScene");
+            MapManager.Instance.UnlockRegion("SeaScene");
+            //노트북을 획득 했을 경우?
+            MapManager.Instance.UnlockRegion("LaboratoryScnen");
+
+            isFirst = true;
+        }
+    }
+
+
+
+    public override void CompleteTask(string task)
+    {
+        if (allRabbitCount == talkRabbitCount)
+        {
+            if (task == "TallWithAllRabbit")
+            {
+                MarkTaskComplete(task);
+                //DialogManager.Instance.PlayerMessageDialog(dialog[0]);
+            }
+        }
+        
+    }
+
+    
+    public override bool IsDayComplete(string currentTask)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void MapIconClick(string regionName)
+    {
+        if (SceneManager.GetActiveScene().name != regionName)
+        {
+            if (regionName == "SeaScene")
+            {
+                //모든 피난묘와 대화했으면
+                if (HasTalkWithAllRabbit())
+                {
+                    StateManager.Instance.LoadSubScene(regionName);
+                }
+                else
+                {
+                    DialogManager.Instance.AdviseMessageDialog(0);
+                }
+            }
+            if (regionName == "LaboratoryScnen")
+            {
+                //모든 피난묘와 대화했으면 + 노트북을 획득 했을 경우 조건 추가
+                if (HasTalkWithAllRabbit())
+                {
+                    StateManager.Instance.LoadSubScene(regionName);
+                }
+                else
+                {
+                    DialogManager.Instance.AdviseMessageDialog(1);
+                }
+            }
+            if (regionName == "ShelterScene")
+            {
+                //지역 이동할 곳이 아님
+                DialogManager.Instance.AdviseMessageDialog(1); 
+            }
+        }
+        else
+        {
+            Debug.Log("지금 있는 곳");
+        }
+    }
+    private bool HasTalkWithAllRabbit()
+    {
+        return gameState.ContainsKey("TallWithAllRabbit") && gameState["TallWithAllRabbit"];
+    }
+}
