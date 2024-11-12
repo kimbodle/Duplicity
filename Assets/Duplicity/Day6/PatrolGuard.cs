@@ -151,9 +151,9 @@ public class PatrolGuard : MonoBehaviour
         scale.x = movingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
         transform.localScale = scale;
 
-        Vector3 visualScale = detectionVisual.transform.localScale;
-        visualScale.x = movingRight ? Mathf.Abs(visualScale.x) : -Mathf.Abs(visualScale.x);
-        detectionVisual.transform.localScale = visualScale;
+        //Vector3 visualScale = detectionVisual.transform.localScale;
+        //visualScale.x = movingRight ? Mathf.Abs(visualScale.x) : -Mathf.Abs(visualScale.x);
+        //detectionVisual.transform.localScale = visualScale;
     }
 
     private void FacePlayer()
@@ -162,12 +162,12 @@ public class PatrolGuard : MonoBehaviour
         if (player.position.x > transform.position.x)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            detectionVisual.transform.localScale = new Vector3(Mathf.Abs(detectionVisual.transform.localScale.x), detectionVisual.transform.localScale.y, detectionVisual.transform.localScale.z);
+            //detectionVisual.transform.localScale = new Vector3(Mathf.Abs(detectionVisual.transform.localScale.x), detectionVisual.transform.localScale.y, detectionVisual.transform.localScale.z);
         }
         else
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            detectionVisual.transform.localScale = new Vector3(-Mathf.Abs(detectionVisual.transform.localScale.x), detectionVisual.transform.localScale.y, detectionVisual.transform.localScale.z);
+            //detectionVisual.transform.localScale = new Vector3(-Mathf.Abs(detectionVisual.transform.localScale.x), detectionVisual.transform.localScale.y, detectionVisual.transform.localScale.z);
         }
     }
 }
