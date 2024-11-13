@@ -9,6 +9,10 @@ public class RegenStorageMissionTimer : MonoBehaviour
     public TMP_Text timerText; // 타이머 UI
     public bool isMissionActive = false; // 미션 활성화 상태
 
+    private void Start()
+    {
+        isMissionActive = true;
+    }
     // Update is called once per frame
     void Update()
     {

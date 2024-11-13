@@ -7,6 +7,7 @@ public class RegenStoreHint : MonoBehaviour, IInteractable
     public string interactionMessage = "정보가 적혀있다.";
     public BigPanelDisplay bigPanelDisplay;
     public Sprite assignedImage;
+    [SerializeField]private Dialog dialog;
     public string GetInteractionMessage()
     {
         return interactionMessage;
@@ -14,6 +15,10 @@ public class RegenStoreHint : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         bigPanelDisplay.ShowPanel(assignedImage);
+        if (dialog != null)
+        {
+            DialogManager.Instance.PlayerMessageDialog(dialog);
+        }
     }
 
     public void HandleTask(string taskKey)
@@ -24,17 +29,5 @@ public class RegenStoreHint : MonoBehaviour, IInteractable
     public void ResetTask()
     {
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

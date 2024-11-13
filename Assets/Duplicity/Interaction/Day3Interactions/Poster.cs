@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Poster : MonoBehaviour, IInteractable
 {
     public BigPanelDisplay bigPanelDisplay;
-    public Sprite assignedImage; // 이 포스터에 할당된 이미지
+    public Sprite assignedImage;
     public Dialog dialog;
 
     public string interactionMessage = "포스터가 부착되어 있다.";
