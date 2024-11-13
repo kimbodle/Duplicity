@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Duplicity/Scenes/DreamScene.unity
     guid: 3ba50110c2abeba4ca12ec5fd1b7c108
   - enabled: 1
+    path: Assets/Duplicity/Scenes/RegenMainScene.unity
+    guid: 7fb78767d5a818045b57329f8dbb108c
+  - enabled: 1
     path: Assets/Duplicity/Scenes/RegenScene.unity
     guid: a617c1a32a05be2488ea6505461372d5
   m_configObjects: {}
