@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Day7ComputerManager : MonoBehaviour
+public class Day7ComputerMission : MonoBehaviour
 {
     public GameObject ComputerPanel;
     public Button closeButton;

@@ -12,8 +12,6 @@ public class BigPanelDisplay : MonoBehaviour
     [Header("Day5")]
     [SerializeField] private PhotoItem currentPhotoItem;
 
-    //[Header("Day7")]
-    //[SerializeField] private RegenStoreItem currentRegenStoreItem;
     private void Start()
     {
         bigPosterPanel.SetActive(false);
@@ -30,12 +28,6 @@ public class BigPanelDisplay : MonoBehaviour
         bigPosterPanel.SetActive(true);
         currentPhotoItem = photoItem;
     }
-    //public void ShowRegenStoreItemPanel(Sprite image, RegenStoreItem regenStoreItem)
-    //{
-    //    bigPosterImage.sprite = image;
-    //    bigPosterPanel.SetActive(true);
-    //    currentRegenStoreItem = regenStoreItem;
-    //}
 
     //OnClick 이벤트 연결
     public void HidePanel()

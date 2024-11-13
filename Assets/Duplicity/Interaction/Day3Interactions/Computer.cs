@@ -20,8 +20,6 @@ public class Computer : MonoBehaviour, IInteractable
     {
     }
 
-   
-
     public void ResetTask()
     {
     }
