@@ -20,10 +20,14 @@ public class Day7ComputerManager : MonoBehaviour
     public GameObject documentOpenPanel; // 문서 내용 표시 패널
     public Image documentDisplayImage; // documentOpenPanel에 있는 Image 컴포넌트
     public List<Sprite> documentSprites; // 문서 이미지 리스트
+    [Header("prints")]
+    public GameObject printButton;
+    public GameObject printedDocument;
     [Space(10)]
     public Dialog dialog;
 
     private const string correctPassword = "0916";
+    private bool isFirst = true;
 
     private void Start()
     {
@@ -31,10 +35,12 @@ public class Day7ComputerManager : MonoBehaviour
         passwordPanel.SetActive(false);
         folderOpenImage.SetActive(false);
         documentOpenPanel.SetActive(false);
+        printButton.SetActive(false);
 
         closeButton.onClick.AddListener(CloseComputerPanel);
         folderIconButton.onClick.AddListener(OnFolderClicked);
         confirmButton.onClick.AddListener(CheckPassword);
+        printButton.GetComponent<Button>().onClick.AddListener(OnClickPrintButton);
 
         // 각 문서 버튼에 이벤트를 동적으로 연결
         for (int i = 0; i < documentIconButtons.Count; i++)
@@ -70,6 +76,25 @@ public class Day7ComputerManager : MonoBehaviour
         documentDisplayImage.sprite = documentSprites[documentIndex];
 
         documentOpenPanel.SetActive(true);
+        if (documentIndex == 1)
+        {
+            printButton.SetActive(true);
+        }
+        else
+        {
+            printButton.SetActive(false);
+        }
+
+        if (isFirst)
+        {
+            isFirst = false;
+            return;
+        }
+        else
+        {
+            
+        }
+        
         //GameManager.Instance.GetCurrentDayController().CompleteTask($"Document{documentIndex + 1}");
     }
 
@@ -78,10 +103,15 @@ public class Day7ComputerManager : MonoBehaviour
         ComputerPanel.SetActive(false);
     }
 
+    //Onclick 이벤트 연결
     public void CloseDocumentContent()
     {
         documentOpenPanel.SetActive(false);
     }
 
-    //클릭시 문서 획득 메소드 구현
+    //문서 프린트
+    public void OnClickPrintButton()
+    {
+        printedDocument.SetActive(true);
+    }
 }

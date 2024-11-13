@@ -9,6 +9,10 @@ public class Day7Controller : DayController
     {
         //일단 후속 처리x
         Debug.Log("Day7 시작");
+
+        UIManager.Instance.ActiveInventory();
+        //아이콘 버그로 start때 임시활성화
+        UIManager.Instance.TogglInventoryUI();
     }
 
     public override void CompleteTask(string task)
