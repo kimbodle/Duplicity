@@ -86,10 +86,10 @@ public class SafeBoxMission : MonoBehaviour, IMission
 
     private void GetRegen()
     {
+        IsMissionCompleted = true;
         Debug.Log("미션 클리어!");
         InventoryManager.Instance.AddItemToInventory(regeneratium);
         GameManager.Instance.GetCurrentDayController().CompleteTask("GetRegen");
-        IsMissionCompleted = true;
         Destroy(regen.gameObject);
     }
 

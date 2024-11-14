@@ -13,10 +13,12 @@ public class Day5Manager : MonoBehaviour
     {
         BlackImage.gameObject.SetActive(true);
         timer.gameObject.SetActive(true );
-        // 다이얼로그 종료 이벤트 구독
-        DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
-
-        DialogManager.Instance.PlayerMessageDialog(Intro);
+        
+        if(DialogManager.Instance != null)
+        {
+            DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
+            DialogManager.Instance.PlayerMessageDialog(Intro);
+        }   
     }
 
     private void HandleDialogEnd()
@@ -24,8 +26,10 @@ public class Day5Manager : MonoBehaviour
         //페이드 매니저 기능 추가
         BlackImage.gameObject.SetActive(false);
         timer.isMissionActive = true;
-
-        // 이벤트 구독 해제
-        DialogManager.Instance.OnDialogEnd -= HandleDialogEnd;
+        if (DialogManager.Instance != null)
+        {
+            // 이벤트 구독 해제
+            DialogManager.Instance.OnDialogEnd -= HandleDialogEnd;
+        }
     }
 }

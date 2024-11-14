@@ -15,7 +15,7 @@ public class Day7MissionManager : MonoBehaviour
         for (int i = 0; i < missionBehaviours.Length; i++)
         {
             missions[i] = missionBehaviours[i] as IMission;
-            Debug.Log(missions[i]);
+            //Debug.Log(missions[i]);
         }
     }
 
@@ -32,7 +32,7 @@ public class Day7MissionManager : MonoBehaviour
         {
             if (!mission.CheckCompletion())
             {
-                Debug.Log("미션 요건 미충족");
+                //Debug.Log(mission+"미션 요건 미충족");
                 return;
             }
         }

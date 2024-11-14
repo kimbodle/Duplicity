@@ -7,11 +7,11 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Item item;
     public Image icon;
+    public Image dragIcon; // 드래그할 때 사용되는 아이콘
     public bool isSelected = false;
-    public bool hasBeenSelected = false; // 새로운 플래그 추가
+    public bool hasBeenSelected = false;
     public Color selectedColor = Color.gray;
     private Color originalColor;
-    private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
@@ -20,7 +20,6 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void Start()
     {
         originalColor = icon.color;
-        canvas = GetComponentInParent<Canvas>();
         rectTransform = icon.GetComponent<RectTransform>();
         canvasGroup = icon.GetComponent<CanvasGroup>();
 
@@ -30,6 +29,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
 
         originalPosition = rectTransform.anchoredPosition;
+
+        // 초기에는 드래그 아이콘을 비활성화합니다.
+        if (dragIcon != null)
+        {
+            dragIcon.gameObject.SetActive(false);
+        }
     }
 
     public void AddItem(Item newItem)
@@ -37,7 +42,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         item = newItem;
         icon.sprite = item.itemIcon;
         icon.enabled = true;
-        icon.color = originalColor; // 초기화 시 원래 색상 적용
+        icon.color = originalColor;
 
         // 아이콘의 위치를 원래 위치로 되돌림
         rectTransform.anchoredPosition = originalPosition;
@@ -49,9 +54,9 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         item = null;
         icon.sprite = null;
         icon.enabled = false;
-        icon.color = originalColor; // 선택 해제 상태로 복귀
+        icon.color = originalColor;
         DeselectSlot();
-        hasBeenSelected = false; // 슬롯 비우기 시 선택 상태 초기화
+        hasBeenSelected = false;
     }
 
     public void OnSlotClicked()
@@ -70,7 +75,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             {
                 InventoryManager.Instance.DeselectAllSlots();
                 SelectSlot();
-                hasBeenSelected = true; // 처음 선택되었음을 기록
+                hasBeenSelected = true;
             }
         }
     }
@@ -94,23 +99,22 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void UpdateIconColor()
     {
-        if (isSelected)
-        {
-            icon.color = selectedColor; // 선택 상태일 때 회색으로 변경
-        }
-        else
-        {
-            icon.color = originalColor; // 선택 해제 시 원래 색상으로 복원
-        }
+        icon.color = isSelected ? selectedColor : originalColor;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // 아이템이 선택되었고 이전에 한 번 이상 선택된 상태에서만 드래그 가능
         if (item != null && isSelected && hasBeenSelected)
         {
             canvasGroup.blocksRaycasts = false; // 드래그 중 클릭 비활성화
-            rectTransform.SetAsLastSibling(); // 드래그할 때 이미지가 최상위로 표시되도록 설정
+            // 드래그 아이콘 활성화 및 초기 설정
+            if (dragIcon != null)
+            {
+                dragIcon.sprite = icon.sprite;
+                dragIcon.color = icon.color;
+                dragIcon.gameObject.SetActive(true);
+                dragIcon.rectTransform.position = Input.mousePosition; // 드래그 시작 위치
+            }
         }
         else
         {
@@ -121,27 +125,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (item != null && isSelected && hasBeenSelected)
+        if (item != null && isSelected && hasBeenSelected && dragIcon != null)
         {
-            rectTransform.position = Input.mousePosition; // 드래그 시 마우스를 따라가도록 수정
+            dragIcon.rectTransform.position = Input.mousePosition; // 드래그 아이콘을 마우스 위치로 따라가게 함
         }
     }
 
-    /*
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if (item != null && isSelected)
-        {
-            canvasGroup.blocksRaycasts = true;
-
-            // 드롭이 실패했을 때 원래 위치로 복구
-            if (!eventData.pointerEnter || eventData.pointerEnter.GetComponent<DropZone>() == null)
-            {
-                rectTransform.anchoredPosition = originalPosition; // 아이템을 원래 슬롯의 위치로 되돌림
-                DeselectSlot();
-            }
-        }
-    }*/
     public void OnEndDrag(PointerEventData eventData)
     {
         if (item != null && isSelected)
@@ -165,19 +154,21 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 }
             }
 
-            // 드롭이 실패했을 때 원래 위치로 복구
+            // 드롭이 실패했을 때 드래그 아이콘을 비활성화하고 슬롯 아이콘 복구
             if (!dropSucceeded)
             {
                 rectTransform.anchoredPosition = originalPosition;
                 DeselectSlot();
-                canvasGroup.blocksRaycasts = true; // 원래 클릭 가능 상태로 복원
             }
 
-            // 드래그 종료 시 선택 상태 초기화
+            // 드래그 종료 후 드래그 아이콘 비활성화
+            if (dragIcon != null)
+            {
+                dragIcon.gameObject.SetActive(false);
+            }
+
             isSelected = false;
-            hasBeenSelected = false; // 드래그 후 선택 상태 해제
+            hasBeenSelected = false;
         }
     }
-
-
 }

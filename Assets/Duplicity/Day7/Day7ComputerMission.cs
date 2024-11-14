@@ -112,6 +112,9 @@ public class Day7ComputerMission : MonoBehaviour
     //문서 프린트
     public void OnClickPrintButton()
     {
-        printedDocument.SetActive(true);
+        if(printedDocument != null)
+        {
+            printedDocument.SetActive(true);
+        }
     }
 }
