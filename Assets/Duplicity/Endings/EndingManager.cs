@@ -28,8 +28,8 @@ public class EndingManager : MonoBehaviour
 
         switch (endingName)
         {
-            case "GoodEnding":
-                SceneManager.LoadScene("GoodEndingScene");
+            case "Ending":
+                SceneManager.LoadScene("EndingScene");
                 break;
             case "GameOver":
                 SceneManager.LoadScene("GameOverScene");
