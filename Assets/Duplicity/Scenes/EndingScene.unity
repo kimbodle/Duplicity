@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 150464719}
   - component: {fileID: 150464723}
   m_Layer: 5
-  m_Name: GameOver Canvas
+  m_Name: Ending Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,16 +241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endingBackgroundImage: {fileID: 1677559796}
   EndingBackgrounds:
-  - {fileID: 21300000, guid: a99af4ece01cfa44e941cc816904e235, type: 3}
-  - {fileID: 21300000, guid: 3644f343e316d55459ff7870e6489e1e, type: 3}
-  - {fileID: 21300000, guid: 02fc59d02ccbe054998830ccab9e0098, type: 3}
-  - {fileID: 21300000, guid: ecf99883cccaeec41bb6d831e1a2fd6d, type: 3}
-  - {fileID: 21300000, guid: aace8eaded71d7f41bed7b550b54527d, type: 3}
-  - {fileID: 21300000, guid: 9bafa9eac8b8ff44a86e39566f863ae7, type: 3}
-  - {fileID: 21300000, guid: 952291c1e7f41da438999355b201c011, type: 3}
-  - {fileID: 21300000, guid: 952291c1e7f41da438999355b201c011, type: 3}
-  - {fileID: 21300000, guid: 664ac6b520af0f3468f78f73f7bdd6a5, type: 3}
-  - {fileID: 21300000, guid: 92ceacc8afb0b7741b4c2cf62dc70cdc, type: 3}
+  - {fileID: 21300000, guid: 1882e78083a466a4a9eea63aa38d31d1, type: 3}
+  - {fileID: 21300000, guid: 4c63c137c3319ed4d95202f993c442ff, type: 3}
+  - {fileID: 21300000, guid: 4858fa0ccb2c1ee4eacdec83d2aa12cb, type: 3}
   endingMessageText: {fileID: 1728448436}
   retryButton: {fileID: 2015780429}
 --- !u!1 &285624604
@@ -357,7 +350,7 @@ GameObject:
   - component: {fileID: 1677559797}
   - component: {fileID: 1677559796}
   m_Layer: 5
-  m_Name: GameOver Image
+  m_Name: Ending Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
