@@ -9,6 +9,7 @@ public class SecretBookMission : MonoBehaviour, IInteractable, IMission
     public BigPanelDisplay bigPanelDisplay;
     public Sprite assignedImage;
     public Item secretBookItem;
+    private bool isFirst = true;
 
     public bool IsMissionCompleted { get; private set; }
 
@@ -20,9 +21,17 @@ public class SecretBookMission : MonoBehaviour, IInteractable, IMission
     public void OnInteract()
     {
         bigPanelDisplay.ShowPanel(assignedImage);
-        InventoryManager.Instance.AddItemToInventory(secretBookItem);
-        IsMissionCompleted = true;
-        GameManager.Instance.GetCurrentDayController().CompleteTask("GetSecretBook");
+        if(isFirst)
+        {
+            if(InventoryManager.Instance != null && GameManager.Instance != null)
+            {
+                InventoryManager.Instance.AddItemToInventory(secretBookItem);
+                GameManager.Instance.GetCurrentDayController().CompleteTask("GetSecretBook");
+            }
+            IsMissionCompleted = true;
+            isFirst = false;
+        }
+        
     }
     public bool CheckCompletion()
     {

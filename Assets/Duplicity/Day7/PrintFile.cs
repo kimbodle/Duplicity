@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class PrintFile : MonoBehaviour, IMission
 {
     public Item printDocument;
-    private Button button;
+    public GameObject printItem;
 
     public bool IsMissionCompleted { get; private set; }
 
     private void Start()
     {
         IsMissionCompleted = false;
-        button = GetComponent<Button>();
-        button.onClick.AddListener(GetPrint);
+        printItem.GetComponentInChildren<Button>().onClick.AddListener(GetPrint);
     }
     public void Initialize()
     {
@@ -32,7 +31,7 @@ public class PrintFile : MonoBehaviour, IMission
             IsMissionCompleted = true;
             InventoryManager.Instance.AddItemToInventory(printDocument);
             GameManager.Instance.GetCurrentDayController().CompleteTask("GetDocument");
-            Destroy(gameObject);
+            Destroy(printItem);
         }
         else
         {

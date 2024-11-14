@@ -38,6 +38,6 @@ public class Day6EndPoint : MonoBehaviour
     private IEnumerator WaitAndNextDay()
     {
         yield return new WaitForSeconds(waitTime);
-        GameManager.Instance.CompleteTask("ShelterScene");
+        GameManager.Instance.CompleteTask("RegenMainScene");
     }
 }
