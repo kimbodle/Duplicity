@@ -69,4 +69,11 @@ public class MapManager : MonoBehaviour
             }
         }
     }
+    public void UnlockAllRegion()
+    {
+        foreach (var region in mapRegions)
+        {
+            region.Unlock();
+        }
+    }
 }

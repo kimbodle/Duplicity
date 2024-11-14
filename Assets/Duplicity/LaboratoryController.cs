@@ -9,8 +9,11 @@ public class LaboratoryController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentDay = GameManager.Instance.GetCurrentDay();
-        ActivateCurrentDayState();
+        if (GameManager.Instance != null)
+        {
+            currentDay = GameManager.Instance.GetCurrentDay();
+            ActivateCurrentDayState();
+        }
     }
 
     private void ActivateCurrentDayState()
@@ -39,6 +42,19 @@ public class LaboratoryController : MonoBehaviour
             if (daysAssets[1] != null)
             {
                 daysAssets[1].SetActive(true);
+            }
+        }
+        if (currentDay == 8)
+        {
+            //Day8
+            if (daysAssets[2] != null)
+            {
+                daysAssets[2].SetActive(true);
+                if(UIManager.Instance != null)
+                {
+                    UIManager.Instance.ActiveInventory();
+                    UIManager.Instance.TogglInventoryUI();
+                }
             }
         }
         else
