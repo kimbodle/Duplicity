@@ -1366,6 +1366,7 @@ MonoBehaviour:
   - {fileID: 708888968}
   - {fileID: 488839742}
   - {fileID: 943263588}
+  - {fileID: 926034497}
 --- !u!4 &206392353
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,6 +1388,7 @@ Transform:
   - {fileID: 708888967}
   - {fileID: 488839741}
   - {fileID: 943263589}
+  - {fileID: 926034496}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208417035
@@ -4596,6 +4598,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64431662b16767a46ad399778b18b250, type: 3}
+--- !u!1 &926034495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 926034496}
+  - component: {fileID: 926034497}
+  m_Layer: 0
+  m_Name: Day8Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &926034496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926034495}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206392353}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &926034497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926034495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5988801493b9a3a419240e930ff61571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRabbitCount: 0
+  talkRabbitCount: 0
+  dialog: []
 --- !u!1 &933846240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8310,7 +8359,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9498fab72a432e548b7d71d4c93366cf, type: 3}
   - {fileID: 21300000, guid: f98c2a8d4aeeb8740b161d472ee94ea9, type: 3}
   - {fileID: 21300000, guid: d8520a1e94c253d47b87217d9d4552bf, type: 3}
-  - {fileID: 21300000, guid: f98c2a8d4aeeb8740b161d472ee94ea9, type: 3}
+  - {fileID: 21300000, guid: 71aafeeb5c9fb97408610eb882f40c9a, type: 3}
 --- !u!4 &2105747470
 Transform:
   m_ObjectHideFlags: 0

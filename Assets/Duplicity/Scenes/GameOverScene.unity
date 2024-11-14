@@ -248,8 +248,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: aace8eaded71d7f41bed7b550b54527d, type: 3}
   - {fileID: 21300000, guid: 9bafa9eac8b8ff44a86e39566f863ae7, type: 3}
   - {fileID: 21300000, guid: 952291c1e7f41da438999355b201c011, type: 3}
-  - {fileID: 21300000, guid: 952291c1e7f41da438999355b201c011, type: 3}
   - {fileID: 21300000, guid: 664ac6b520af0f3468f78f73f7bdd6a5, type: 3}
+  - {fileID: 21300000, guid: 92ceacc8afb0b7741b4c2cf62dc70cdc, type: 3}
   - {fileID: 21300000, guid: 92ceacc8afb0b7741b4c2cf62dc70cdc, type: 3}
   endingMessageText: {fileID: 1728448436}
   retryButton: {fileID: 2015780429}

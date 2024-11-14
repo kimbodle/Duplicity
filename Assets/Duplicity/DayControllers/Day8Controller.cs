@@ -6,26 +6,23 @@ using UnityEngine.SceneManagement;
 public class Day8Controller : DayController
 {
     public Dialog[] dialog;
-    bool isFirst = false;
 
     public override void Initialize(string currentTask)
     {
+        Debug.Log("Day8 Ω√¿€");
+
+        allRabbitCount = 3;
+        talkRabbitCount = 0;
+
         //∏  æ∆¿Ãƒ‹ ∂Áøˆ¡÷±‚
         UIManager.Instance.ActiveMapIcon();
         MapManager.Instance.InitializeMapRegions();
-        if (isFirst == false)
-        {
-            Debug.Log("Day8 Ω√¿€");
-            allRabbitCount = 3;
-            talkRabbitCount = 0;
 
-            MapManager.Instance.UnlockRegion("ShelterScene");
-            MapManager.Instance.UnlockRegion("SeaScene");
-            //≥Î∆Æ∫œ¿ª »πµÊ «ﬂ¿ª ∞ÊøÏ?
-            MapManager.Instance.UnlockRegion("LaboratoryScnen");
-
-            isFirst = true;
-        }
+        MapManager.Instance.UnlockRegion("ShelterScene");
+        MapManager.Instance.UnlockRegion("SeaScene");
+        MapManager.Instance.UnlockRegion("RegenScene");
+        //≥Î∆Æ∫œ¿ª »πµÊ «ﬂ¿ª ∞ÊøÏ?
+        MapManager.Instance.UnlockRegion("LaboratoryScnen");
     }
 
 
@@ -46,13 +43,21 @@ public class Day8Controller : DayController
     
     public override bool IsDayComplete(string currentTask)
     {
-        throw new System.NotImplementedException();
+        return gameState.ContainsKey("GetDocument") && gameState["GetDocument"] &&
+           gameState.ContainsKey("GetKey") && gameState["GetKey"] &&
+           gameState.ContainsKey("GetRegen") && gameState["GetRegen"] &&
+           gameState.ContainsKey("GetSecretBook") && gameState["GetSecretBook"];
     }
 
     public override void MapIconClick(string regionName)
     {
         if (SceneManager.GetActiveScene().name != regionName)
         {
+            if (regionName == "LibraryScene" || regionName == "RegenScene")
+            {
+                DialogManager.Instance.AdviseMessageDialog(1);
+            }
+
             if (regionName == "SeaScene")
             {
                 //∏µÁ ««≥≠π¶øÕ ¥Î»≠«ﬂ¿∏∏È
