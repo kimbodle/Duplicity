@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Day8Controller : DayController
 {
-    public Dialog[] dialog;
-
     public override void Initialize(string currentTask)
     {
         Debug.Log("Day8 시작");
@@ -18,9 +16,7 @@ public class Day8Controller : DayController
         UIManager.Instance.ActiveMapIcon();
         MapManager.Instance.InitializeMapRegions();
 
-        MapManager.Instance.UnlockRegion("ShelterScene");
-        MapManager.Instance.UnlockRegion("SeaScene");
-        MapManager.Instance.UnlockRegion("RegenScene");
+        MapManager.Instance.UnlockAllRegion();
         //노트북을 획득 했을 경우?
         MapManager.Instance.UnlockRegion("LaboratoryScnen");
     }
@@ -34,7 +30,6 @@ public class Day8Controller : DayController
             if (task == "TallWithAllRabbit")
             {
                 MarkTaskComplete(task);
-                //DialogManager.Instance.PlayerMessageDialog(dialog[0]);
             }
         }
         
@@ -70,7 +65,7 @@ public class Day8Controller : DayController
                     DialogManager.Instance.AdviseMessageDialog(0);
                 }
             }
-            if (regionName == "LaboratoryScnen")
+            if (regionName == "LaboratoryScene")
             {
                 //모든 피난묘와 대화했으면 + 노트북을 획득 했을 경우 조건 추가
                 if (HasTalkWithAllRabbit())

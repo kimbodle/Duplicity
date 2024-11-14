@@ -68,6 +68,10 @@ public class InteractionManager : MonoBehaviour
                 ShowInteractionUI(interactable.GetInteractionMessage());
             }
         }
+        else
+        {
+            Debug.Log("isInteraction is false");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
