@@ -32,16 +32,17 @@ public class Day8Controller : DayController
                 MarkTaskComplete(task);
             }
         }
-        
+
+        if (task == "ItemCollected")
+        {
+            MarkTaskComplete(task);
+        }
     }
 
     
     public override bool IsDayComplete(string currentTask)
     {
-        return gameState.ContainsKey("GetDocument") && gameState["GetDocument"] &&
-           gameState.ContainsKey("GetKey") && gameState["GetKey"] &&
-           gameState.ContainsKey("GetRegen") && gameState["GetRegen"] &&
-           gameState.ContainsKey("GetSecretBook") && gameState["GetSecretBook"];
+        return gameState.ContainsKey("ItemCollected") && gameState["ItemCollected"];
     }
 
     public override void MapIconClick(string regionName)
@@ -67,7 +68,7 @@ public class Day8Controller : DayController
             }
             if (regionName == "LaboratoryScene")
             {
-                //모든 피난묘와 대화했으면 + 노트북을 획득 했을 경우 조건 추가
+                //모든 피난묘와 대화했으면 + 노트북을 획득 했을 경우 조건 추가 > 회색 처리로 변경
                 if (HasTalkWithAllRabbit())
                 {
                     StateManager.Instance.LoadSubScene(regionName);

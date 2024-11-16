@@ -68,6 +68,11 @@ public class UIManager : MonoBehaviour
     {
         mapIconButton.gameObject.SetActive(true);
     }
+    public void DeactiveMapIcon()
+    {
+        mapIconButton.gameObject.SetActive(false);
+    }
+
     public void ToggleMapUI()
     {
         mapUI.SetActive(!mapUI.activeSelf);

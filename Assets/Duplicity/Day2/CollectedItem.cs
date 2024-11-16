@@ -36,6 +36,7 @@ public class CollectedItem : MonoBehaviour, IInteractable
         else
         {
             Debug.Log("플레이어 못찾음");
+            InventoryManager.Instance.AddItemToInventory(item);
         }
     }
 
