@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CabinetMission : MonoBehaviour,IMission
 {
+    public Day7MissionManager missionManager;
+    [Space(10)]
     public TMP_InputField[] inputFields; // 각 네모 칸의 InputField 배열
     public Button checkButton;
     public GameObject cabinetOpenPanel;
@@ -42,7 +44,9 @@ public class CabinetMission : MonoBehaviour,IMission
         if(InventoryManager.Instance != null && GameManager.Instance != null)
         {
             InventoryManager.Instance.AddItemToInventory(keyItem);
-            GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
+            //GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
+
+            missionManager.CheckAllMission();
         }
         
         Destroy(key);

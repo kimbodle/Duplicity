@@ -32,14 +32,15 @@ public class Day7MissionManager : MonoBehaviour
         {
             if (!mission.CheckCompletion())
             {
-                //Debug.Log(mission+"미션 요건 미충족");
+                Debug.Log(mission+"미션 요건 미충족");
                 return;
             }
         }
 
         Debug.Log("전체 획득 미션 성공");
         timer.CompleteMission();
+        GameManager.Instance.GetCurrentDayController().CompleteTask("AllMissionClear");
         //missionCompleted = true;
-        
+
     }
 }

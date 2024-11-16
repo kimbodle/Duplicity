@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SafeBoxMission : MonoBehaviour, IMission
 {
+    public Day7MissionManager missionManager;
+    [Space(10)]
     public Button[] numberButtons; // 숫자 버튼 배열 (9개의 흰색 버튼)
     public TMP_Text inputDisplay; // 빨간 부분에 입력된 숫자를 표시하는 텍스트
     public Button submitButton; // 노란색 확인 버튼
@@ -89,7 +91,10 @@ public class SafeBoxMission : MonoBehaviour, IMission
         IsMissionCompleted = true;
         Debug.Log("미션 클리어!");
         InventoryManager.Instance.AddItemToInventory(regeneratium);
-        GameManager.Instance.GetCurrentDayController().CompleteTask("GetRegen");
+        //GameManager.Instance.GetCurrentDayController().CompleteTask("GetRegen");
+        // Day7MissionManager에 상태 갱신 요청
+        missionManager.CheckAllMission();
+
         Destroy(regen.gameObject);
     }
 

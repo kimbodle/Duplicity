@@ -7,6 +7,7 @@ public class PrintFile : MonoBehaviour, IMission
 {
     public Item printDocument;
     public GameObject printItem;
+    public Day7MissionManager missionManager;
 
     public bool IsMissionCompleted { get; private set; }
 
@@ -30,8 +31,10 @@ public class PrintFile : MonoBehaviour, IMission
         if(InventoryManager.Instance != null) {
             IsMissionCompleted = true;
             InventoryManager.Instance.AddItemToInventory(printDocument);
-            GameManager.Instance.GetCurrentDayController().CompleteTask("GetDocument");
             Destroy(printItem);
+
+            // Day7MissionManager에 상태 갱신 요청
+            missionManager.CheckAllMission();
         }
         else
         {
