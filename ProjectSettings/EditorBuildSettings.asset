@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Duplicity/Scenes/RegenScene.unity
     guid: a617c1a32a05be2488ea6505461372d5
+  - enabled: 1
+    path: Assets/Duplicity/Scenes/Day9Scene.unity
+    guid: 8a6f0c1d1c2f2d64091f33c68eb4d201
   m_configObjects: {}

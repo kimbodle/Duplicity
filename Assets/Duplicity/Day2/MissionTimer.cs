@@ -86,6 +86,6 @@ public class MissionTimer : MonoBehaviour
     private void HandleDialogEnd()
     {
         //페이드 인 아웃 추가
-        GameManager.Instance.CompleteTask("LaboratoryScene");
+        GameManager.Instance.CompleteTask("Day9Scene");
     }
 }

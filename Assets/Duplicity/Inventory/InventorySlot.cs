@@ -13,10 +13,13 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
     private CanvasGroup canvasGroup;
     private Vector2 originalPosition; // 드래그 실패 시 원래 위치로 복구
 
+    private int currentDay = 0;
+
     private void Start()
     {
         rectTransform = icon.GetComponent<RectTransform>();
         canvasGroup = icon.GetComponent<CanvasGroup>();
+        currentDay = GameManager.Instance.GetCurrentDay();
 
         if (canvasGroup == null)
         {
@@ -100,13 +103,30 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
 
             foreach (var result in results)
             {
-                DropZone dropZone = result.gameObject.GetComponent<DropZone>();
-                if (dropZone != null)
+                if(currentDay == 5)
                 {
-                    dropZone.OnDrop(eventData); // 드롭존 처리
-                    dropSucceeded = true;
-                    break;
+                    DropZone dropZone = result.gameObject.GetComponent<DropZone>();
+                    if (dropZone != null)
+                    {
+                        dropZone.OnDrop(eventData); // 드롭존 처리
+                        dropSucceeded = true;
+                        break;
+                    }
                 }
+                else if (currentDay == 9)
+                {
+
+                }
+                {
+                    VaccineDropzone dropZone = result.gameObject.GetComponent<VaccineDropzone>();
+                    if (dropZone != null)
+                    {
+                        dropZone.OnDrop(eventData); // 드롭존 처리
+                        dropSucceeded = true;
+                        break;
+                    }
+                }
+
             }
 
             // 드롭 실패 시 원래 위치로 복구
