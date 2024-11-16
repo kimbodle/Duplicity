@@ -29,8 +29,8 @@ public class LogToUI : MonoBehaviour
     void HandleLog(string logString, string stackTrace, LogType type)
     {
         // UI에 로그 추가
-        logText.text += logString + "\n";
-
+        //logText.text += logString + "\n";
+        logText.text =logString;
         // 로그를 파일에 추가
         File.AppendAllText(logFilePath, logString + "\n");
     }

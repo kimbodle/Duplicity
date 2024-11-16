@@ -21,7 +21,7 @@ public class Day6EndPoint : MonoBehaviour
             //collision.gameObject.GetComponentInParent<VariableJoystick>().enabled = false;
             //collision.GetComponentInChildren<MoveController>().enabled = false;
             joystick.gameObject.SetActive(false);
-            fadeManager.OnlyStartFadeIn();
+            fadeManager.OnlyStartFadeOut();
             /*
             // 페이드 아웃을 시작하고 완료 후 페이드 인
             fadeManager.StartFadeOut(() =>

@@ -17,7 +17,7 @@ public class Day8Controller : DayController
         MapManager.Instance.InitializeMapRegions();
 
         MapManager.Instance.UnlockAllRegion();
-        //노트북을 획득 했을 경우?
+        //프린트 파일 2 를 획득 했을 경우 연구소 오픈 로직 추가
         MapManager.Instance.UnlockRegion("LaboratoryScnen");
     }
 

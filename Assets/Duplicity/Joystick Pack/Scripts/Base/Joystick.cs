@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -21,7 +19,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         set { deadZone = Mathf.Abs(value); }
     }
 
-    public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
+    public AxisOptions AxisOptions { get { return axisOptions; } set { axisOptions = value; } }
     public bool SnapX { get { return snapX; } set { snapX = value; } }
     public bool SnapY { get { return snapY; } set { snapY = value; } }
 
@@ -59,6 +57,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        // 드래그 시작
         OnDrag(eventData);
     }
 
@@ -66,7 +65,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     {
         cam = null;
         if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
+        {
             cam = canvas.worldCamera;
+        }
 
         Vector2 position = RectTransformUtility.WorldToScreenPoint(cam, background.position);
         Vector2 radius = background.sizeDelta / 2;
@@ -84,15 +85,21 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
                 input = normalised;
         }
         else
+        {
             input = Vector2.zero;
+        }
     }
 
     private void FormatInput()
     {
         if (axisOptions == AxisOptions.Horizontal)
+        {
             input = new Vector2(input.x, 0f);
+        }
         else if (axisOptions == AxisOptions.Vertical)
+        {
             input = new Vector2(0f, input.y);
+        }
     }
 
     private float SnapFloat(float value, AxisOptions snapAxis)
@@ -131,6 +138,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        // 입력 초기화
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }

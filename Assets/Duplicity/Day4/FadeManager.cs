@@ -66,4 +66,19 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
     }
+    public void OnlyStartFadeOut()
+    {
+        fadeImage.gameObject.SetActive(true); // 페이드 인 시작 시 활성화
+        fadeImage.color = new Color(0, 0, 0, 0);
+        StartCoroutine(OnlyFadeOutCoroutine()); // 코루틴으로 호출
+    }
+
+    private IEnumerator OnlyFadeOutCoroutine() // 페이드 아웃
+    {
+        for (float alpha = 0; alpha <= 1; alpha += Time.deltaTime * fadeSpeed22)
+        {
+            fadeImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+    }
 }

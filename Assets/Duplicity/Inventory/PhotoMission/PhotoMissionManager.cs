@@ -71,7 +71,7 @@ public class PhotoMissionManager : MonoBehaviour
             Debug.Log("Photos are not in the correct order. Returning to inventory.");
 
             // 모든 슬롯의 선택 상태 해제
-            InventoryManager.Instance.DeselectAllSlots();
+            //InventoryManager.Instance.DeselectAllSlots();
 
             // 인벤토리를 먼저 비운다
             InventoryManager.Instance.ClearAllItemSlot();

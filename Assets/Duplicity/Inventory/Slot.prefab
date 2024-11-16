@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   icon: {fileID: 5062172879341211817}
+  dragIcon: {fileID: 0}
   isSelected: 0
   hasBeenSelected: 0
   selectedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -223,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
