@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Day7Controller : DayController
 {
-    private Day7MissionManager missionManager;
     public override void Initialize(string currentTask)
     {
         //일단 후속 처리x
@@ -22,47 +21,22 @@ public class Day7Controller : DayController
         MapManager.Instance.UnlockRegion("LaboratoryScene");
         MapManager.Instance.UnlockRegion("ShelterScene");
 
-        missionManager = FindObjectOfType<Day7MissionManager>();
     }
 
     public override void CompleteTask(string task)
     {
-        if (task == "GetDocument")
+        if (task == "AllMissionClear")
         {
             MarkTaskComplete(task);
-            missionManager.CheckAllMission();
-            //UpdateCurrentTask(task);
         }
 
-        if (task == "GetKey")
-        {
-            MarkTaskComplete(task);
-            missionManager.CheckAllMission();
-            //UpdateCurrentTask(task);
-        }
-
-        if (task == "GetRegen")
-        {
-            MarkTaskComplete(task);
-            missionManager.CheckAllMission();
-            //UpdateCurrentTask(task);
-        }
-        if (task == "GetSecretBook")
-        {
-            MarkTaskComplete(task);
-            missionManager.CheckAllMission();
-            //UpdateCurrentTask(task);
-        }
     }
        
 
     public override bool IsDayComplete(string currentTask)
     {
         //gameState에 존재하는 키값으로 파악
-        return gameState.ContainsKey("GetDocument") && gameState["GetDocument"] &&
-            gameState.ContainsKey("GetKey") && gameState["GetKey"] &&
-            gameState.ContainsKey("GetRegen") && gameState["GetRegen"] &&
-            gameState.ContainsKey("GetSecretBook") && gameState["GetSecretBook"];
+        return gameState.ContainsKey("AllMissionClear") && gameState["AllMissionClear"];
     }
 
     public override void MapIconClick(string regionName)

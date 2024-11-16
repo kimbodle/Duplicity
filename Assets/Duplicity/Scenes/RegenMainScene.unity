@@ -3242,6 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b023344170c7c9b468278b82a811beb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionManager: {fileID: 182922537}
   inputFields:
   - {fileID: 185757103}
   - {fileID: 1681343589}
@@ -3938,6 +3939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionMessage: "\uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4 \uC788\uB2E4."
+  missionManager: {fileID: 182922537}
   bigPanelDisplay: {fileID: 1402866412}
   assignedImage: {fileID: 21300000, guid: 7a26a484afd674542b6b0037aaf171e1, type: 3}
   secretBookItem: {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
@@ -6700,6 +6702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccf6e10897a54d41b16ba9f01d61c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionManager: {fileID: 182922537}
   numberButtons:
   - {fileID: 3275394179022091318}
   - {fileID: 1960258760}
@@ -9901,6 +9904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   printDocument: {fileID: 11400000, guid: a8124e97002daf548a7ac56249e83e22, type: 2}
   printItem: {fileID: 1901586467}
+  missionManager: {fileID: 182922537}
 --- !u!224 &7739959187694685528
 RectTransform:
   m_ObjectHideFlags: 0
