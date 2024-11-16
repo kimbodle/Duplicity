@@ -1852,7 +1852,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!224 &1443170546
 RectTransform:
@@ -2195,6 +2195,8 @@ EdgeCollider2D:
   - {x: -11.197586, y: -5.6044693}
   - {x: 37.20937, y: -5.5945683}
   - {x: 60.937546, y: -5.5980177}
+  - {x: 77.68579, y: -5.5743237}
+  - {x: 77.903625, y: 1.315956}
   - {x: 60.918476, y: 1.398294}
   - {x: 37.16587, y: 1.4934417}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -2472,7 +2474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5204572533121741, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: patrolSpeed
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5204572533121741, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: isHorizontal
@@ -2484,7 +2486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204572533121741, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: patrolDistance
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 303480008267567282, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2557,7 +2559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5204572533121741, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: patrolDistance
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 303480008267567282, guid: e79eb83dcfcac0d48a72394e6effaf08, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2762,6 +2764,10 @@ PrefabInstance:
     - target: {fileID: 429064221172857314, guid: dc68f03eaaaf94041af74cd8ae96870e, type: 3}
       propertyPath: m_Name
       value: D6_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 879562551697090743, guid: dc68f03eaaaf94041af74cd8ae96870e, type: 3}
+      propertyPath: flashRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2435077181454758026, guid: dc68f03eaaaf94041af74cd8ae96870e, type: 3}
       propertyPath: m_Materials.Array.data[0]

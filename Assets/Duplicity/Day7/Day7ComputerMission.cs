@@ -115,6 +115,8 @@ public class Day7ComputerMission : MonoBehaviour
         if(printedDocument != null)
         {
             printedDocument.SetActive(true);
+            //프린트 버튼 삭제 로직 추가
+            // 파일 2를 프린트 했으면 엔딩 앨범 save 로직 추가
         }
     }
 }

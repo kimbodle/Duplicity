@@ -3,23 +3,18 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Item item;
-    public Image icon;
-    public Image dragIcon; // 드래그할 때 사용되는 아이콘
-    public bool isSelected = false;
-    public bool hasBeenSelected = false;
-    public Color selectedColor = Color.gray;
-    private Color originalColor;
+    public Item item; // 슬롯에 포함된 아이템
+    public Image icon; // 슬롯 아이콘 이미지
+    public Image dragIcon; // 드래그 중 보여줄 아이콘
+
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-
-    private Vector2 originalPosition;
+    private Vector2 originalPosition; // 드래그 실패 시 원래 위치로 복구
 
     private void Start()
     {
-        originalColor = icon.color;
         rectTransform = icon.GetComponent<RectTransform>();
         canvasGroup = icon.GetComponent<CanvasGroup>();
 
@@ -28,12 +23,14 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             canvasGroup = icon.gameObject.AddComponent<CanvasGroup>();
         }
 
-        originalPosition = rectTransform.anchoredPosition;
-
-        // 초기에는 드래그 아이콘을 비활성화합니다.
         if (dragIcon != null)
         {
-            dragIcon.gameObject.SetActive(false);
+            dragIcon.gameObject.SetActive(false); // 초기에는 드래그 아이콘을 숨김
+        }
+
+        if (icon != null)
+        {
+            icon.enabled = true; // 아이콘 표시
         }
     }
 
@@ -41,91 +38,50 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         item = newItem;
         icon.sprite = item.itemIcon;
-        icon.enabled = true;
-        icon.color = originalColor;
-
-        // 아이콘의 위치를 원래 위치로 되돌림
-        rectTransform.anchoredPosition = originalPosition;
-        DeselectSlot();
+        icon.enabled = true; // 아이콘 표시
+        icon.color = Color.white;
     }
 
     public void ClearSlot()
     {
         item = null;
         icon.sprite = null;
-        icon.enabled = false;
-        icon.color = originalColor;
-        DeselectSlot();
-        hasBeenSelected = false;
+        icon.enabled = false; // 아이콘 숨김
     }
 
-    public void OnSlotClicked()
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (item != null)
         {
-            if (isSelected)
-            {
-                if (item.canViewDetails)
-                {
-                    ShowItemDetails();
-                }
-                DeselectSlot();
-            }
-            else
-            {
-                InventoryManager.Instance.DeselectAllSlots();
-                SelectSlot();
-                hasBeenSelected = true;
-            }
+            //InventoryManager.Instance.DeselectAllSlots(); // 모든 슬롯 선택 해제
+            InventoryManager.Instance.ShowDetailPanel(item); // 디테일 패널 표시
         }
-    }
-
-    public void ShowItemDetails()
-    {
-        InventoryManager.Instance.ShowDetailPanel(item);
-    }
-
-    public void SelectSlot()
-    {
-        isSelected = true;
-        UpdateIconColor();
-    }
-
-    public void DeselectSlot()
-    {
-        isSelected = false;
-        UpdateIconColor();
-    }
-
-    private void UpdateIconColor()
-    {
-        icon.color = isSelected ? selectedColor : originalColor;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (item != null && isSelected && hasBeenSelected)
+        if (item != null) // 슬롯에 아이템이 있는지 확인
         {
             canvasGroup.blocksRaycasts = false; // 드래그 중 클릭 비활성화
-            // 드래그 아이콘 활성화 및 초기 설정
+            originalPosition = rectTransform.anchoredPosition; // 원래 위치 저장
+
             if (dragIcon != null)
             {
                 dragIcon.sprite = icon.sprite;
                 dragIcon.color = icon.color;
-                dragIcon.gameObject.SetActive(true);
+                dragIcon.gameObject.SetActive(true); // 드래그 아이콘 활성화
                 dragIcon.rectTransform.position = Input.mousePosition; // 드래그 시작 위치
             }
         }
         else
         {
-            eventData.pointerDrag = null; // 드래그를 취소
-            DeselectSlot();
+            eventData.pointerDrag = null; // 드래그 취소
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (item != null && isSelected && hasBeenSelected && dragIcon != null)
+        if (item != null && dragIcon != null)
         {
             dragIcon.rectTransform.position = Input.mousePosition; // 드래그 아이콘을 마우스 위치로 따라가게 함
         }
@@ -133,13 +89,12 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (item != null && isSelected)
+        if (item != null)
         {
             canvasGroup.blocksRaycasts = true;
 
-            // Raycast로 다른 캔버스의 드롭존 탐색
-            List<RaycastResult> results = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(eventData, results);
+            // Raycast로 드롭존 확인
+            List<RaycastResult> results = GetRaycastResults(eventData);
 
             bool dropSucceeded = false;
 
@@ -148,27 +103,29 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 DropZone dropZone = result.gameObject.GetComponent<DropZone>();
                 if (dropZone != null)
                 {
-                    dropZone.OnDrop(eventData);
+                    dropZone.OnDrop(eventData); // 드롭존 처리
                     dropSucceeded = true;
                     break;
                 }
             }
 
-            // 드롭이 실패했을 때 드래그 아이콘을 비활성화하고 슬롯 아이콘 복구
+            // 드롭 실패 시 원래 위치로 복구
             if (!dropSucceeded)
             {
                 rectTransform.anchoredPosition = originalPosition;
-                DeselectSlot();
             }
 
-            // 드래그 종료 후 드래그 아이콘 비활성화
             if (dragIcon != null)
             {
-                dragIcon.gameObject.SetActive(false);
+                dragIcon.gameObject.SetActive(false); // 드래그 아이콘 숨김
             }
-
-            isSelected = false;
-            hasBeenSelected = false;
         }
+    }
+
+    private List<RaycastResult> GetRaycastResults(PointerEventData eventData)
+    {
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+        return results;
     }
 }

@@ -39,8 +39,12 @@ public class CabinetMission : MonoBehaviour,IMission
     {
         //¿­¼è ¾ÆÀÌÅÛ È¹µæ ±â´É ÄÚµå ±¸Çö
         IsMissionCompleted = true;
-        InventoryManager.Instance.AddItemToInventory(keyItem);
-        GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
+        if(InventoryManager.Instance != null && GameManager.Instance != null)
+        {
+            InventoryManager.Instance.AddItemToInventory(keyItem);
+            GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
+        }
+        
         Destroy(key);
     }
 

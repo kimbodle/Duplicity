@@ -37,7 +37,5 @@ public class PrintFile : MonoBehaviour, IMission
         {
             Debug.Log("¹®¼­ È¹µæx");
         }
-    }
-
-    
+    } 
 }

@@ -20,6 +20,8 @@ public class Day5Ending : MonoBehaviour
 
     public void StartDay5EndingDialog()
     {
+        if(UIManager.Instance == null && DialogManager.Instance == null) { return; }
+        UIManager.Instance.TogglInventoryUI();
         DialogManager.Instance.StartDialog(dialog, wakeupImage);
 
         // 다이얼로그 종료 시 Debug.Log 호출을 위한 콜백 등록
