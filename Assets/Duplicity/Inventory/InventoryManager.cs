@@ -39,11 +39,11 @@ public class InventoryManager : MonoBehaviour
             if (slot.item == null)
             {
                 slot.AddItem(item); // 슬롯에 아이템 추가
-                Debug.Log($"Added {item.itemName} to inventory slot.");
+                Debug.Log($"{item.itemName}을 인벤토리에 추가함.");
                 return;
             }
         }
-        Debug.Log("Inventory is full!");
+        Debug.Log("인벤토리 꽉 참.");
     }
 
     // 모든 슬롯 비우기
@@ -53,7 +53,7 @@ public class InventoryManager : MonoBehaviour
         {
             slot.ClearSlot(); // 슬롯 비우기
         }
-        Debug.Log("Inventory cleared!");
+        Debug.Log("인벤토리 비워짐.");
     }
 
     // 디테일 패널 표시
@@ -74,5 +74,35 @@ public class InventoryManager : MonoBehaviour
         {
             detailPanel.SetActive(false);
         }
+    }
+
+    // 특정 아이템을 갖고 있는지 확인
+    public bool HasItem(Item targetItem)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.item == targetItem) // 대상 아이템과 동일한 아이템이 있다면
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // 특정 아이템을 삭제하고 새로운 아이템 추가
+    public bool ReplaceItem(Item targetItem, Item newItem)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.item == targetItem) // 대상 아이템 발견
+            {
+                slot.ClearSlot(); // 기존 아이템 삭제
+                AddItemToInventory(newItem); // 새로운 아이템 추가
+                Debug.Log($"{targetItem.itemName}아이템을 {newItem.itemName}로 변경");
+                return true;
+            }
+        }
+        Debug.Log($"{targetItem.itemName}이 인벤토리에 존재하지 않음.");
+        return false;
     }
 }
