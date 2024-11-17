@@ -55,6 +55,7 @@ public class UIManager : MonoBehaviour
         InitializeDaySprites();
     }
 
+    //Login
     public void OpenLoginUI()
     {
         LoginUI.SetActive(true);
@@ -64,11 +65,13 @@ public class UIManager : MonoBehaviour
     {
         LoginUI.SetActive(false);
     }
+
+    //Map
     public void ActiveMapIcon()
     {
         mapIconButton.gameObject.SetActive(true);
     }
-    public void DeactiveMapIcon()
+    public void DeactivateMapIcon()
     {
         mapIconButton.gameObject.SetActive(false);
     }
@@ -78,6 +81,7 @@ public class UIManager : MonoBehaviour
         mapUI.SetActive(!mapUI.activeSelf);
     }
 
+    //Inventory
     public void ActiveInventory()
     {
         Debug.Log("인벤토리 활성화");
@@ -96,7 +100,16 @@ public class UIManager : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    private void InitializeDaySprites()
+    //Ending
+    public void EndingUI()
+    {
+        DeactivateInventory();
+        DeactivateMapIcon();
+        mapUI.SetActive(false);
+    }
+
+        //DayIntro
+        private void InitializeDaySprites()
     {
         daySpriteDictionary = new Dictionary<int, Sprite>();
 

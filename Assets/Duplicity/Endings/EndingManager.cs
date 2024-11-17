@@ -22,7 +22,11 @@ public class EndingManager : MonoBehaviour
 
     public void LoadEnding(string endingName, string message, int endingIndex = 0)
     {
+        //게임 상태 초기화
         GameManager.Instance.isInitializingGameState = true;
+        UIManager.Instance.EndingUI();
+        InventoryManager.Instance.ClearAllItemSlot();
+
         this.endingIndex = endingIndex;
         this.endingMessage = message;
 

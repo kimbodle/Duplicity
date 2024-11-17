@@ -31,13 +31,14 @@ public class EndingImage : MonoBehaviour
         {
             Debug.LogWarning("유효하지 않은 엔딩 인덱스");
         }
-
-        // 엔딩 메시지 설정
+        /*
+        // 디버깅용 엔딩 메시지 설정
         if (endingMessageText != null)
         {
             endingMessageText.text = endingManager.endingMessage;
             endingMessageText.gameObject.SetActive(true);
         }
+        */
         retryButton.onClick.AddListener(OnClickRetryButton);
 
         retryButton.gameObject.SetActive(false); // 초기에는 비활성화
