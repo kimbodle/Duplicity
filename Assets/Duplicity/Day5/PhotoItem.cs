@@ -25,9 +25,10 @@ public class PhotoItem : MonoBehaviour, IInteractable
         if(InventoryManager.Instance != null)
         {
             InventoryManager.Instance.AddItemToInventory(photoItem);
-            if (playerDialog != null)
+            // 환청 다이얼로그 시작 후 종료 이벤트 구독
+            if (hallucination != null && halluciantionDialog != null)
             {
-                DialogManager.Instance.PlayerMessageDialog(playerDialog);
+                hallucination.OnHallucinationDialogEnd += OnHallucinationDialogEnd;
                 hallucination.StartHallucinationDialog(halluciantionDialog);
             }
             else
@@ -35,6 +36,17 @@ public class PhotoItem : MonoBehaviour, IInteractable
                 return;
             }
         }
+    }
+    private void OnHallucinationDialogEnd()
+    {
+        // 환청 다이얼로그 종료 후 플레이어 다이얼로그 다시 표시
+        if (playerDialog != null)
+        {
+            DialogManager.Instance.PlayerMessageDialog(playerDialog);
+        }
+
+        // 이벤트 구독 해제
+        hallucination.OnHallucinationDialogEnd -= OnHallucinationDialogEnd;
     }
 
     public void HandleTask(string taskKey)
@@ -46,31 +58,4 @@ public class PhotoItem : MonoBehaviour, IInteractable
     {
 
     }
-
-    /*
-    public void OnInteract()
-    {
-        bigPanelDisplay.ShowPanel(assignedImage);
-
-        if (playerDialog != null)
-        {
-            // 플레이어 다이얼로그 시작
-            DialogManager.Instance.PlayerMessageDialog(playerDialog);
-
-            // 플레이어 다이얼로그가 끝났을 때 환청 다이얼로그를 실행하도록 이벤트에 등록
-            DialogManager.Instance.OnDialogEnd += TriggerHallucinationDialog;
-
-            InventoryManager.Instance.AddItemToInventory(photoItem);
-        }
-    }
-
-    private void TriggerHallucinationDialog()
-    {
-        // 환청 다이얼로그 실행
-        hallucination.StartHallucinationDialog(halluciantionDialog);
-
-        // 이벤트 핸들러를 제거하여 여러 번 실행되지 않도록 설정
-        DialogManager.Instance.OnDialogEnd -= TriggerHallucinationDialog;
-    }
-    */
 }

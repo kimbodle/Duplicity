@@ -62,16 +62,14 @@ public class PhotoMissionManager : MonoBehaviour
 
         if (isCorrect)
         {
-            Debug.Log("Photos are in the correct order!");
+            Debug.Log("사진 미션 성공!");
             timer.CompleteMission();
             WallCrackPanel.SetActive(true);
         }
         else
         {
-            Debug.Log("Photos are not in the correct order. Returning to inventory.");
+            Debug.Log("사진 미션 실패");
 
-            // 모든 슬롯의 선택 상태 해제
-            //InventoryManager.Instance.DeselectAllSlots();
 
             // 인벤토리를 먼저 비운다
             InventoryManager.Instance.ClearAllItemSlot();

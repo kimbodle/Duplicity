@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 79242159}
   - component: {fileID: 79242161}
   m_Layer: 0
-  m_Name: day5_photo_2
+  m_Name: day5_photo_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,11 +267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMessage: "\uC0AC\uC9C4"
   bigPanelDisplay: {fileID: 1342074872}
-  assignedImage: {fileID: 21300000, guid: 10cf83cce8d40c34c9523b605b2ea40b, type: 3}
-  playerDialog: {fileID: 11400000, guid: 6259eef9318706b43abaa4a748561e1d, type: 2}
-  halluciantionDialog: {fileID: 11400000, guid: 1d291eaa5851dab46876f02e7a9b67eb, type: 2}
+  assignedImage: {fileID: 21300000, guid: 68b6c621b7b0bb140bda9f95e7941b0a, type: 3}
+  playerDialog: {fileID: 11400000, guid: 6e4b51aecaa086f4499e0d19f9a4934b, type: 2}
+  halluciantionDialog: {fileID: 11400000, guid: cb6d4ba6cbff0cd4fa1f43610e48ce5d, type: 2}
   hallucination: {fileID: 99474312}
-  photoItem: {fileID: 11400000, guid: 26eae6ef2d4a6c548bdc2369812e152e, type: 2}
+  photoItem: {fileID: 11400000, guid: cd440d6b15c181a4b93f3347a655968f, type: 2}
 --- !u!1 &86320766
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +447,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 86320768}
-  - {fileID: 1028222592}
   - {fileID: 1757358525}
+  - {fileID: 1028222592}
   - {fileID: 79242158}
   - {fileID: 1349835228}
   m_Father: {fileID: 0}
@@ -461,6 +461,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1695175565304003133, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695175565304003133, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695175565304003133, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695175565304003133, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1914711571630520788, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_Name
       value: Hallusication Canvas
@@ -622,28 +638,36 @@ PrefabInstance:
       value: -0.0056762397
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.8773585
+      value: 0.13725491
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.6639926
+      value: 0.40909198
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.13656996
+      value: 0.8784314
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_fontSizeBase
       value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 562857e85d805dc409a0adb81063ff75, type: 2}
+    - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4292913443
+      value: 4280510688
       objectReference: {fileID: 0}
     - target: {fileID: 7698655931178493346, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -1091,7 +1115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 283692900}
         m_TargetAssemblyTypeName: SecretNoteClick, Assembly-CSharp
-        m_MethodName: DisplayDay5ending
+        m_MethodName: NoteClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1123,6 +1147,7 @@ MonoBehaviour:
   - {fileID: 95027517}
   - {fileID: 1636274114}
   ending: {fileID: 1728261072}
+  dialog: {fileID: 11400000, guid: 4ba5e6ced3c039640b93325f48a602b4, type: 2}
 --- !u!1 &351689973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,8 +3466,8 @@ Transform:
   m_GameObject: {fileID: 1028222591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.4, y: 3.18, z: 0.16474669}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.8954, y: 15.55, z: 0.16474669}
+  m_LocalScale: {x: 0.7478, y: 0.7478, z: 0.7478}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 95027518}
@@ -3479,7 +3504,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.4102971}
+  m_Offset: {x: 0, y: -2.001316}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3490,7 +3515,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2819138, y: 3.0815363}
+  m_Size: {x: 2.2819138, y: 6.2635727}
   m_EdgeRadius: 0
 --- !u!212 &1028222594
 SpriteRenderer:
@@ -3558,7 +3583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMessage: "\uC0AC\uC9C4"
   bigPanelDisplay: {fileID: 1342074872}
-  assignedImage: {fileID: 21300000, guid: bb95dd6e9933ac9418472d3ed3712a0e, type: 3}
+  assignedImage: {fileID: 21300000, guid: 03ca4d32a2ee8544185e89b7add0d745, type: 3}
   playerDialog: {fileID: 11400000, guid: f110bca71793a7c499f1fbaadad706dd, type: 2}
   halluciantionDialog: {fileID: 11400000, guid: 1ad7d9cdf6114614fa9faed2f41df58c, type: 2}
   hallucination: {fileID: 99474312}
@@ -4698,7 +4723,7 @@ GameObject:
   - component: {fileID: 1349835229}
   - component: {fileID: 1349835231}
   m_Layer: 0
-  m_Name: day5_photo_3
+  m_Name: day5_photo_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4830,11 +4855,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMessage: "\uC0AC\uC9C4"
   bigPanelDisplay: {fileID: 1342074872}
-  assignedImage: {fileID: 21300000, guid: 68b6c621b7b0bb140bda9f95e7941b0a, type: 3}
-  playerDialog: {fileID: 11400000, guid: 6e4b51aecaa086f4499e0d19f9a4934b, type: 2}
-  halluciantionDialog: {fileID: 11400000, guid: cb6d4ba6cbff0cd4fa1f43610e48ce5d, type: 2}
+  assignedImage: {fileID: 21300000, guid: 10cf83cce8d40c34c9523b605b2ea40b, type: 3}
+  playerDialog: {fileID: 11400000, guid: 6259eef9318706b43abaa4a748561e1d, type: 2}
+  halluciantionDialog: {fileID: 11400000, guid: 1d291eaa5851dab46876f02e7a9b67eb, type: 2}
   hallucination: {fileID: 99474312}
-  photoItem: {fileID: 11400000, guid: cd440d6b15c181a4b93f3347a655968f, type: 2}
+  photoItem: {fileID: 11400000, guid: 26eae6ef2d4a6c548bdc2369812e152e, type: 2}
 --- !u!1 &1373942022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5662,7 +5687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1580679358
 Transform:
   m_ObjectHideFlags: 0
@@ -5924,10 +5949,10 @@ MonoBehaviour:
   - {fileID: 2050717067}
   - {fileID: 1285776092}
   correctOrder:
-  - {fileID: 11400000, guid: 3409056139cdb074cb5252b3e7ed98d2, type: 2}
   - {fileID: 11400000, guid: 4d7131a90f99cf84d8598e8583155fc0, type: 2}
-  - {fileID: 11400000, guid: 26eae6ef2d4a6c548bdc2369812e152e, type: 2}
+  - {fileID: 11400000, guid: 3409056139cdb074cb5252b3e7ed98d2, type: 2}
   - {fileID: 11400000, guid: cd440d6b15c181a4b93f3347a655968f, type: 2}
+  - {fileID: 11400000, guid: 26eae6ef2d4a6c548bdc2369812e152e, type: 2}
   PhotoMissionPanel: {fileID: 1755816923}
   WallCrackPanel: {fileID: 1326342680}
   SecretNotePanel: {fileID: 1775169026}
@@ -6503,8 +6528,8 @@ Transform:
   m_GameObject: {fileID: 1757358524}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.698927, y: 15.369513, z: 0.16474669}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.39, y: 3.2, z: 0.16474669}
+  m_LocalScale: {x: 1.2661, y: 1.2661, z: 1.2661}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 95027518}
@@ -6541,7 +6566,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13206303, y: -1.5187252}
+  m_Offset: {x: 0.03649953, y: -0.6267997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6552,7 +6577,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3741262, y: 4.3374505}
+  m_Size: {x: 1.5652533, y: 2.5536}
   m_EdgeRadius: 0
 --- !u!212 &1757358527
 SpriteRenderer:

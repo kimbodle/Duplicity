@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: D5_photo3
   m_EditorClassIdentifier: 
   sentences:
-  - a
-  isPlayerSpeaking: 01
+  - "\uBD80\uBAA8\uB2D8\uC744 \uC0AC\uACE0\uB85C \uC783\uACE0\n\uADF8 \uB204\uAD6C\uD558\uACE0\uB3C4
+    \uB9CC\uB098\uACE0 \uC2F6\uC9C0 \uC54A\uC558\uC5B4.."
+  - "\uADF8\uB54C \uB0B4\uAC00 \uC5F0\uAD6C\uC2E4\uC5D0 \uAC00\uC790\uACE0\n\uC870\uB974\uC9C0\uB9CC
+    \uC54A\uC558\uB354\uB77C\uBA74..."
+  isPlayerSpeaking: 0101

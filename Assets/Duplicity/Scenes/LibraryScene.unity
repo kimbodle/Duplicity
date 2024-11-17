@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bigPanelDisplay: {fileID: 2065348562}
-  assignedImage: {fileID: 21300000, guid: d9903eb682ae6fe40b7752aeb84b90c3, type: 3}
+  assignedImage: {fileID: -21794270, guid: d9903eb682ae6fe40b7752aeb84b90c3, type: 3}
   dialog: {fileID: 11400000, guid: 8f9e57020f3712948b4fd189bf05a072, type: 2}
   interactionMessage: "\uC2E4\uC885\uC790 \uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4
     \uC788\uB2E4."

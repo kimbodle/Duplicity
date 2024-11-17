@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: D5_Ending
   m_EditorClassIdentifier: 
   sentences:
-  - "\uC7A0\uC5D0\uC11C \uAE7B\uB2E4\uB9AC"
-  isPlayerSpeaking: 01
+  - ....!!!!
+  - "\uD5C9... \uD5C9..."
+  - "\uBB34\uC2A8 \uAFC8\uC774 \uC774\uB798....\n\uC694\uC998 \uB108\uBB34 \uC2E0\uACBD
+    \uC4F0\uC774\uB294 \uC77C\uB4E4\uC774 \uB9CE\uC544\uC11C \uADF8\uB7F0\uAC00..."
+  - "\uC5C4\uB9C8 \uC544\uBE60 \uBCF4\uACE0 \uC2F6\uB2E4.."
+  isPlayerSpeaking: 00000000

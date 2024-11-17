@@ -100,7 +100,7 @@ public class UIManager : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    //Ending
+    //ing
     public void EndingUI()
     {
         DeactivateInventory();
