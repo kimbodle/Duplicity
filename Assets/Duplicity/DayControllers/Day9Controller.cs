@@ -10,7 +10,7 @@ public class Day9Controller : DayController
         Debug.Log("Day9 시작");
         
         //맵 아이콘 비활성화
-        UIManager.Instance.DeactiveMapIcon();
+        UIManager.Instance.DeactivateMapIcon();
         UIManager.Instance.ActiveInventory();
     }
 

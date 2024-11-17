@@ -18,10 +18,11 @@ public class CollectedItem : MonoBehaviour, IInteractable
     }
 
     // µð¹ö±ë¿ë
+    /*
     private void OnMouseDown()
     {
         CompletCollectItem();
-    }
+    }*/
     private void CompletCollectItem()
     {
         if (collector != null)

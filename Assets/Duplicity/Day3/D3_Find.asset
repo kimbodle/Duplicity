@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79e4b443f8cf3864a9789036c485d345, type: 3}
-  m_Name: D3_Luna
+  m_Name: D3_Find
   m_EditorClassIdentifier: 
   sentences:
-  - "\uC6B0\uB9AC \uC544\uB4E4 \uC880 \uCC3E\uC544\uC8FC\uC138\uC694..\n\uC6B0\uB9AC
-    \uC544\uB4E4 \uC880 \uCC3E\uC544\uC8FC\uC138\uC694...."
-  - "\uC6B0\uB9AC \uC544\uB4E4 \uC880 \uCC3E\uC544\uC8FC\uC138\uC694!!!!!!!!!!"
-  - "\uC5B4\uB5A1\uD574.. \uC804\uC7C1 \uC911\uC5D0 \uC544\uB4E4\uC774 \uC2E4\uC885\uB410\uB098\uBD10.."
-  isPlayerSpeaking: 000001
+  - "\uD5E8\uB9AC.. \uB300\uCCB4 \uC5B4\uB514 \uC788\uB294\uAC70\uC57C.."
+  isPlayerSpeaking: 01

@@ -75,13 +75,4 @@ public class InventoryManager : MonoBehaviour
             detailPanel.SetActive(false);
         }
     }
-
-    //// 모든 슬롯의 선택 해제
-    //public void DeselectAllSlots()
-    //{
-    //    foreach (var slot in slots)
-    //    {
-    //        slot.DeselectSlot(); // 슬롯 선택 해제
-    //    }
-    //}
 }

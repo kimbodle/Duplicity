@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneName;
         currentTask = "Intro";
         gameState.Clear();
+        InventoryManager.Instance.ClearAllItemSlot();
 
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);

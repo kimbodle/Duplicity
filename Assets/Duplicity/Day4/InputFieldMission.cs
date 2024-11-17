@@ -34,11 +34,43 @@ public class InputFieldMission : MonoBehaviour, IMission
         {
             IsMissionCompleted = true;
             Debug.Log("입력 필드 서브 미션 통과!");
+            /*
             if (missionStatusText != null)
             {
                 //missionStatusText.text = "Clear!";
                 missionStatusText.SetActive(true);
+            }*/
+            // 각 InputField의 텍스트를 합쳐서 사용자 입력 확인
+            int i = 0;
+            foreach (TMP_InputField inputField in inputFields)
+            {
+                if(i == 0)
+                {
+                    inputField.text = "N";
+                    i++;
+                }
+                else if(i == 1)
+                {
+                    inputField.text = "I";
+                    i++;
+                }
+                else if (i == 2)
+                {
+                    inputField.text = "G";
+                    i++;
+                }
+                else if (i == 3)
+                {
+                    inputField.text = "H";
+                    i++;
+                }
+                else if (i == 4)
+                {
+                    inputField.text = "T";
+                }
+
             }
+
         }
         else
         {

@@ -541,9 +541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bigPanelDisplay: {fileID: 2065348562}
-  assignedImage: {fileID: 21300000, guid: e4a79d96ca2e6594cbc46bbe20106d68, type: 3}
-  dialog: {fileID: 0}
-  interactionMessage: "\uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4 \uC788\uB2E4."
+  assignedImage: {fileID: 21300000, guid: d9903eb682ae6fe40b7752aeb84b90c3, type: 3}
+  dialog: {fileID: 11400000, guid: 8f9e57020f3712948b4fd189bf05a072, type: 2}
+  interactionMessage: "\uC2E4\uC885\uC790 \uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4
+    \uC788\uB2E4."
 --- !u!1 &169926539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,7 +5383,7 @@ MonoBehaviour:
   bigPanelDisplay: {fileID: 2065348562}
   assignedImage: {fileID: 21300000, guid: 78492c80437c84242aae6e43102bab2c, type: 3}
   dialog: {fileID: 11400000, guid: b9ce0a1423ba74247b78f61be6b3f928, type: 2}
-  interactionMessage: "\uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4 \uC788\uB2E4."
+  interactionMessage: "\uC804\uB2E8\uC9C0\uAC00 \uBD80\uCC29\uB418\uC5B4\uC788\uB2E4."
 --- !u!1001 &2036110727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5589,7 +5590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bigPanelDisplay: {fileID: 2065348562}
-  assignedImage: {fileID: 21300000, guid: 891a31e1507f8d34f81f912672a5b864, type: 3}
+  assignedImage: {fileID: 21300000, guid: 52d1218ef9b1d2944a83fd5bd025a8c2, type: 3}
   dialog: {fileID: 11400000, guid: 6a9dcde151358194c8a2465a4a0fa962, type: 2}
   interactionMessage: "\uC2DC\uACC4\uB2E4."
 --- !u!1 &2065348557
@@ -6102,8 +6103,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8443117acc17cb241a8e66b7dfd99de6, type: 2}
-  m_sharedMaterial: {fileID: -2506457488390299601, guid: 8443117acc17cb241a8e66b7dfd99de6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
+  m_sharedMaterial: {fileID: -5604219792238310682, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6445,7 +6446,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -6578,8 +6579,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Password..
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
+  m_sharedMaterial: {fileID: -5604219792238310682, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
