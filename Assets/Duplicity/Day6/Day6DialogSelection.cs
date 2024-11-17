@@ -12,7 +12,7 @@ public class Day6DialogSelection : MonoBehaviour
     [Space(10)]
     public Dialog BadendingDialog;
     public Dialog OpenRegenDialog;
-    // Start is called before the first frame update
+
     void Start()
     {
         // 선택지 버튼에 클릭 이벤트 연결
@@ -23,19 +23,21 @@ public class Day6DialogSelection : MonoBehaviour
         ChoicePanel.SetActive(false);
         choiceButton1.gameObject.SetActive(false);
         choiceButton2.gameObject.SetActive(false);
+
+        
     }
 
     // 외부에서 호출하여 선택지 버튼 표시
     public void ShowChoices()
     {
         ChoicePanel.SetActive(true);
-        SetChoices("그런데 난 정말 몰랐어. 이게 정말 모두 다 내 잘못이야?","주변을 돌아보지 못한 내 잘못이야.");
+        SetChoices("그런데 난 정말 몰랐어.\n이게 정말 모두 다 내 잘못이야?","주변을 돌아보지 못한 내 잘못이야.");
     }
 
     private void SetChoices(string choice1, string choice2)
     {
-        choiceButton1.GetComponentInChildren<TMP_Text>().text = choice1;
-        choiceButton2.GetComponentInChildren<TMP_Text>().text = choice2;
+        choiceButton1.GetComponent<TMP_Text>().text = choice1;
+        choiceButton2.GetComponent<TMP_Text>().text = choice2;
         choiceButton1.gameObject.SetActive(true); // 선택지 1 활성화
         choiceButton2.gameObject.SetActive(true); // 선택지 2 활성화
     }
@@ -47,13 +49,17 @@ public class Day6DialogSelection : MonoBehaviour
         if (choice == 1)
         {
             Debug.Log("엔딩");
+            // 다이얼로그 종료 시 Debug.Log 호출을 위한 콜백 등록
+            DialogManager.Instance.OnDialogEnd += OnDialogEnd;
+
             DialogManager.Instance.PlayerMessageDialog(BadendingDialog);
-            //엔딩 매니저 
+            
 
         }
         else
         {
             Debug.Log("저장소 오픈");
+            MapManager.Instance.UnlockRegion("RegenScene");
             DialogManager.Instance.PlayerMessageDialog(OpenRegenDialog);
             GameManager.Instance.GetCurrentDayController().CompleteTask("OpenRegen");
         }
@@ -66,5 +72,12 @@ public class Day6DialogSelection : MonoBehaviour
     {
         choiceButton1.gameObject.SetActive(false); // 선택지 1 비활성화
         choiceButton2.gameObject.SetActive(false); // 선택지 2 비활성화
+    }
+    private void OnDialogEnd()
+    {
+        // 콜백을 한 번만 실행하도록 등록 해제
+        DialogManager.Instance.OnDialogEnd -= OnDialogEnd;
+
+        EndingManager.Instance.LoadEnding("Ending", "배드엔딩", 0);
     }
 }

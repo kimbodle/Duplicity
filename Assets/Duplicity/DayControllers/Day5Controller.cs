@@ -14,6 +14,7 @@ public class Day5Controller : DayController
         UIManager.Instance.ActiveInventory();
         //아이콘 버그로 start때 임시활성화
         UIManager.Instance.TogglInventoryUI();
+        MapManager.Instance.InitializeMapRegions();
     }
 
     public override void CompleteTask(string task)

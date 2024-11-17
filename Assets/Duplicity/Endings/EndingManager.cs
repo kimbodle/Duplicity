@@ -25,7 +25,10 @@ public class EndingManager : MonoBehaviour
         //게임 상태 초기화
         GameManager.Instance.isInitializingGameState = true;
         UIManager.Instance.EndingUI();
-        InventoryManager.Instance.ClearAllItemSlot();
+        if(InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.ClearAllItemSlot();
+        }
 
         this.endingIndex = endingIndex;
         this.endingMessage = message;

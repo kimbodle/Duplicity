@@ -8,7 +8,7 @@ public class HallucinationDialogManager : MonoBehaviour
     public GameObject hallucinationPanel; // 환청 다이얼로그 패널
     public TMP_Text hallucinationText; // 환청 다이얼로그 텍스트
     [SerializeField] float typingSpeed = 0.05f; // 타이핑 속도 조절 변수
-    [SerializeField] private float displayDuration = 0.2f; // 글씨가 전부 뜬 후 유지되는 시간
+    [SerializeField] private float displayDuration = 1f; // 글씨가 전부 뜬 후 유지되는 시간
 
     private bool isTyping = false; // 현재 타이핑 중인지 여부
 
@@ -42,9 +42,9 @@ public class HallucinationDialogManager : MonoBehaviour
 
         isTyping = false;
 
+        EndHallucinationDialog();
         // 모든 글씨가 다 뜬 후 대사 유지
         yield return new WaitForSeconds(displayDuration);
-        EndHallucinationDialog();
     }
 
     // 환청 다이얼로그 종료 메서드
