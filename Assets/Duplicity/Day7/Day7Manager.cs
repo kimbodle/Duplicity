@@ -5,17 +5,11 @@ using UnityEngine;
 public class Day7Manager : MonoBehaviour
 {
     public Item secretBook;
-    public Item openSecretBook;
     void Start()
     {
         if(InventoryManager.Instance != null)
         {
-            //InventoryManager.Instance.AddItemToInventory(secretBook);
+            InventoryManager.Instance.AddItemToInventory(secretBook);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

@@ -3181,7 +3181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &855976854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3820,7 +3820,7 @@ GameObject:
   - component: {fileID: 975112513}
   - component: {fileID: 975112514}
   m_Layer: 0
-  m_Name: secretBook
+  m_Name: paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3950,11 +3950,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b5f6c0010d65b4cb0b7536ae677cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uD3EC\uC2A4\uD130\uAC00 \uBD80\uCC29\uB418\uC5B4 \uC788\uB2E4."
+  interactionMessage: "\uB9AC\uC820 \uC5F0\uAD6C \uC790\uB8CC\uAC00 \uB5A8\uC5B4\uC838
+    \uC788\uB2E4."
   missionManager: {fileID: 182922537}
-  bigPanelDisplay: {fileID: 1402866412}
-  assignedImage: {fileID: 21300000, guid: 7a26a484afd674542b6b0037aaf171e1, type: 3}
-  secretBookItem: {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
+  paper: {fileID: 11400000, guid: bee92f9e210021344bdb6c3c8428f8ac, type: 2}
 --- !u!1001 &1019379729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4130,8 +4129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 338}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 334.10007}
+  m_SizeDelta: {x: 511.9932, y: 57.7998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063456647
 MonoBehaviour:
@@ -4183,10 +4182,10 @@ MonoBehaviour:
   m_fontSize: 100
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontSizeMax: 100
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4507,6 +4506,8 @@ MonoBehaviour:
   CabinetPasswordPanel: {fileID: 855976853}
   dialog: {fileID: 11400000, guid: 0509c32d7cf84034fa944a496a1559d6, type: 2}
   closeButton: {fileID: 1652763526}
+  secretBook: {fileID: 11400000, guid: eccd017f481f34040847ace922664d07, type: 2}
+  openSecretBook: {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
 --- !u!1001 &1191797390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6826,8 +6827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0e09af419f5694b9ffca673b460265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secretBook: {fileID: 0}
-  openSecretBook: {fileID: 0}
+  secretBook: {fileID: 11400000, guid: eccd017f481f34040847ace922664d07, type: 2}
 --- !u!4 &1817783185
 Transform:
   m_ObjectHideFlags: 0
