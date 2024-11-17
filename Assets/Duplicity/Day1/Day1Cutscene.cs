@@ -12,6 +12,12 @@ public class Day1Cutscene : MonoBehaviour
     public Button choiceButton2; // 선택지 2 버튼
     public AudioSource soundEffect; // 효과음
 
+    // 컷씬 이미지 배열
+    public Sprite[] cutsceneImages;
+
+    public float typingSpeed = 0.05f; // 타이핑 속도
+    private bool isTyping = false; // 타이핑 진행 여부 확인용 변수
+
     private int dialogueIndex = 0;
     private bool isFirstChoice = true; // 첫 번째 선택지 여부 확인
 
@@ -21,17 +27,11 @@ public class Day1Cutscene : MonoBehaviour
     private string[] dialogues = {
         "연구중인 로라", //0
         "쿵 -", // 1
-        "?… 이게 무슨 일이지?'\n'연구소 밖으로 나가봐야 하는 걸까..?", // 2
+        "?… 이게 무슨 소리지?\n연구소 밖으로 나가봐야 하는 걸까..?", // 2
         "??????????.....", // 3
-        "내가 지금 보고 있는 게 진짜야…?\n전쟁 중이라고…?", // 4
-        "이게 무슨일 이지? 지금 뭘 해야 해..? \n 내가 뭘 할 수 있는 거야??!!?!!??",  // 5 
+        "내가 보고 있는 게 진짜야..?\n지금 전쟁 중이라고…?", // 4
+        "어떡하지, 어떡해.. 내가 뭘 해야 하지?\n아니, 내가 뭘 할 수 있는 거야?!",  // 5 
     };
-
-    // 컷씬 이미지 배열
-    public Sprite[] cutsceneImages;
-
-    public float typingSpeed = 0.05f; // 타이핑 속도
-    private bool isTyping = false; // 타이핑 진행 여부 확인용 변수
 
     void Start()
     {
@@ -109,8 +109,8 @@ public class Day1Cutscene : MonoBehaviour
     private void SetChoices(string choice1, string choice2)
     {
         nextButton.gameObject.SetActive(false);
-        choiceButton1.GetComponentInChildren<TMP_Text>().text = choice1;
-        choiceButton2.GetComponentInChildren<TMP_Text>().text = choice2;
+        choiceButton1.GetComponent<TMP_Text>().text = choice1;
+        choiceButton2.GetComponent<TMP_Text>().text = choice2;
         choiceButton1.gameObject.SetActive(true);
         choiceButton2.gameObject.SetActive(true);
     }
@@ -152,7 +152,7 @@ public class Day1Cutscene : MonoBehaviour
                 else
                 {
                     dialogueText.text = "";
-                    StartCoroutine(CompleteTaskWithDialogue("그래 일단 연구소로 돌아가서 중요한 물품들을 챙기고 얼른 여기를 떠나자"));
+                    StartCoroutine(CompleteTaskWithDialogue("그래 일단 연구소로 돌아가서\n중요한 물품들을 챙기고 얼른 여기를 떠나자"));
                 }
             }
         }
