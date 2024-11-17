@@ -1,4 +1,6 @@
+using Firebase;
 using Firebase.Auth;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,6 +25,18 @@ public class FirebaseAuthController : MonoBehaviour
     public string uid = "";
     private bool isMessageUpdated = false;
 
+    // 오류 메시지 번역 딕셔너리
+    private Dictionary<string, string> errorMessages = new Dictionary<string, string>
+    {
+        { "8", "이 이메일은 이미 사용 중입니다." },
+        { "INVALID_EMAIL", "유효하지 않은 이메일 주소입니다." },
+        { "23", "비밀번호는 최소 6자 이상이어야 합니다." },
+        { "11", "이메일 또는 비밀번호가 잘못되었습니다." },
+        { "1", "이메일 또는 비밀번호가 잘못되었습니다." },
+        { "??", "비밀번호가 잘못되었습니다." },
+        { "TOO_MANY_ATTEMPTS_TRY_LATER", "잠시 후 다시 시도해주세요." }
+    };
+
     void Awake()
     {
         if (Instance == null)
@@ -38,20 +52,9 @@ public class FirebaseAuthController : MonoBehaviour
 
     void Start()
     {
-        InitializeFirebase();
         messageText.text = string.Empty;
 
-        /*// 로그인 상태 확인
-        if (auth.CurrentUser != null)
-        {
-            // 사용자가 이미 로그인 되어 있으면 해당 상태를 유지하도록 하거나 로그아웃
-            Debug.Log("User is already logged in: " + auth.CurrentUser.Email);
-        }
-        else
-        {
-            // 사용자가 로그인하지 않은 상태라면 초기 상태로 설정
-            Debug.Log("No user is logged in.");
-        }*/
+        InitializeFirebase();
     }
 
 
@@ -73,24 +76,41 @@ public class FirebaseAuthController : MonoBehaviour
         }
     }
 
+    // Firebase 초기화 메서드
     void InitializeFirebase()
     {
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+        {
             var dependencyStatus = task.Result;
             if (dependencyStatus == Firebase.DependencyStatus.Available)
             {
-                // Firebase가 사용 가능할 때 FirebaseAuth를 초기화합니다.
+                // Firebase가 사용 가능할 때 FirebaseAuth 초기화
                 auth = FirebaseAuth.DefaultInstance;
                 firestoreController = FirestoreController.Instance;
                 auth.StateChanged += AuthStateChanged;
                 AuthStateChanged(this, null);
+
+                // FirebaseAuth가 초기화된 후 로그인 상태 확인
+                CheckAndLogoutIfLoggedIn();
             }
             else
             {
-                Debug.LogError(System.String.Format(
-                    "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
             }
         });
+    }
+    // 로그인 상태 확인 후 로그아웃
+    void CheckAndLogoutIfLoggedIn()
+    {
+        if (auth != null && auth.CurrentUser != null)
+        {
+            Debug.Log($"이미 로그인된 사용자: {auth.CurrentUser.Email}");
+            Logout();
+        }
+        else
+        {
+            Debug.Log("로그인 상태가 아님");
+        }
     }
 
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
@@ -118,6 +138,7 @@ public class FirebaseAuthController : MonoBehaviour
         }
     }
 
+    //OnClick 이벤트 연결
     public void Register()
     {
         string email = emailInput.text;
@@ -127,19 +148,21 @@ public class FirebaseAuthController : MonoBehaviour
             .ContinueWith(task => {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    message = "Sign up failed: " + task.Exception?.Message;
+                    string translatedMessage = GetTranslatedMessage(task.Exception);
+                    message = "회원가입 실패: " + translatedMessage;
                     isMessageUpdated = true;
                     return;
                 }
 
                 AuthResult authResult = task.Result;
                 FirebaseUser newUser = authResult.User;
-                message = "Sign up successful: " + newUser.Email;
+                message = "회원가입 성공: " + newUser.Email;
                 uid = newUser.UserId;
                 isMessageUpdated = true;
             });
     }
 
+    //OnClick 이벤트 연결
     public void Login()
     {
         string email = emailInput.text;
@@ -149,15 +172,15 @@ public class FirebaseAuthController : MonoBehaviour
             .ContinueWith(task => {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    message = "Login failed: " + task.Exception?.Message;
+                    string translatedMessage = GetTranslatedMessage(task.Exception);
+                    message = "로그인 실패: " + translatedMessage;
                     isMessageUpdated = true;
                     return;
                 }
 
                 AuthResult authResult = task.Result;
                 FirebaseUser newUser = authResult.User;
-                message = "Login successful: " + newUser.Email;
-                //Map 하기 위해 UIManager 코드 추가 해보면 알게 된 사실인데 이 Login()함수 코드가 로그인 할때 안쓰임....(?)
+                message = "로그인 성공: " + newUser.Email;
                 //UIManager.Instance.closeLoginUI();
                 uid = newUser.UserId;
                 isMessageUpdated = true;
@@ -198,7 +221,8 @@ public class FirebaseAuthController : MonoBehaviour
         firestoreController.LoadGameState(OnGameStateLoaded); //아래 함수를 파라미터로 같이 전달
     }
 
-    private void OnGameStateLoaded(int currentDay, string currentSceneName, string currentTask, Dictionary<string, bool> gameState, Dictionary<string, bool> endingAlbum) //게임매니저의 게임상태 업데이트 함수호출
+    private void OnGameStateLoaded(int currentDay, string currentSceneName, string currentTask,
+        Dictionary<string, bool> gameState, Dictionary<string, bool> endingAlbum) //게임매니저의 게임상태 업데이트 함수호출
     {
         if (gameManager != null)
         {
@@ -209,5 +233,25 @@ public class FirebaseAuthController : MonoBehaviour
     public bool IsLoggedIn()
     {
         return User != null; // User 프로퍼티로 확인
+    }
+
+    private string GetTranslatedMessage(AggregateException exception)
+    {
+        foreach (var innerException in exception.InnerExceptions)
+        {
+            if (innerException is FirebaseException firebaseException)
+            {
+                // ErrorCode 속성을 직접 사용
+                if (errorMessages.TryGetValue(firebaseException.ErrorCode.ToString(), out string translatedMessage))
+                {
+                    return translatedMessage;
+                }
+                else
+                {
+                    Debug.LogError($"Unmapped error code: {firebaseException.ErrorCode}");
+                }
+            }
+        }
+        return "알 수 없는 오류가 발생했습니다.";
     }
 }
