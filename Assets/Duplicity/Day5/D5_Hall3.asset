@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: D5_Hall3
   m_EditorClassIdentifier: 
   sentences:
-  - "\uB108\uC796\uC544. \uB108. \uC774 \uC77C\uAE30\uC7A5\uC758 \uC8FC\uC778 \uB9D0\uC774\uC57C."
+  - "\uC5F0\uAD6C\uC18C\uAC00 \uBD88\uD0C0\uACE0 \uC788\uB124?\n\uB108 \uBB34\uC2A8
+    \uC77C\uC774 \uC788\uC5C8\uB358\uAC70\uC9C0?"
   isPlayerSpeaking: 

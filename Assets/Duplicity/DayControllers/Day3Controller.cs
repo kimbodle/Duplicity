@@ -39,7 +39,7 @@ public class Day3Controller : DayController
             if (task == "TallWithAllRabbit")
             {
                 MarkTaskComplete(task);
-                DialogManager.Instance.PlayerMessageDialog(dialog[1]);
+                StartCoroutine(ShowDialogAfterDelay(1f, dialog[1]));
             }
         }
         if (task == "Day3ComputerUnlock")
@@ -110,5 +110,11 @@ public class Day3Controller : DayController
     private bool HasTalkWithAllRabbit()
     {
         return gameState.ContainsKey("TallWithAllRabbit") && gameState["TallWithAllRabbit"];
+    }
+
+    private IEnumerator ShowDialogAfterDelay(float delay, Dialog dialog)
+    {
+        yield return new WaitForSeconds(delay);
+        DialogManager.Instance.PlayerMessageDialog(dialog);
     }
 }

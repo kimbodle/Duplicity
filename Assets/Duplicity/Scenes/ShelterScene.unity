@@ -2261,7 +2261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 92230dc34a5ae2543b8962eb8610c6ba, type: 2}
-  characterSprite: {fileID: 21300000, guid: 934d5ba3d1de05c4a8a7bc3fc6bcb360, type: 3}
+  characterSprite: {fileID: 21300000, guid: 1180abae100088c468ab9db4eebf4d3c, type: 3}
 --- !u!114 &1847197566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,7 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 320ea44780373ff4bbc422947f7a5c6d, type: 2}
-  characterSprite: {fileID: 21300000, guid: 0e84d314cf319fa4386b88885ea6b20f, type: 3}
+  characterSprite: {fileID: 21300000, guid: bdc8b149414901441b17b7a01c4af20a, type: 3}
 --- !u!114 &1957985209
 MonoBehaviour:
   m_ObjectHideFlags: 0

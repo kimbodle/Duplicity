@@ -6,17 +6,6 @@ public class Day5Ending : MonoBehaviour
 {
     public Sprite wakeupImage;
     public Dialog dialog;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void StartDay5EndingDialog()
     {
