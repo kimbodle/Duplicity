@@ -27,7 +27,6 @@ public class Day7ComputerMission : MonoBehaviour
     public Dialog dialog;
 
     private const string correctPassword = "0916";
-    private bool isFirst = true;
 
     private void Start()
     {
@@ -40,7 +39,6 @@ public class Day7ComputerMission : MonoBehaviour
         closeButton.onClick.AddListener(CloseComputerPanel);
         folderIconButton.onClick.AddListener(OnFolderClicked);
         confirmButton.onClick.AddListener(CheckPassword);
-        printButton.GetComponent<Button>().onClick.AddListener(OnClickPrintButton);
 
         // 각 문서 버튼에 이벤트를 동적으로 연결
         for (int i = 0; i < documentIconButtons.Count; i++)
@@ -76,6 +74,10 @@ public class Day7ComputerMission : MonoBehaviour
         documentDisplayImage.sprite = documentSprites[documentIndex];
 
         documentOpenPanel.SetActive(true);
+        printButton.SetActive(true);
+
+        /*
+        //정답 파일만 프린트 할 수 있음
         if (documentIndex == 1)
         {
             printButton.SetActive(true);
@@ -83,19 +85,11 @@ public class Day7ComputerMission : MonoBehaviour
         else
         {
             printButton.SetActive(false);
-        }
-
-        if (isFirst)
-        {
-            isFirst = false;
-            return;
-        }
-        else
-        {
-            
-        }
-        
-        //GameManager.Instance.GetCurrentDayController().CompleteTask($"Document{documentIndex + 1}");
+        }*/
+        // Assign the current document index for printing
+        int indexForPrint = documentIndex;
+        printButton.GetComponent<Button>().onClick.RemoveAllListeners(); // Clear previous listeners
+        printButton.GetComponent<Button>().onClick.AddListener(() => OnClickPrintButton(indexForPrint));
     }
 
     public void CloseComputerPanel()
@@ -109,14 +103,28 @@ public class Day7ComputerMission : MonoBehaviour
         documentOpenPanel.SetActive(false);
     }
 
-    //문서 프린트
-    public void OnClickPrintButton()
+    public void OnClickPrintButton(int documentIndex)
     {
-        if(printedDocument != null)
+        if (printedDocument != null)
         {
             printedDocument.SetActive(true);
-            //프린트 버튼 삭제 로직 추가
-            // 파일 2를 프린트 했으면 엔딩 앨범 save 로직 추가
+            // 문서 인덱스에 맞는 이미지 활성화
+            Transform documentImage = printedDocument.transform.GetChild(documentIndex);
+            if (documentImage != null)
+            {
+                documentImage.gameObject.SetActive(true);
+                if (documentIndex == 1)
+                {
+                    GameManager.Instance.SaveEnding("EndingItem", 0);
+                }
+            }
+            else
+            {
+                Debug.LogError($"인덱스 {documentIndex}에 해당하는 printedDocument 이미지가 없습니다.");
+            }
+
+            // 프린트 버튼은 한 번만 사용 가능하도록 제거
+            Destroy(printButton);
         }
     }
 }

@@ -15,16 +15,17 @@ public class Day6DialogSelection : MonoBehaviour
 
     void Start()
     {
-        // 선택지 버튼에 클릭 이벤트 연결
-        choiceButton1.onClick.AddListener(() => OnChoiceClick(1)); // 선택지 1 클릭 시
-        choiceButton2.onClick.AddListener(() => OnChoiceClick(2)); // 선택지 2 클릭 시
+        if(GameManager.Instance.GetCurrentDay() == 6)
+        {
+            // 선택지 버튼에 클릭 이벤트 연결
+            choiceButton1.onClick.AddListener(() => OnChoiceClick(1)); // 선택지 1 클릭 시
+            choiceButton2.onClick.AddListener(() => OnChoiceClick(2)); // 선택지 2 클릭 시
 
-        // 선택지 버튼 초기 비활성화
-        ChoicePanel.SetActive(false);
-        choiceButton1.gameObject.SetActive(false);
-        choiceButton2.gameObject.SetActive(false);
-
-        
+            // 선택지 버튼 초기 비활성화
+            ChoicePanel.SetActive(false);
+            choiceButton1.gameObject.SetActive(false);
+            choiceButton2.gameObject.SetActive(false);
+        }
     }
 
     // 외부에서 호출하여 선택지 버튼 표시

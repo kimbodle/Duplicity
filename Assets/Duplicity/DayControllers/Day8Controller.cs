@@ -16,9 +16,14 @@ public class Day8Controller : DayController
         UIManager.Instance.ActiveMapIcon();
         MapManager.Instance.InitializeMapRegions();
 
-        MapManager.Instance.UnlockAllRegion();
+        MapManager.Instance.UnlockRegion("SeaScene");
         //프린트 파일 2 를 획득 했을 경우 연구소 오픈 로직 추가
-        MapManager.Instance.UnlockRegion("LaboratoryScnen");
+        bool hasRecipe = GameManager.Instance.HasSeenEnding("EndingItem", 0);
+        Debug.Log(hasRecipe);
+        if (hasRecipe)
+        {
+            MapManager.Instance.UnlockRegion("LaboratoryScene");
+        }
     }
 
 

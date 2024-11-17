@@ -36,21 +36,6 @@ public class CabinetMission : MonoBehaviour,IMission
         return IsMissionCompleted;
     }
 
-    //Key -> Onclick 이벤트 연결
-    public void OnClickKey()
-    {
-        //열쇠 아이템 획득 기능 코드 구현
-        IsMissionCompleted = true;
-        if(InventoryManager.Instance != null && GameManager.Instance != null)
-        {
-            InventoryManager.Instance.AddItemToInventory(keyItem);
-            //GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
-
-            missionManager.CheckAllMission();
-        }
-        
-        Destroy(key);
-    }
 
     public void CheckMission()
     {
@@ -72,5 +57,20 @@ public class CabinetMission : MonoBehaviour,IMission
         {
             Debug.Log("입력 필드 서브 미션 실패. 다시 시도하세요.");
         }
+    }
+    //Key -> Onclick 이벤트 연결
+    public void OnClickKey()
+    {
+        //열쇠 아이템 획득 기능 코드 구현
+        IsMissionCompleted = true;
+        if (InventoryManager.Instance != null && GameManager.Instance != null)
+        {
+            InventoryManager.Instance.AddItemToInventory(keyItem);
+            //GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
+
+            missionManager.CheckAllMission();
+        }
+
+        Destroy(key);
     }
 }

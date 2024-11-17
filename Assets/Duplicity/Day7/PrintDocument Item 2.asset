@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8d24a9e2e03ba94db225506192c57d5, type: 3}
-  m_Name: PrintDocument Item
+  m_Name: PrintDocument Item 2
   m_EditorClassIdentifier: 
-  itemName: "\uB77C\uC81C\uB124\uB77C\uD2F0\uC6C0"
-  itemIcon: {fileID: 21300000, guid: 7ac3f56cd78863d4fac3114b72344dd6, type: 3}
+  itemName: "\uB85C\uB77C\uB124\uB77C\uD2F0\uC6C0"
+  itemIcon: {fileID: 21300000, guid: 9ef522199f1c72a46bd92c9291fe8dda, type: 3}
   canViewDetails: 1
-  itemDescription: "\uB77C\uC81C\uB124\uB77C\uD2F0\uC6C0 \uC81C\uC870\uBC95"
+  itemDescription: "\uB85C\uB77C\uB124\uB77C\uD2F0\uC6C0 \uC81C\uC870\uBC95"
