@@ -18,7 +18,6 @@ public class Day6Controller : DayController
         MapManager.Instance.InitializeMapRegions();
 
         MapManager.Instance.UnlockRegion("ShelterScene");
-        MapManager.Instance.UnlockRegion("RegenScene");
     }
 
     public override void CompleteTask(string task)
@@ -75,11 +74,9 @@ public class Day6Controller : DayController
                     Debug.Log("현재 씬");
                     //x
                 }
-                //아직 선택지 대화를 끝내지 않았으면
                 if (HasOpenRegen())
                 {
                     StateManager.Instance.LoadSubScene(regionName);
-                    //이후 리젠 저장소 씬 로드
                 }
                 else
                 {

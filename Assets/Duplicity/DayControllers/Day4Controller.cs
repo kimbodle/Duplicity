@@ -21,7 +21,6 @@ public class Day4Controller : DayController
             UIManager.Instance.ActiveMapIcon();
             MapManager.Instance.InitializeMapRegions();
 
-            MapManager.Instance.UnlockRegion("LibraryScene");
             MapManager.Instance.UnlockRegion("ShelterScene");
             MapManager.Instance.UnlockRegion("LaboratoryScene");
         }

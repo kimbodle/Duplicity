@@ -11,6 +11,7 @@ public class Day6EndPoint : MonoBehaviour
 
     void Start()
     {
+        UIManager.Instance.DeactivateMapIcon();
         fadeManager = GetComponent<FadeManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
