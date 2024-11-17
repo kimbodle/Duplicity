@@ -17,8 +17,6 @@ public class Day7Controller : DayController
         UIManager.Instance.TogglInventoryUI();
         MapManager.Instance.InitializeMapRegions();
 
-        MapManager.Instance.UnlockRegion("LibraryScene");
-        MapManager.Instance.UnlockRegion("LaboratoryScene");
         MapManager.Instance.UnlockRegion("ShelterScene");
 
     }
