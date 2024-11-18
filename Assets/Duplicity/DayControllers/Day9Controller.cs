@@ -18,7 +18,7 @@ public class Day9Controller : DayController
 
     public override void CompleteTask(string task)
     {
-        if (task == "ItemCollected")
+        if (task == "TheEnd")
         {
             MarkTaskComplete(task);
         }
@@ -27,7 +27,7 @@ public class Day9Controller : DayController
     
     public override bool IsDayComplete(string currentTask)
     {
-        return gameState.ContainsKey("ItemCollected") && gameState["ItemCollected"];
+        return gameState.ContainsKey("TheEnd") && gameState["TheEnd"];
     }
 
     public override void MapIconClick(string regionName)

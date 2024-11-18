@@ -20,7 +20,7 @@ public class VaccineMission : MonoBehaviour
     private HashSet<string> completedMissionSet = new HashSet<string>(); // 중복 방지용
 
     private List<string> enteredChemicalSequence = new List<string>(); // 플레이어가 입력한 시약 순서
-    private string correctChemicalSequence = "빨노초";//"노빨빨노초빨초빨"; // 정답 시약 순서
+    private string correctChemicalSequence = "YRRYGRGR";//"노빨빨노초빨초빨"; // 정답 시약 순서
 
     public GameObject flask; // 삼각 플라스크
     public GameObject blueFlask; // 성공 시 플라스크 이미지
@@ -149,12 +149,18 @@ public class VaccineMission : MonoBehaviour
         }
 
         Debug.Log("모든 미션을 올바른 순서로 완료했습니다. 파란 플라스크로 변경.");
+        GameManager.Instance.GetCurrentDayController().CompleteTask("TheEnd");
         SetFlaskSprite(true); // 파란 플라스크
     }
 
     // 플라스크 색상 변경
     private void SetFlaskSprite(bool isSuccess)
     {
+        if(UIManager.Instance != null)
+        {
+            UIManager.Instance.EndingUI();
+        }
+
         flask.SetActive(false);
 
         if (isSuccess)

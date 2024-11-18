@@ -174,6 +174,20 @@ public class GameManager : MonoBehaviour
         InitializeGameState(currentDay, currentScene, currentTask, gameState, endingAlbum);
     }
 
+    public void ResetGameState()
+    {
+        // 현재 게임 상태 초기화
+        currentDay = 0;
+        currentTask = "Start";
+        currentScene = "Day0Scene";
+        gameState.Clear();
+
+        SaveGame();
+
+        Debug.Log("게임 상태 초기화 완료 (endingAlbum 제외)");
+    }
+
+
     public bool HasSeenEnding(string endingType, int endingIndex)
     {
         string endingKey = $"{endingType}_{endingIndex}";

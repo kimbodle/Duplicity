@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EndingImage : MonoBehaviour
 {
@@ -53,7 +54,16 @@ public class EndingImage : MonoBehaviour
 
     public void OnClickRetryButton()
     {
-        GameManager.Instance.GameOver();
+        if(GameManager.Instance.GetCurrentDay()== 9)
+        {
+            GameManager.Instance.ResetGameState();
+            FirebaseAuthController.Instance.Logout();
+            SceneManager.LoadScene("MainScene");
+        }
+        else
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     public void CloseRetryUI()
