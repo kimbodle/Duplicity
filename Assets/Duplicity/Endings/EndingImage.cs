@@ -54,7 +54,7 @@ public class EndingImage : MonoBehaviour
 
     public void OnClickRetryButton()
     {
-        if(GameManager.Instance.GetCurrentDay()== 9)
+        if(GameManager.Instance.GetCurrentDay() == 9 && GameManager.Instance.currentTask =="TheEnd")
         {
             GameManager.Instance.ResetGameState();
             FirebaseAuthController.Instance.Logout();

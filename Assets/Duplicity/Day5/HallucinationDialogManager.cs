@@ -42,9 +42,10 @@ public class HallucinationDialogManager : MonoBehaviour
 
         isTyping = false;
 
-        EndHallucinationDialog();
         // 모든 글씨가 다 뜬 후 대사 유지
         yield return new WaitForSeconds(displayDuration);
+
+        EndHallucinationDialog();
     }
 
     // 환청 다이얼로그 종료 메서드

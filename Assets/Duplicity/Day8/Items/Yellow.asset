@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Yellow
   m_EditorClassIdentifier: 
   itemName: "\uB178\uB791 \uC2DC\uC57D"
-  itemIcon: {fileID: 21300000, guid: abd636af10f8e974aaea431fcebf7423, type: 3}
+  itemIcon: {fileID: 1671391196, guid: 8c761562d7d806a42bdf059e93124d64, type: 3}
   canViewDetails: 0
   itemDescription: "\uB178\uB791 \uC2DC\uC57D"
