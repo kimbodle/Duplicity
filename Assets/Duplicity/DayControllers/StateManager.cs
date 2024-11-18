@@ -54,6 +54,10 @@ public class StateManager : MonoBehaviour
             {
                 currentDayController = controller;
                 controller.gameObject.SetActive(true);
+                if (InventoryManager.Instance != null)
+                {
+                    InventoryManager.Instance.ClearAllItemSlot();
+                }
                 controller.Initialize(currentTask);
             }
         }

@@ -1,27 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Day8Manager : MonoBehaviour
 {
     public Dialog dialog;
     public MissionTimer missionTimer;
+    public Item[] items;
+    public Item correctRecipe;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (DialogManager.Instance != null)
+        if (dialog != null)
         {
-            DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
-            DialogManager.Instance.PlayerMessageDialog(dialog);
+            if (DialogManager.Instance != null)
+            {
+                DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
+                DialogManager.Instance.PlayerMessageDialog(dialog);
+            }
         }
-       
     }
-
-    // Update is called once per frame
-    void Update()
+    public void AddDay8Items()
     {
-        
+        if (InventoryManager.Instance != null)
+        {
+            foreach (Item item in items)
+            {
+                InventoryManager.Instance.AddItemToInventory(item);
+            }
+            bool hasRecipe = GameManager.Instance.HasSeenEnding("EndingItem", 0);
+            if (hasRecipe)
+            {
+                InventoryManager.Instance.AddItemToInventory(correctRecipe);
+            }
+        }
     }
     private void HandleDialogEnd()
     {

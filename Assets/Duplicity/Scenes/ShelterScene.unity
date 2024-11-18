@@ -1757,7 +1757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1369903514}
-  - component: {fileID: 1369903513}
+  - component: {fileID: 1369903515}
   m_Layer: 0
   m_Name: Day8
   m_TagString: Untagged
@@ -1765,23 +1765,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1369903513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369903512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04dcf4f92f53fc7488de1dd2f9b15da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChoicePanel: {fileID: 1914711572631355543}
-  choiceButton1: {fileID: 0}
-  choiceButton2: {fileID: 0}
-  BadendingDialog: {fileID: 11400000, guid: 2cb15d9544d79b34cb244810e3de7b2b, type: 2}
-  OpenRegenDialog: {fileID: 11400000, guid: 09edb931dbb66714eb21e530e9e861f4, type: 2}
 --- !u!4 &1369903514
 Transform:
   m_ObjectHideFlags: 0
@@ -1800,6 +1783,24 @@ Transform:
   - {fileID: 619715855}
   m_Father: {fileID: 30570418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369903515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369903512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707c7763d57896c4794c4ba4f00dd29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 0}
+  missionTimer: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
+  - {fileID: 11400000, guid: e00cbf67c27e1b340b6a6038541b6128, type: 2}
+  correctRecipe: {fileID: 11400000, guid: c5b958a3ff852d949a1e445493cf6794, type: 2}
 --- !u!1 &1404744818
 GameObject:
   m_ObjectHideFlags: 0

@@ -151,10 +151,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneName;
         currentTask = "Intro";
         gameState.Clear();
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.ClearAllItemSlot();
-        }
+        currentDayController?.ClearGameState();
 
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);
@@ -165,9 +162,10 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         //EndingManager.Instance.CloseRetryUI();
-        gameState.Clear();
 
-        currentTask = "Start";
+        currentTask = "Intro";
+        gameState.Clear();
+        currentDayController?.ClearGameState();
 
         // TaskHandler의 상태 초기화
         currentDayController?.GetTaskHandler()?.ResetTasks();
