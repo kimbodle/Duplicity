@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 619715857}
   - component: {fileID: 619715856}
   m_Layer: 0
-  m_Name: Ayla
+  m_Name: Tomi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1023,8 +1023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98d6765780f1fe43ab0cf1ec5de41cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 267adf3011d42484aa76ff04917f04f1, type: 2}
-  characterSprite: {fileID: 21300000, guid: 934d5ba3d1de05c4a8a7bc3fc6bcb360, type: 3}
+  dialog: {fileID: 11400000, guid: 7e7f67f742f74304da3863943dbc406a, type: 2}
+  characterSprite: {fileID: 21300000, guid: 73e46b73325277a4da17d18702fa82b3, type: 3}
 --- !u!114 &619715858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,7 +1324,7 @@ GameObject:
   - component: {fileID: 870378158}
   - component: {fileID: 870378157}
   m_Layer: 0
-  m_Name: Tom (1)
+  m_Name: Choly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1405,8 +1405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98d6765780f1fe43ab0cf1ec5de41cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 267adf3011d42484aa76ff04917f04f1, type: 2}
-  characterSprite: {fileID: 21300000, guid: 2a9204b7359034544953b595b263b8b5, type: 3}
+  dialog: {fileID: 11400000, guid: ac61357414f8b794890418077feaa998, type: 2}
+  characterSprite: {fileID: 21300000, guid: 0e84d314cf319fa4386b88885ea6b20f, type: 3}
 --- !u!114 &870378159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98d6765780f1fe43ab0cf1ec5de41cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: {fileID: 11400000, guid: 267adf3011d42484aa76ff04917f04f1, type: 2}
+  dialog: {fileID: 11400000, guid: 6e71c60f640a16845b4f365b5a70ed60, type: 2}
   characterSprite: {fileID: 21300000, guid: 2a9204b7359034544953b595b263b8b5, type: 3}
 --- !u!114 &1839438279
 MonoBehaviour:
