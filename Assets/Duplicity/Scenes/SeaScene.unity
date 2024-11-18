@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 1530736395}
   - component: {fileID: 1530736394}
   - component: {fileID: 1530736393}
+  - component: {fileID: 1530736397}
   m_Layer: 5
   m_Name: MissionCanvas
   m_TagString: Untagged
@@ -662,6 +663,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1530736397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530736392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707c7763d57896c4794c4ba4f00dd29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 11400000, guid: 30a958a16c7577b4cb2aab52c68e8e4b, type: 2}
+  missionTimer: {fileID: 8348578436795481582}
+  items: []
+  correctRecipe: {fileID: 0}
 --- !u!1 &1568658187
 GameObject:
   m_ObjectHideFlags: 0

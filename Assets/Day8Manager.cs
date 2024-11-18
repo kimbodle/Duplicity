@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Day8Manager : MonoBehaviour
 {
     public Dialog dialog;
-    public MissionTimer missionTimer;
+    public SignMisisonTimer missionTimer;
     public Item[] items;
     public Item correctRecipe;
 
@@ -17,6 +16,7 @@ public class Day8Manager : MonoBehaviour
         {
             if (DialogManager.Instance != null)
             {
+                UIManager.Instance.EndingUI();
                 DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
                 DialogManager.Instance.PlayerMessageDialog(dialog);
             }
