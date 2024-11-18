@@ -28,6 +28,7 @@ public class VaccineMission : MonoBehaviour
     public TMP_Text chemicalSequenceDisplay; // 시약 순서 표시 UI
 
     private int shakeCount = 0; // 핸드폰 흔든 횟수
+    private ShakeDetector shakeDetector;
 
 
     private void Awake()
@@ -36,6 +37,19 @@ public class VaccineMission : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+    private void Start()
+    {
+        // ShakeDetector 초기화 및 흔들기 이벤트 연결
+        shakeDetector = gameObject.AddComponent<ShakeDetector>();
+        shakeDetector.shakeThreshold = 2.0f;
+        shakeDetector.shakeCooldown = 0.5f;
+        shakeDetector.OnShake += HandleShakeDetected;
+    }
+    private void HandleShakeDetected()
+    {
+        Debug.Log("핸드폰 흔들기 감지됨!");
+        ShakeFlask();
     }
 
     // 미션 완료 처리
@@ -114,7 +128,6 @@ public class VaccineMission : MonoBehaviour
         if (shakeCount == 7)
         {
             CompleteMission("ShakeFlask");
-            //인벤토리 비활성화 추가
             EvaluateResult(); // 7번 흔들기 완료 후 결과 평가
         }
     }
@@ -122,6 +135,11 @@ public class VaccineMission : MonoBehaviour
     // 결과 평가
     public void EvaluateResult()
     {
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.EndingUI();
+        }
+
         if (completedMissions.Count < correctOrder.Count)
         {
             Debug.Log("모든 미션을 완료하지 않았습니다. 회색 플라스크로 변경.");
@@ -156,11 +174,6 @@ public class VaccineMission : MonoBehaviour
     // 플라스크 색상 변경
     private void SetFlaskSprite(bool isSuccess)
     {
-        if(UIManager.Instance != null)
-        {
-            UIManager.Instance.EndingUI();
-        }
-
         flask.SetActive(false);
 
         if (isSuccess)
