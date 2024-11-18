@@ -85,7 +85,10 @@ public class Day6DialogSelection : MonoBehaviour
     {
         // 콜백을 한 번만 실행하도록 등록 해제
         DialogManager.Instance.OnDialogEnd -= OnDialogEnd;
-
-        EndingManager.Instance.LoadEnding("Ending", "배드엔딩", 0);
+        FadeManager.Instance.StartFadeOut(() =>
+        {
+            EndingManager.Instance.LoadEnding("Ending", "나도 이렇게 끝내고 싶지 않았어.", 0);
+        }, true, 3f);
+        
     }
 }

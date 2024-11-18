@@ -108,9 +108,15 @@ public class SeaSignMission : MonoBehaviour
     private void MissionClear()
     {
         Debug.Log("미션 클리어!");
-        if (EndingManager.Instance != null)
+        if(FadeManager.Instance != null)
         {
-            EndingManager.Instance.LoadEnding("Ending", "Try: 노력하다", 1);
+            FadeManager.Instance.StartFadeOut(() =>
+            {
+                if (EndingManager.Instance != null)
+                {
+                    EndingManager.Instance.LoadEnding("Ending", "평범한 토끼의 삶, 난 만족해.", 1);
+                }
+            }, true, 3f);
         }
     }
 }

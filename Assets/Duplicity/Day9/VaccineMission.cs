@@ -199,11 +199,27 @@ public class VaccineMission : MonoBehaviour
         Debug.Log("Final Ending 실행!");
         if (isSuccess)
         {
-            EndingManager.Instance.LoadEnding("Ending", "Yell: 외치다", 2);
+            
+            if (FadeManager.Instance != null)
+            {
+                FadeManager.Instance.StartFadeOut(() =>
+                {
+                    if (EndingManager.Instance != null)
+                    {
+                        EndingManager.Instance.LoadEnding("Ending", "아픔 어쩌구", 2);
+                    }
+                }, true, 3f);
+            }
         }
         else
         {
-            EndingManager.Instance.LoadEnding("GameOver", "실험 틀림", 9);
+            FadeManager.Instance.StartFadeOut(() =>
+            {
+                if (EndingManager.Instance != null)
+                {
+                    EndingManager.Instance.LoadEnding("GameOver", "실험 틀림", 9);
+                }
+            }, true, 3f);
         }
     }
 
