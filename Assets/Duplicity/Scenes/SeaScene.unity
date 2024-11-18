@@ -912,18 +912,19 @@ MonoBehaviour:
   reverseCards:
   - {fileID: 769462316}
   - {fileID: 873577198}
-  seaSigns:
+  correctSigns:
   - {fileID: 881825533, guid: 41c0d7b5150375244abe5badf3623e64, type: 3}
   - {fileID: -1300733084, guid: aa7967d38d6de46409fd7e2cb8cd9bb7, type: 3}
   - {fileID: -1222588177, guid: 69bf14c5f9d43294a9fac319cd4de2bd, type: 3}
   - {fileID: 1215072365, guid: 76b3fa8efea1a7448aeb367411a15618, type: 3}
   - {fileID: -2104791524, guid: 5de2ba471ea3af3468831ed42e3bc799, type: 3}
-  nonSeaSigns:
+  incorrectSigns:
   - {fileID: -297778666, guid: 41c0d7b5150375244abe5badf3623e64, type: 3}
   - {fileID: -1321984712, guid: aa7967d38d6de46409fd7e2cb8cd9bb7, type: 3}
   - {fileID: -1990112965, guid: 69bf14c5f9d43294a9fac319cd4de2bd, type: 3}
   - {fileID: 895516953, guid: 76b3fa8efea1a7448aeb367411a15618, type: 3}
   - {fileID: 1114277099, guid: 5de2ba471ea3af3468831ed42e3bc799, type: 3}
+  maxRounds: 5
   timer: {fileID: 8348578436795481582}
 --- !u!1 &1766228593
 GameObject:
