@@ -12,10 +12,12 @@ public class Day8Controller : DayController
         allRabbitCount = 3;
         talkRabbitCount = 0;
 
-        //맵 아이콘 띄워주기
+        //Map, Inventory 활성화
         UIManager.Instance.ActiveMapIcon();
-        MapManager.Instance.InitializeMapRegions();
+        UIManager.Instance.ActiveInventory();
 
+        //Map 초기화
+        MapManager.Instance.InitializeMapRegions();
         MapManager.Instance.UnlockRegion("SeaScene");
         //프린트 파일 2 를 획득 했을 경우 연구소 오픈 로직 추가
         bool hasRecipe = GameManager.Instance.HasSeenEnding("EndingItem", 0);
@@ -25,8 +27,6 @@ public class Day8Controller : DayController
             MapManager.Instance.UnlockRegion("LaboratoryScene");
         }
     }
-
-
 
     public override void CompleteTask(string task)
     {
@@ -44,7 +44,6 @@ public class Day8Controller : DayController
         }
     }
 
-    
     public override bool IsDayComplete(string currentTask)
     {
         return gameState.ContainsKey("ItemCollected") && gameState["ItemCollected"];
@@ -73,14 +72,14 @@ public class Day8Controller : DayController
             }
             if (regionName == "LaboratoryScene")
             {
-                //모든 피난묘와 대화했으면 + 노트북을 획득 했을 경우 조건 추가 > 회색 처리로 변경
+                //모든 피난묘와 대화했으면 + 제조법을 획득했을 경우 이동
                 if (HasTalkWithAllRabbit())
                 {
                     StateManager.Instance.LoadSubScene(regionName);
                 }
                 else
                 {
-                    DialogManager.Instance.AdviseMessageDialog(1);
+                    DialogManager.Instance.AdviseMessageDialog(0);
                 }
             }
             if (regionName == "ShelterScene")

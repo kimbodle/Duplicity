@@ -29,7 +29,6 @@ public class Day7Controller : DayController
         }
 
     }
-       
 
     public override bool IsDayComplete(string currentTask)
     {

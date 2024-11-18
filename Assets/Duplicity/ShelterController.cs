@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShelterController : MonoBehaviour
 {
     private int currentDay = 0;
     [SerializeField] private GameObject[] DayCanvas;
+    private Day8Manager day8Manager;
 
     void Start()
     {
@@ -45,6 +47,17 @@ public class ShelterController : MonoBehaviour
             if (DayCanvas[3] != null)
             {
                 DayCanvas[3].SetActive(true);
+            }
+
+            day8Manager = FindObjectOfType<Day8Manager>();
+
+            if (day8Manager != null)
+            {
+                day8Manager.AddDay8Items();
+            }
+            else
+            {
+                Debug.LogWarning("Day8Manager -> null");
             }
         }
         else

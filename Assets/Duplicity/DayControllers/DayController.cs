@@ -37,10 +37,16 @@ public abstract class DayController : MonoBehaviour
         {
             if (gameState[taskKey])
             {
-                Debug.Log($"현재 {taskKey}가 있음.");
+                Debug.Log($"gameState : {taskKey} = true");
             }
 
         }
+    }
+    public void ClearGameState()
+    {
+        gameState.Clear();
+        gameState["Intro"] = true;
+        Debug.Log("gameState가 비워짐.");
     }
 
     // Task 진행 상황 불러오기
