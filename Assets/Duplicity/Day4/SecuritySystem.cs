@@ -14,7 +14,6 @@ public class SecuritySystem : MonoBehaviour
     public Button closeButton;
     [Space(10)]
     public Dialog dialog;
-    private FadeManager fadeManager; // 페이드 관리를 위한 클래스 참조
     public SecretLab secretLab; // SecretLab 클래스 참조
 
     private float timeLimit = 77f;
@@ -23,7 +22,6 @@ public class SecuritySystem : MonoBehaviour
 
     void Start()
     {
-        fadeManager = GetComponent<FadeManager>();
         // missionBehaviours 배열의 각 요소를 IMission으로 캐스팅
         missions = new IMission[missionBehaviours.Length];
         for (int i = 0; i < missionBehaviours.Length; i++)
@@ -84,7 +82,11 @@ public class SecuritySystem : MonoBehaviour
         Debug.Log("전체 보안 시스템 해킹 미션 성공!");
         missionCompleted = true;
         OnCloseButton();
-        fadeManager.StartFadeOut(secretLab.SecretLabDisplay);
+        FadeManager.Instance.StartFadeOut(() =>
+        {
+            Debug.Log("SecretLabDisplay 실행");
+            secretLab.SecretLabDisplay();
+        }, true, 1.5f);
     }
 
     public void OnCloseButton()
@@ -97,6 +99,10 @@ public class SecuritySystem : MonoBehaviour
         Debug.Log("전체 보안 시스템 해킹 미션 성공!");
         missionCompleted = true;
         OnCloseButton();
-        fadeManager.StartFadeOut(secretLab.SecretLabDisplay);
+        FadeManager.Instance.StartFadeOut(() =>
+        {
+            Debug.Log("SecretLabDisplay 실행");
+            secretLab.SecretLabDisplay();
+        }, true); // autoFadeIn을 true로 설정
     }
 }

@@ -7362,7 +7362,6 @@ GameObject:
   - component: {fileID: 1080762841}
   - component: {fileID: 1080762840}
   - component: {fileID: 1080762844}
-  - component: {fileID: 1080762845}
   m_Layer: 5
   m_Name: MissionCanvas
   m_TagString: Untagged
@@ -7477,21 +7476,6 @@ MonoBehaviour:
   closeButton: {fileID: 613785198}
   dialog: {fileID: 11400000, guid: 9bc21f8c5da187f4f9964b03813ded4e, type: 2}
   secretLab: {fileID: 632085054}
---- !u!114 &1080762845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080762839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f70bc30fc70d154c907587a9fd9109a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeImage: {fileID: 8850321710702871330}
-  fadeSpeed: 1
-  fadeSpeed22: 5
 --- !u!1 &1111672589
 GameObject:
   m_ObjectHideFlags: 0
@@ -12373,17 +12357,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b53bad7e5d55a48932c5002279745e, type: 3}
---- !u!114 &8850321710702871330 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2157225368486469529, guid: 56b53bad7e5d55a48932c5002279745e, type: 3}
-  m_PrefabInstance: {fileID: 8850321710702871329}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8850321710702871331 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4276844699539766681, guid: 56b53bad7e5d55a48932c5002279745e, type: 3}

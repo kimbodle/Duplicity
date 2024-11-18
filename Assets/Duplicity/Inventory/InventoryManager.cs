@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
         {
             detailPanel.SetActive(false);
         }
-        AddItemToInventory(item);
+        //AddItemToInventory(item);
     }
 
     // 아이템을 슬롯에 추가
