@@ -41,7 +41,10 @@ public class SecuritySystem : MonoBehaviour
         {
             securitySystemPanel.SetActive(true);
             StartCoroutine(StartTimer());
-            DialogManager.Instance.PlayerMessageDialog(dialog);
+            if(DialogManager.Instance != null)
+            {
+                DialogManager.Instance.PlayerMessageDialog(dialog);
+            }
             isStart = false;
         }
         else

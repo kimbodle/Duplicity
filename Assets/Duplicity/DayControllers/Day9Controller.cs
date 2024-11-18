@@ -21,6 +21,7 @@ public class Day9Controller : DayController
         if (task == "TheEnd")
         {
             MarkTaskComplete(task);
+            UpdateCurrentTask(task);
         }
     }
 

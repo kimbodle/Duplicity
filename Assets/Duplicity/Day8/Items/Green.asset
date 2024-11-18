@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   itemName: "\uCD08\uB85D \uC2DC\uC57D"
-  itemIcon: {fileID: 21300000, guid: 4951a01f95e9f9f45a43b9445a43c7fe, type: 3}
+  itemIcon: {fileID: 980675351, guid: 8c761562d7d806a42bdf059e93124d64, type: 3}
   canViewDetails: 0
   itemDescription: "\uCD08\uB85D \uC2DC\uC57D"
