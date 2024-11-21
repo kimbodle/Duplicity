@@ -6,6 +6,7 @@ public class Day8Manager : MonoBehaviour
 {
     public Dialog dialog;
     public SignMisisonTimer missionTimer;
+    public MissionTimer missionTimer2;
     public Item[] items;
     public Item correctRecipe;
 
@@ -16,7 +17,10 @@ public class Day8Manager : MonoBehaviour
         {
             if (DialogManager.Instance != null)
             {
-                UIManager.Instance.EndingUI();
+                if(missionTimer != null)
+                {
+                    UIManager.Instance.EndingUI();
+                }
                 DialogManager.Instance.OnDialogEnd += HandleDialogEnd;
                 DialogManager.Instance.PlayerMessageDialog(dialog);
             }
@@ -39,8 +43,16 @@ public class Day8Manager : MonoBehaviour
     }
     private void HandleDialogEnd()
     {
-        Debug.Log("다이얼로그가 종료되었습니다.");
-        missionTimer.gameObject.SetActive(true);
-        missionTimer.isMissionActive = true;
+        Debug.Log("다이얼로그가 종료됨.");
+        if(missionTimer != null)
+        {
+            missionTimer.gameObject.SetActive(true);
+            missionTimer.isMissionActive = true;
+        }
+        if (missionTimer2 != null)
+        {
+            missionTimer2.gameObject.SetActive(true);
+            missionTimer2.isMissionActive = true;
+        }
     }
 }

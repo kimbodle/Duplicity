@@ -76,6 +76,7 @@ public class Day8Controller : DayController
                 if (HasTalkWithAllRabbit())
                 {
                     StateManager.Instance.LoadSubScene(regionName);
+                    UIManager.Instance.ActiveInventory();
                 }
                 else
                 {
