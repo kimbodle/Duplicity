@@ -5590,7 +5590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: cd5d03f57c8746442a916f624a0c8288, type: 2}
-  missionTimer: {fileID: 6540717403397042865}
+  missionTimer: {fileID: 0}
+  missionTimer2: {fileID: 6540717403397042865}
   items: []
   correctRecipe: {fileID: 0}
 --- !u!1 &807658952
@@ -7403,7 +7404,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -9213,7 +9214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1507915344
 Transform:
   m_ObjectHideFlags: 0
@@ -12194,15 +12195,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346324608637277835, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954013706896657821, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 154
       objectReference: {fileID: 0}
     - target: {fileID: 7954013706896657821, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 7954013706896657821, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_LocalPosition.z

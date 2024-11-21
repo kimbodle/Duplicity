@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
 
     public GameObject LoginUI;
+    [Space(10)]
+    public Button settingIcon;
+    public GameObject settingUI;
 
     [Space(10)] //지도
     public GameObject mapUI; // 지도 UI 오브젝트
@@ -66,6 +70,22 @@ public class UIManager : MonoBehaviour
         LoginUI.SetActive(false);
     }
 
+    public void ToggleSettingUI()
+    {
+        settingUI.SetActive(!settingUI.activeSelf);
+    }
+
+    public void LogoutButton()
+    {
+        FirebaseAuthController.Instance.Logout();
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void QuitGameButton()
+    {
+        Application.Quit();
+    }
+
     //Map
     public void ActiveMapIcon()
     {
@@ -100,7 +120,7 @@ public class UIManager : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    //ing
+    //Ending
     public void EndingUI()
     {
         DeactivateInventory();
@@ -108,19 +128,19 @@ public class UIManager : MonoBehaviour
         mapUI.SetActive(false);
     }
 
-        //DayIntro
-        private void InitializeDaySprites()
+    //DayIntro
+    private void InitializeDaySprites()
     {
         daySpriteDictionary = new Dictionary<int, Sprite>();
 
         for (int i = 0; i < daySprites.Count; i++)
         {
-            daySpriteDictionary.Add(i+1, daySprites[i]);
+            daySpriteDictionary.Add(i + 1, daySprites[i]);
         }
     }
     public void DisplayDayIntro(int currentDay)
     {
-        if(currentDay == 0) { return; }
+        if (currentDay == 0) { return; }
         if (daySpriteDictionary.TryGetValue(currentDay, out Sprite daySprite))
         {
             dayIntroCanvas.SetActive(true);
