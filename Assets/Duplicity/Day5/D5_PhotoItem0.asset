@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: "\uB2E4\uC815\uD574\uBCF4\uC774\uB294 \uAC00\uC871 \uC0AC\uC9C4"
   itemIcon: {fileID: 21300000, guid: 03ca4d32a2ee8544185e89b7add0d745, type: 3}
   canViewDetails: 1
-  itemDescription: "\uC5EC\uAE30 \uBB38\uAD6C \uBB50\uD558\uC9C0"
+  itemDescription: "\uC5F0\uAD6C\uC2E4 \uC55E\uC5D0\uC11C \uB85C\uB77C\uAC00 \uBD80\uBAA8\uB2D8\uACFC
+    \uD568\uAED8 \uD2B8\uB85C\uD53C\uB97C \uB4E4\uACE0 \uCC0D\uC740 \uC0AC\uC9C4\uC774\uB2E4."

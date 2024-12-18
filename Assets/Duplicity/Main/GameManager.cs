@@ -51,6 +51,15 @@ public class GameManager : MonoBehaviour
             LoadDayController(currentDay);
         }
         isInitializingGameState = false;
+
+        if (currentDay != 0 && currentDay != 1 && currentDay != 9)
+        {
+            UIManager.Instance.ActiveDialogHistoryIcon();
+        }
+        else
+        {
+            UIManager.Instance.DeactivateDialogHistoryIcon();
+        }
     }
 
     //Day의 모든 Task를 완료 했을 시 따로 호출
@@ -152,6 +161,7 @@ public class GameManager : MonoBehaviour
         currentTask = "Intro";
         gameState.Clear();
         currentDayController?.ClearGameState();
+        DialogManager.Instance.ClearHistory();
 
         SaveGame();
         UIManager.Instance.DisplayDayIntro(currentDay);

@@ -9,23 +9,26 @@ public class UIManager : MonoBehaviour
 {
 
     public static UIManager Instance { get; private set; }
-
+    [Header("Login")]
     public GameObject LoginUI;
-    [Space(10)]
+
+    [Header("Setting")]
     public Button settingIcon;
     public GameObject settingUI;
 
-    [Space(10)] //지도
+    [Header("Map")]
     public GameObject mapUI; // 지도 UI 오브젝트
     public Button mapIconButton; // 지도 아이콘 버튼
 
-
-    [Space(10)] //인벤토리
+    [Header("Inventory")]
     public GameObject inventoryManager;
     public Button inventoryIconButton;
     public GameObject inventoryUI;
 
-    [Space(10)] //Day
+    [Header("DialogHistory")]
+    public GameObject dialogHistoryIconButton;
+
+    [Header("Days")]
     public GameObject dayIntroCanvas;
     public Image dayIntroImage;
     public List<Sprite> daySprites; // Inspector에서 순서대로 추가: 0 -> Day 1, 1 -> Day 2, 등
@@ -54,6 +57,7 @@ public class UIManager : MonoBehaviour
         inventoryUI.SetActive(false);
 
         mapIconButton.gameObject.SetActive(false);
+        dialogHistoryIconButton.gameObject.SetActive(false);
 
         //mapIconButton.onClick.AddListener(ToggleMapUI);
         InitializeDaySprites();
@@ -70,6 +74,7 @@ public class UIManager : MonoBehaviour
         LoginUI.SetActive(false);
     }
 
+    //Setting
     public void ToggleSettingUI()
     {
         settingUI.SetActive(!settingUI.activeSelf);
@@ -118,6 +123,21 @@ public class UIManager : MonoBehaviour
     public void TogglInventoryUI()
     {
         inventoryUI.SetActive(!inventoryUI.activeSelf);
+    }
+    
+    //DialogHistorySystem
+    public void ActiveDialogHistoryIcon()
+    {
+        dialogHistoryIconButton.SetActive(true);
+    }
+    public void DeactivateDialogHistoryIcon()
+    {
+        dialogHistoryIconButton.SetActive(false);
+    }
+
+    public void TogglDialogHistoryUI()
+    {
+        DialogManager.Instance.ToggleHistoryUI();
     }
 
     //Ending

@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class Day0IntroPlay : MonoBehaviour
 {
-    public Sprite mainCharacterSprite; // 주인공 이미지
-    public Dialog dialogIntro; // 에디터에서 설정할 Dialog 객체
-    //Dialog dialogIntro;
+    public Dialog dialogIntro;
 
     Day0Controller day0controller;
     DialogManager dialogManager;
 
     private void Start()
     {
-        //dialogIntro = GetComponent<Dialog>();
         day0controller = FindObjectOfType<Day0Controller>();
 
         dialogManager = DialogManager.Instance;
-        dialogManager.characterImage.sprite = mainCharacterSprite;
 
         // 다이얼로그 종료 이벤트 구독
         dialogManager.OnDialogEnd += HandleDialogEnd;
-
-        DialogManager.Instance.StartDialog(dialogIntro, mainCharacterSprite);
-    }
-
-    public void OnClickIntroTestButton()
-    {
-        DialogManager.Instance.StartDialog(dialogIntro, mainCharacterSprite);
+        DialogManager.Instance.PlayerMessageDialog(dialogIntro);
     }
 
     private void HandleDialogEnd()

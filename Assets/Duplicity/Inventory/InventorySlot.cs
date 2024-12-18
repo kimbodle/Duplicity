@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
         canvasGroup = icon.GetComponent<CanvasGroup>();
         currentDay = GameManager.Instance.GetCurrentDay();
         nullIcon = icon;
-
+        Debug.Log(nullIcon.gameObject.name);
         if (canvasGroup == null)
         {
             canvasGroup = icon.gameObject.AddComponent<CanvasGroup>();

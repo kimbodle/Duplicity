@@ -22,3 +22,4 @@ MonoBehaviour:
   - "\uC774\uB7F0 \uB054\uC9C1\uD55C \uC77C\uC774 \uBC8C\uC5B4\uC9C4 \uC774\uC720
     \uB9D0\uC774\uC57C.."
   isPlayerSpeaking: 0101010101
+  characterSprite: {fileID: 21300000, guid: f880e657fb15b2846bebfc93f26f764d, type: 3}

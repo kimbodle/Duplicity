@@ -258,3 +258,4 @@ MonoBehaviour:
   timeLimit: 120
   timerText: {fileID: 4421117897034610422}
   isMissionActive: 0
+  dialog: {fileID: 0}

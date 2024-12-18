@@ -9,18 +9,23 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance; // 싱글톤 인스턴스
 
-    public GameObject dialogPanel; // 다이얼로그 패널
-    public TMP_Text dialogText; // 다이얼로그 텍스트
-    public Image characterImage; // 캐릭터 이미지
-    public Button nextButton; // 다음 문장 버튼
+    [Header("UI Components")]
+    public GameObject dialogPanel;            // 대화 패널
+    public TMP_Text dialogText;               // 현재 대사 텍스트
+    public Image characterImage;              // 캐릭터 이미지
+    public Button nextButton;                 // 다음 버튼
     public float typingSpeed = 0.05f; // 타이핑 속도 조절 변수
     public Dialog[] advissMessages;
-
-    [Space(10)]
-    public Sprite playerImage; // 플레이어 이미지
+    [Header("History UI")]
+    public GameObject historyPanel;           // 히스토리 패널
+    public Transform contentParent;           // ScrollView Content
+    public GameObject dialogEntryPrefab;      // 프리팹
+    [Header("Assets")]
+    public Sprite lauraImage;
 
     private Queue<(Dialog dialog, Sprite characterSprite)> dialogQueue; // 대기 중인 다이얼로그 큐
     private Queue<(string sentence, bool isPlayerSpeaking)> sentenceQueue; // 화자 정보를 포함한 문장 큐
+    private List<Dialog> dialogHistory;       // 히스토리에 저장되는 Dialog
     private bool isTyping = false; // 코루틴 실행 여부를 나타내는 변수
     private bool isDialogActive = false; // 다이얼로그 활성 상태를 추적하는 변수
     private Sprite currentCharacterSprite; // 현재 대화 중인 캐릭터 이미지
@@ -46,6 +51,7 @@ public class DialogManager : MonoBehaviour
     {
         dialogQueue = new Queue<(Dialog, Sprite)>();
         sentenceQueue = new Queue<(string, bool)>();
+        dialogHistory = new List<Dialog>();
         dialogPanel.SetActive(false);
         nextButton.onClick.AddListener(DisplayNextSentence); // 버튼 클릭 이벤트 추가
         nextButton.gameObject.SetActive(false); // 버튼을 처음에는 비활성화
@@ -58,6 +64,12 @@ public class DialogManager : MonoBehaviour
         {
             dialogQueue.Enqueue((dialog, characterSprite));
             return;
+        }
+
+        // 히스토리에 Dialog 저장 (중복 방지)
+        if (!dialogHistory.Contains(dialog))
+        {
+            dialogHistory.Add(dialog);
         }
 
         // 다이얼로그 시작
@@ -94,7 +106,7 @@ public class DialogManager : MonoBehaviour
         (string sentence, bool isPlayerSpeaking) = sentenceQueue.Dequeue();
 
         // 화자에 따라 캐릭터 이미지를 설정
-        characterImage.sprite = isPlayerSpeaking ? playerImage : currentCharacterSprite;
+        characterImage.sprite = isPlayerSpeaking ? lauraImage : currentCharacterSprite;
 
         StartCoroutine(TypeSentence(sentence));
     }
@@ -133,20 +145,79 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    public void UpdateHistoryUI()
+    {
+        // 기존 UI 제거
+        foreach (Transform child in contentParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // 히스토리 UI 추가
+        foreach (var dialog in dialogHistory)
+        {
+            for (int i = 0; i < dialog.sentences.Length; i++)
+            {
+                GameObject dialogEntry = Instantiate(dialogEntryPrefab, contentParent);
+
+                Image characterImage = dialogEntry.transform.Find("CharactorImage").GetComponent<Image>();
+                TMP_Text dialogText = dialogEntry.transform.Find("DialogHistoryText").GetComponent<TMP_Text>();
+
+                // 플레이어 또는 NPC 이미지 설정
+                bool isPlayerSpeaking = dialog.isPlayerSpeaking[i];
+                characterImage.sprite = isPlayerSpeaking ? lauraImage : dialog.characterSprite;
+
+                /*
+                // 텍스트 설정
+                dialogText.text = isPlayerSpeaking
+                    ? $"<color=blue>Player:</color> {dialog.sentences[i]}"
+                    : $"<color=green>NPC:</color> {dialog.sentences[i]}";
+                */
+                dialogText.text = dialog.sentences[i];
+            }
+        }
+    }
+
+    public void ToggleHistoryUI()
+    {
+        historyPanel.SetActive(!historyPanel.activeSelf);
+
+        if (historyPanel.activeSelf)
+        {
+            UpdateHistoryUI();
+        }
+    }
+
+    public void ClearHistory()
+    {
+        // 히스토리 리스트 비우기
+        dialogHistory.Clear();
+
+        // 히스토리 UI 초기화
+        foreach (Transform child in contentParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        Debug.Log("대화 히스토리가 초기화");
+    }
+
+
+
     public void PlayerMessageDialog(Dialog dialog)
     {
-        StartDialog(dialog, playerImage);
+        StartDialog(dialog, lauraImage);
     }
 
     public void AdviseMessageDialog(int adviseMessageDialogNumber)
     {
         if (adviseMessageDialogNumber < advissMessages.Length)
         {
-            StartDialog(advissMessages[adviseMessageDialogNumber], playerImage);
+            StartDialog(advissMessages[adviseMessageDialogNumber], lauraImage);
         }
         else
         {
-            Debug.LogWarning("유효하지 않은 조언 메시지 인덱스입니다.");
+            Debug.LogWarning("유효하지 않은 조언 메시지 인덱스");
         }
     }
 }

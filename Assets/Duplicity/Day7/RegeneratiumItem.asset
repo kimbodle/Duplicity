@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: Regeneratium
   itemIcon: {fileID: -565428201, guid: a68342080bc53b041bef2b119bd39dc4, type: 3}
   canViewDetails: 1
-  itemDescription: "\uB9AC\uB77C\uC81C\uB124\uB77C\uD2F0\uC6C0\uC774\uB2E4."
+  itemDescription: "\uC774\uAC83\uC740 \uD76C\uADC0\uBCD1 \uCE58\uB8CC\uC81C\uB97C
+    \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC5F0\uAD6C\uB418\uC5C8\uB358 \uBB3C\uC9C8,
+    \uB9AC\uC81C\uB124\uB77C\uD2F0\uC6C0\uC774\uB2E4."

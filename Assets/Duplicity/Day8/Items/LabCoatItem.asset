@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: LabCoatItem
   itemIcon: {fileID: 21300000, guid: 9fd58b74ff795ad48b76550051d97273, type: 3}
-  canViewDetails: 0
-  itemDescription: "\uC2E4\uD5D8\uBCF5"
+  canViewDetails: 1
+  itemDescription: "\uB85C\uB77C\uC758 \uC2E4\uD5D8\uBCF5\uC774\uB2E4."

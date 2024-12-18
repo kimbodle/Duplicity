@@ -5,7 +5,6 @@ using UnityEngine;
 public class Day2Manager : MonoBehaviour
 {
     public Dialog[] dialog;
-    public Sprite characterSprite;
     public MissionTimer missionTimer;
 
     private int dialogIndex = 0;
@@ -20,7 +19,7 @@ public class Day2Manager : MonoBehaviour
         {
             dialogManager = DialogManager.Instance;
             //다이얼로그 0
-            dialogManager.StartDialog(dialog[dialogIndex], characterSprite);
+            dialogManager.PlayerMessageDialog(dialog[dialogIndex]);
             // 다이얼로그 종료 이벤트 구독
             dialogManager.OnDialogEnd += HandleDialogEnd;
         }
@@ -51,7 +50,7 @@ public class Day2Manager : MonoBehaviour
     public void CompleteItemCollected()
     {
         dialogIndex++;
-        dialogManager.StartDialog(dialog[dialogIndex], characterSprite);
+        dialogManager.PlayerMessageDialog(dialog[dialogIndex]);
     }
     private void OnDestroy()
     {
