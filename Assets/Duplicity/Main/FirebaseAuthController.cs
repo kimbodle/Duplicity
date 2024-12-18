@@ -105,11 +105,13 @@ public class FirebaseAuthController : MonoBehaviour
         if (auth != null && auth.CurrentUser != null)
         {
             Debug.Log($"이미 로그인된 사용자: {auth.CurrentUser.Email}");
+            messageText.text = string.Empty;
             Logout();
         }
         else
         {
             Debug.Log("로그인 상태가 아님");
+            messageText.text = string.Empty;
         }
     }
 

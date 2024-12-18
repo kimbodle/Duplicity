@@ -4502,7 +4502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691e45a28a9af2b4685295cd0bf595f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uB204\uAD70\uAC00\uC758 \uAC1C\uC778 \uCE90\uBE44\uB137"
+  interactionMessage: "\uB9C8\uB9AC\uC544\uC758 \uAC1C\uC778 \uCE90\uBE44\uB137"
   CabinetPasswordPanel: {fileID: 855976853}
   dialog: {fileID: 11400000, guid: 0509c32d7cf84034fa944a496a1559d6, type: 2}
   closeButton: {fileID: 1652763526}
@@ -5306,7 +5306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea53c7bda2a9ae4ea238df8f378c444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uCEF4\uD4E8\uD130\uAC00 \uC788\uB2E4."
+  interactionMessage: "\uB85C\uBC84\uD2B8\uC758 \uCEF4\uD4E8\uD130\uAC00 \uC788\uB2E4."
   ComputerPanel: {fileID: 1406901325716963279}
 --- !u!1 &1353383302
 GameObject:
@@ -5493,7 +5493,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

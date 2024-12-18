@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RefuseRabbit : MonoBehaviour
 {
     public Dialog dialog; // 해당 캐릭터의 다이얼로그
-    public Sprite characterSprite; // 해당 캐릭터의 이미지
+    //public Sprite characterSprite; // 해당 캐릭터의 이미지
 
     private bool isTalk= false;
 
@@ -36,7 +36,7 @@ public class RefuseRabbit : MonoBehaviour
     {
         if (dialogManager != null)
         {
-            dialogManager.StartDialog(dialog, characterSprite);
+            dialogManager.StartDialog(dialog, dialog.characterSprite);
             if (isTalk == false)
             {
                 dayController.talkRabbitCount++;

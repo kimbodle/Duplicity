@@ -37,3 +37,4 @@ MonoBehaviour:
     \uD558\uC9C0 \uC54A\uC558\uC744 \uD150\uB370.."
   - ....
   isPlayerSpeaking: 01000100010000010000000001010101
+  characterSprite: {fileID: 21300000, guid: 73e46b73325277a4da17d18702fa82b3, type: 3}

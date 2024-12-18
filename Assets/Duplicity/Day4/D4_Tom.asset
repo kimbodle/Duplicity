@@ -20,3 +20,4 @@ MonoBehaviour:
   - "\uB124 \uADF8\uB7F4\uAC8C\uC694 \uD560\uC544\uBC84\uC9C0.\n\uB9D0\uC500 \uAC10\uC0AC\uD569\uB2C8\uB2E4."
   - "\uBC24\uC744 \uC870\uC2EC\uD558\uB77C..."
   isPlayerSpeaking: 00000101
+  characterSprite: {fileID: 21300000, guid: 2a9204b7359034544953b595b263b8b5, type: 3}

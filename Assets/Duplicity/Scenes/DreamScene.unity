@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b91291e1ac61474bab2a8148e768058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uC0AC\uC9C4"
+  interactionMessage: "\uC0AC\uC9C4\uC774\uB2E4."
   bigPanelDisplay: {fileID: 1342074872}
   assignedImage: {fileID: 21300000, guid: 68b6c621b7b0bb140bda9f95e7941b0a, type: 3}
   playerDialog: {fileID: 11400000, guid: 6e4b51aecaa086f4499e0d19f9a4934b, type: 2}
@@ -415,7 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bab95e272e907479b02625243033e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uC0AC\uC9C4 girl 2"
+  interactionMessage: "\uC0AC\uC9C4\uC744 \uAC78 \uC218 \uC788\uB294 \uBCBD\uC774
+    \uBCF4\uC778\uB2E4."
   PhotoMissionPanel: {fileID: 1755816923}
 --- !u!1 &95027517
 GameObject:
@@ -3589,7 +3590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b91291e1ac61474bab2a8148e768058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uC0AC\uC9C4"
+  interactionMessage: "\uC0AC\uC9C4\uC774\uB2E4."
   bigPanelDisplay: {fileID: 1342074872}
   assignedImage: {fileID: 21300000, guid: 03ca4d32a2ee8544185e89b7add0d745, type: 3}
   playerDialog: {fileID: 11400000, guid: f110bca71793a7c499f1fbaadad706dd, type: 2}
@@ -4861,7 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b91291e1ac61474bab2a8148e768058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uC0AC\uC9C4"
+  interactionMessage: "\uC0AC\uC9C4\uC774\uB2E4."
   bigPanelDisplay: {fileID: 1342074872}
   assignedImage: {fileID: 21300000, guid: 10cf83cce8d40c34c9523b605b2ea40b, type: 3}
   playerDialog: {fileID: 11400000, guid: 6259eef9318706b43abaa4a748561e1d, type: 2}
@@ -6651,7 +6652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b91291e1ac61474bab2a8148e768058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: "\uC0AC\uC9C4"
+  interactionMessage: "\uC0AC\uC9C4\uC774\uB2E4."
   bigPanelDisplay: {fileID: 1342074872}
   assignedImage: {fileID: 21300000, guid: e0d6e34bdd609bf44ad4da133d4ec623, type: 3}
   playerDialog: {fileID: 11400000, guid: 68701a4dbbcf6724da4735cf528b21ca, type: 2}

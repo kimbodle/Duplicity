@@ -17,3 +17,4 @@ MonoBehaviour:
     \uBABB\uD574!"
   - ....
   isPlayerSpeaking: 0001
+  characterSprite: {fileID: 21300000, guid: 0e84d314cf319fa4386b88885ea6b20f, type: 3}

@@ -17,3 +17,4 @@ MonoBehaviour:
   - "\uC6B0\uB9AC \uB0A8\uD3B8 \uBCF8 \uC801 \uC788\uC5B4\uC694?"
   - "\uC8C4\uC1A1\uD574\uC694.. \uBCF8 \uC801 \uC5C6\uC2B5\uB2C8\uB2E4.."
   isPlayerSpeaking: 000001
+  characterSprite: {fileID: 21300000, guid: 934d5ba3d1de05c4a8a7bc3fc6bcb360, type: 3}

@@ -31,3 +31,4 @@ MonoBehaviour:
   - "\uC815\uB9D0 \uC9C4\uC2EC\uC73C\uB85C \uB2E4\uC2DC \uD55C \uBC88 \uC8C4\uC1A1\uD574\uC694."
   - "\u2026"
   isPlayerSpeaking: 000101010101010100
+  characterSprite: {fileID: 21300000, guid: 73e46b73325277a4da17d18702fa82b3, type: 3}
