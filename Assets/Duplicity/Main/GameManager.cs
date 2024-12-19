@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        if (authController != null && !string.IsNullOrEmpty(authController.uid))
+        if (authController != null && !string.IsNullOrEmpty(FirebaseAuthController.Instance.Uid))
         {
             var currentState = currentDayController?.GetGameState() ?? new Dictionary<string, bool>();
             firestoreController.SaveGameState(currentDay, currentScene, currentTask, currentState, endingAlbum);
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     //로그인시 실행
     public void LoadGame()
     {
-        if (authController != null && !string.IsNullOrEmpty(authController.uid))
+        if (authController != null && !string.IsNullOrEmpty(FirebaseAuthController.Instance.Uid))
         {
             //Debug.Log("LoadGame 안 if");
             firestoreController.LoadGameState((day, SceneName, task, loadedGameState, loadedEndingAlbum) =>

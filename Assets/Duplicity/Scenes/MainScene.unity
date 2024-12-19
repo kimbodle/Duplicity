@@ -2672,9 +2672,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 954813948}
-        m_TargetAssemblyTypeName: FirebaseAuthController, Assembly-CSharp
-        m_MethodName: Login
+      - m_Target: {fileID: 508694963}
+        m_TargetAssemblyTypeName: FirebaseUIManager, Assembly-CSharp
+        m_MethodName: OnLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2780,6 +2780,7 @@ GameObject:
   - component: {fileID: 508694961}
   - component: {fileID: 508694960}
   - component: {fileID: 508694959}
+  - component: {fileID: 508694963}
   m_Layer: 5
   m_Name: Login UI Canvas
   m_TagString: Untagged
@@ -2873,6 +2874,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &508694963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508694958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3dc75cadb514545958fe74612aab23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailInput: {fileID: 2064671258}
+  passwordInput: {fileID: 208417037}
+  messageText: {fileID: 330887308}
+  UserUidText: {fileID: 469396403}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5581,12 +5598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292dc4fed61927d44aeef6dd69b4d5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emailInput: {fileID: 2064671258}
-  passwordInput: {fileID: 208417037}
-  messageText: {fileID: 330887308}
-  UserUidText: {fileID: 469396403}
   gameManager: {fileID: 187376796}
-  uid: 
 --- !u!1 &987530271
 GameObject:
   m_ObjectHideFlags: 0
@@ -5959,9 +5971,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 954813948}
-        m_TargetAssemblyTypeName: FirebaseAuthController, Assembly-CSharp
-        m_MethodName: Logout
+      - m_Target: {fileID: 508694963}
+        m_TargetAssemblyTypeName: FirebaseUIManager, Assembly-CSharp
+        m_MethodName: OnLogout
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8665,9 +8677,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 954813948}
-        m_TargetAssemblyTypeName: FirebaseAuthController, Assembly-CSharp
-        m_MethodName: Register
+      - m_Target: {fileID: 508694963}
+        m_TargetAssemblyTypeName: FirebaseUIManager, Assembly-CSharp
+        m_MethodName: OnRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9696,7 +9708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1020, y: -249}
+  m_AnchoredPosition: {x: -1018, y: 450}
   m_SizeDelta: {x: 102.7057, y: 102.7057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053488104
@@ -9775,7 +9787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd23815bd109b4c4295d72bd95031a31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 775cfa9ba7c62a04bbffd87af9f79262, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11709,6 +11721,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365204662834143328, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006494642250057709, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006494642250057709, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
