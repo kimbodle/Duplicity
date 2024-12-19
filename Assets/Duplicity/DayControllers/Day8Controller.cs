@@ -12,9 +12,8 @@ public class Day8Controller : DayController
         allRabbitCount = 3;
         talkRabbitCount = 0;
 
-        //Map, Inventory 활성화
+        //Map
         UIManager.Instance.ActiveMapIcon();
-        UIManager.Instance.ActiveInventory();
 
         //Map 초기화
         MapManager.Instance.InitializeMapRegions();
@@ -76,7 +75,6 @@ public class Day8Controller : DayController
                 if (HasTalkWithAllRabbit())
                 {
                     StateManager.Instance.LoadSubScene(regionName);
-                    UIManager.Instance.ActiveInventory();
                 }
                 else
                 {

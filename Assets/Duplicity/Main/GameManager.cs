@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             LoadDayController(currentDay);
         }
         isInitializingGameState = false;
-
+        //DH
         if (currentDay != 0 && currentDay != 1 && currentDay != 9)
         {
             UIManager.Instance.ActiveDialogHistoryIcon();
@@ -59,6 +59,15 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.Instance.DeactivateDialogHistoryIcon();
+        }
+        //Inventory
+        if (currentDay != 5 && currentDay != 7 && currentDay != 8 && currentDay != 9)
+        {
+            UIManager.Instance.DeactivateInventory();
+        }
+        else
+        {
+            UIManager.Instance.ActiveInventory();
         }
     }
 

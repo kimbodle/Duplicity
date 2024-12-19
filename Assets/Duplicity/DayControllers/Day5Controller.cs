@@ -10,8 +10,6 @@ public class Day5Controller : DayController
     //로라의 꿈 속
     public override void Initialize(string currentTask)
     {
-        //Day5 피난묘 대화 x
-        UIManager.Instance.ActiveInventory();
         //아이콘 버그로 start때 임시활성화
         UIManager.Instance.TogglInventoryUI();
         MapManager.Instance.InitializeMapRegions();

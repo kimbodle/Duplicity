@@ -145,6 +145,8 @@ public class UIManager : MonoBehaviour
     {
         DeactivateInventory();
         DeactivateMapIcon();
+        DeactivateDialogHistoryIcon();
+        DialogManager.Instance.ClearHistory();
         mapUI.SetActive(false);
     }
 

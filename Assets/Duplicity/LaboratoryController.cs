@@ -6,7 +6,7 @@ public class LaboratoryController : MonoBehaviour
 {
     private int currentDay = 0;
     [SerializeField] private GameObject[] daysAssets;
-    // Start is called before the first frame update
+
     void Start()
     {
         if (GameManager.Instance != null)
@@ -31,12 +31,12 @@ public class LaboratoryController : MonoBehaviour
         if (currentDay == 2)
         {
             //2부터 시작
-            if (daysAssets[currentDay - 2] != null)
+            if (daysAssets[0] != null)
             {
-                daysAssets[currentDay - 2].SetActive(true);
+                daysAssets[0].SetActive(true);
             }
         }
-        if (currentDay == 4)
+        else if (currentDay == 4)
         {
             //Day4
             if (daysAssets[1] != null)
@@ -44,7 +44,7 @@ public class LaboratoryController : MonoBehaviour
                 daysAssets[1].SetActive(true);
             }
         }
-        if (currentDay == 8)
+        else if (currentDay == 8)
         {
             //Day8
             if (daysAssets[2] != null)

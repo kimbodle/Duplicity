@@ -1,5 +1,6 @@
 using Firebase;
 using Firebase.Auth;
+using Firebase.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -95,7 +96,7 @@ public class FirebaseAuthController : MonoBehaviour
     //OnClick 이벤트 연결
     public void Register(string email, string password, Action<string> callback)
     {
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
@@ -112,7 +113,7 @@ public class FirebaseAuthController : MonoBehaviour
     //OnClick 이벤트 연결
     public void Login(string email, string password, Action<string> callback)
     {
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {

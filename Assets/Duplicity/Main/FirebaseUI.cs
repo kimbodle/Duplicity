@@ -21,7 +21,7 @@ public class FirebaseUIManager : MonoBehaviour
 
         FirebaseAuthController.Instance.Register(email, password, result =>
         {
-            UpdateUI(result, FirebaseAuthController.Instance.Uid);
+            UpdateUI(result, FirebaseAuthController.Instance.Uid ?? string.Empty); // UID가 없으면 빈 문자열
         });
     }
 
@@ -32,7 +32,7 @@ public class FirebaseUIManager : MonoBehaviour
 
         FirebaseAuthController.Instance.Login(email, password, result =>
         {
-            UpdateUI(result, FirebaseAuthController.Instance.Uid);
+            UpdateUI(result, FirebaseAuthController.Instance.Uid ?? string.Empty); // UID가 없으면 빈 문자열
         });
     }
 

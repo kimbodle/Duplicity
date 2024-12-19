@@ -713,7 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!1 &99474311 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5203936313146072775, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1795643242662781056, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
   m_PrefabInstance: {fileID: 99474308}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &99474312
@@ -5929,8 +5929,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1755816924}
   - {fileID: 8765048566183867524}
+  - {fileID: 1755816924}
   - {fileID: 1775169027}
   - {fileID: 970106681}
   m_Father: {fileID: 0}
@@ -7732,7 +7732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -108, y: -112}
+  m_AnchoredPosition: {x: -193, y: -121}
   m_SizeDelta: {x: 131, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
