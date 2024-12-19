@@ -11,7 +11,6 @@ public class Day9Controller : DayController
         
         //맵 아이콘 비활성화
         UIManager.Instance.DeactivateMapIcon();
-        UIManager.Instance.ActiveInventory();
     }
 
 

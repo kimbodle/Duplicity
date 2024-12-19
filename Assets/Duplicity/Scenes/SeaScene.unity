@@ -677,6 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 30a958a16c7577b4cb2aab52c68e8e4b, type: 2}
   missionTimer: {fileID: 8348578436795481582}
+  missionTimer2: {fileID: 0}
   items: []
   correctRecipe: {fileID: 0}
 --- !u!1 &1568658187
@@ -1267,10 +1268,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.15
-  m_fontSizeBase: 36
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1356,8 +1357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -130, y: -133}
-  m_SizeDelta: {x: 119.8833, y: 136.35583}
+  m_AnchoredPosition: {x: -238, y: -109}
+  m_SizeDelta: {x: 102.2643, y: 116.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8348578436795481582
 MonoBehaviour:

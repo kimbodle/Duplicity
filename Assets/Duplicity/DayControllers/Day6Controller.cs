@@ -12,7 +12,6 @@ public class Day6Controller : DayController
         allRabbitCount = 3;
         talkRabbitCount = 0;
 
-        UIManager.Instance.DeactivateInventory();
         //¸Ê ¾ÆÀÌÄÜ ¶ç¿öÁÖ±â
         UIManager.Instance.ActiveMapIcon();
         MapManager.Instance.InitializeMapRegions();
