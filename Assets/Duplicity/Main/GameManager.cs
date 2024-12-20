@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(endingKey);
             SaveGame();
             //// UI에 엔딩 이미지 표시
-            //UIManager.Instance.DisplayEndingImage(endingType, endingIndex);
+            EndingAlbumHandler.Instance.AddEndingToAlbum(endingKey);
         }
     }
 
@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
         stateManager.ActivateDayController(currentDay);
         currentDayController = GetCurrentDayController();
         currentDayController.SetGameState(gameState);
+        EndingAlbumHandler.Instance.InitializeEndingAlbum(endingAlbum);
     }
 
     //씬 전환시 실행

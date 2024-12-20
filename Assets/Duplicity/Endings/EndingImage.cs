@@ -20,8 +20,16 @@ public class EndingImage : MonoBehaviour
         int endingIndex = endingManager.endingIndex;
         string endingMessage = endingManager.endingMessage;
 
-        // 엔딩 앨범에 저장 (중복 방지)
-        GameManager.Instance.SaveEnding("Ending", endingIndex);
+        string sceneName = SceneManager.GetActiveScene().name;
+        if(sceneName == "GameOverScene")
+        {
+            // 엔딩 앨범에 저장 (중복 방지)
+            GameManager.Instance.SaveEnding("GameOver", endingIndex);
+        }
+        else
+        {
+            GameManager.Instance.SaveEnding("Ending", endingIndex);
+        }
 
         // 인덱스에 맞는 배경 이미지 설정
         if (endingIndex >= 0 && endingIndex < EndingBackgrounds.Length)
