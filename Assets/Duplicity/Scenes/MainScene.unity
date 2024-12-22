@@ -9839,7 +9839,7 @@ GameObject:
   - component: {fileID: 1879294111}
   - component: {fileID: 1879294110}
   m_Layer: 0
-  m_Name: S
+  m_Name: Singleton Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12989,6 +12989,34 @@ PrefabInstance:
     - target: {fileID: 6365204662834143328, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1472359261}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkipDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135900049757675379, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9006494642250057709, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_AnchoredPosition.x

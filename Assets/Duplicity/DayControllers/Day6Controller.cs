@@ -17,6 +17,10 @@ public class Day6Controller : DayController
         MapManager.Instance.InitializeMapRegions();
 
         MapManager.Instance.UnlockRegion("ShelterScene");
+        if (HasOpenRegen())
+        {
+            MapManager.Instance.UnlockRegion("RegenScene");
+        }
     }
 
     public override void CompleteTask(string task)

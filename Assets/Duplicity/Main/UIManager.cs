@@ -69,6 +69,8 @@ public class UIManager : MonoBehaviour
     public void LogoutButton()
     {
         FirebaseAuthController.Instance.Logout();
+        ToggleSettingUI();
+        DialogManager.Instance.ClearHistory();
         SingletonManager.Instance.LogoutAndDestroySingletons();
     }
 
