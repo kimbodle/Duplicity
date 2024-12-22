@@ -318,6 +318,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9006494642250057709, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006494642250057709, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9125593705982984641, guid: 939e2e31e34e16d42a92280d59770e02, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -604,7 +612,7 @@ MonoBehaviour:
   nextButton: {fileID: 957346857}
   choiceButton1: {fileID: 1070784351}
   choiceButton2: {fileID: 140217641}
-  soundEffect: {fileID: 0}
+  testSound: {fileID: 11400000, guid: 9dd9189826c1463479de39f6ad16a0c1, type: 2}
   cutsceneImages:
   - {fileID: 21300000, guid: d4c0d38233416f64c87e38695825e136, type: 3}
   - {fileID: 21300000, guid: e1aaf42344737db45b8928f709e56ac0, type: 3}

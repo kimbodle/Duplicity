@@ -38,7 +38,6 @@ public class MapRegion : MonoBehaviour
     // 지역 활성화 메서드
     public void Unlock()
     {
-        Debug.Log(regionName + "언락");
         regionButton.interactable = true;
         regionButton.GetComponent<Image>().color = Color.white; // 색상 변경
     }
@@ -46,7 +45,6 @@ public class MapRegion : MonoBehaviour
     // 지역 비활성화 메서드
     public void Lock()
     {
-        Debug.Log(regionName + "Lock");
         regionButton.interactable = false;
         regionButton.GetComponent<Image>().color = Color.gray; // 색상 변경
     }

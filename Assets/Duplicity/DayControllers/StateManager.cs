@@ -64,6 +64,7 @@ public class StateManager : MonoBehaviour
     }
     public void UpdateGameState()
     {
+        Debug.Log($"현재 {currentDayController}. 초기화 시작");
         currentDayController.Initialize(currentTask);
     }
 

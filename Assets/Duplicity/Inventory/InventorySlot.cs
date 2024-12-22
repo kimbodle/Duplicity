@@ -13,7 +13,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
     private CanvasGroup canvasGroup;
     private Vector2 originalPosition; // 드래그 실패 시 원래 위치로 복구
 
-    private Image nullIcon;
+    public Sprite nullIcon;
     private int currentDay = 0;
 
     private void Start()
@@ -21,8 +21,6 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
         rectTransform = icon.GetComponent<RectTransform>();
         canvasGroup = icon.GetComponent<CanvasGroup>();
         currentDay = GameManager.Instance.GetCurrentDay();
-        nullIcon = icon;
-        Debug.Log(nullIcon.gameObject.name);
         if (canvasGroup == null)
         {
             canvasGroup = icon.gameObject.AddComponent<CanvasGroup>();
@@ -49,9 +47,12 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler, IBeginDragHand
 
     public void ClearSlot()
     {
-        item = null;
-        icon.sprite = nullIcon.sprite;
-        icon.enabled = false; // 아이콘 숨김
+        if(item != null)
+        {
+            item = null;
+            icon.sprite = nullIcon;
+            icon.enabled = false; // 아이콘 숨김
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
