@@ -20,6 +20,7 @@ public class StateManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SingletonManager.Instance.RegisterSingleton(gameObject);
         }
         else
         {

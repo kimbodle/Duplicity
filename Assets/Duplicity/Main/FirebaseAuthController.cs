@@ -25,6 +25,7 @@ public class FirebaseAuthController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SingletonManager.Instance.RegisterSingleton(gameObject);
         }
         else
         {
@@ -34,6 +35,7 @@ public class FirebaseAuthController : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         InitializeFirebase();
     }
 

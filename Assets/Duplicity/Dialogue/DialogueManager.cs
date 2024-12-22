@@ -29,9 +29,14 @@ public class DialogManager : MonoBehaviour
     private bool isTyping = false; // 코루틴 실행 여부를 나타내는 변수
     private bool isDialogActive = false; // 다이얼로그 활성 상태를 추적하는 변수
     private Sprite currentCharacterSprite; // 현재 대화 중인 캐릭터 이미지
+    private string currentSentence; // 현재 문장
+    private bool currentIsPlayerSpeaking; // 현재 화자 정보
+
 
     // 다이얼로그 종료 이벤트
     public event Action OnDialogEnd;
+    //스킵 기능 온오프
+    //public bool allowSkip = true;
 
     private void Awake()
     {
@@ -103,12 +108,14 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        (string sentence, bool isPlayerSpeaking) = sentenceQueue.Dequeue();
+        // 다음 문장을 큐에서 가져오고 현재 문장 변수에 저장
+        (currentSentence, currentIsPlayerSpeaking) = sentenceQueue.Dequeue();
 
-        // 화자에 따라 캐릭터 이미지를 설정
-        characterImage.sprite = isPlayerSpeaking ? lauraImage : currentCharacterSprite;
+        // 화자에 따라 캐릭터 이미지 설정
+        characterImage.sprite = currentIsPlayerSpeaking ? lauraImage : currentCharacterSprite;
 
-        StartCoroutine(TypeSentence(sentence));
+        // 문장 타이핑 시작
+        StartCoroutine(TypeSentence(currentSentence));
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -122,9 +129,8 @@ public class DialogManager : MonoBehaviour
             dialogText.text += letter;
             yield return new WaitForSeconds(typingSpeed); // 타이핑 속도에 따라 대기
         }
-
-        nextButton.gameObject.SetActive(true); // 문장이 끝나면 버튼 활성화
         isTyping = false; // 코루틴 종료 시 false로 설정
+        nextButton.gameObject.SetActive(true); // 문장이 끝나면 버튼 활성화
     }
 
     private void EndDialog()
@@ -202,6 +208,49 @@ public class DialogManager : MonoBehaviour
         Debug.Log("대화 히스토리가 초기화");
     }
 
+    public void SkipDialog()
+    {
+        if (isTyping)
+        {
+            // 코루틴 중단
+            StopAllCoroutines();
+
+            // 현재 문장을 즉시 완성
+            dialogText.text = currentSentence;
+
+            // 상태 초기화
+            isTyping = false; // 타이핑 상태 해제
+            nextButton.gameObject.SetActive(true); // 다음 버튼 활성화
+        }
+    }
+
+
+
+    /*
+    public void SkipDialog()
+    {
+        //if (!allowSkip) return;
+        if (isTyping)
+        {
+            // 타이핑 즉시 완료
+            StopAllCoroutines();
+            dialogText.text = sentenceQueue.Peek().sentence; // 현재 문장 완성
+            isTyping = false;
+            nextButton.gameObject.SetActive(true); // 버튼 활성화
+        }
+        /*
+        else if (sentenceQueue.Count > 0)
+        {
+            // 다음 문장으로 이동
+            DisplayNextSentence();
+        }
+        else
+        {
+            // 대화 종료
+            EndDialog();
+        }
+    }
+*/
 
 
     public void PlayerMessageDialog(Dialog dialog)

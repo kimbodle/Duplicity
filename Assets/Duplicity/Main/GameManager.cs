@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SingletonManager.Instance.RegisterSingleton(gameObject);
         }
         else
         {
@@ -46,11 +47,23 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (activeSceneName == "SeaScene")
+        {
+            return;
+        }
+
         if (!isInitializingGameState)
         {
             LoadDayController(currentDay);
         }
         isInitializingGameState = false;
+
+        if (activeSceneName == "GameOverScene" || activeSceneName == "EndingScene")
+        {
+            return;
+        }
+
         //DH
         if (currentDay != 0 && currentDay != 1 && currentDay != 9)
         {
@@ -138,7 +151,6 @@ public class GameManager : MonoBehaviour
 
         foreach (var ending in endingAlbum)
         {
-            Debug.Log(ending);
             if (ending.Value)
             {
                 string[] endingData = ending.Key.Split('_');
@@ -196,14 +208,22 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameState()
     {
-        // 현재 게임 상태 초기화
-        currentDay = 0;
-        currentTask = "Start";
-        currentScene = "Day0Scene";
-        gameState.Clear();
-
+        if(currentDay == 9)
+        {
+            // 현재 게임 상태 초기화
+            currentDay = 0;
+            currentTask = "Start";
+            currentScene = "Day0Scene";
+            gameState.Clear(); 
+        }
+        else
+        {
+            currentDay = 7;
+            currentTask = "Start";
+            currentScene = "RegenMainScene";
+            gameState.Clear();
+        }
         SaveGame();
-
         Debug.Log("게임 상태 초기화 완료 (endingAlbum 제외)");
     }
 

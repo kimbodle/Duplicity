@@ -18,6 +18,7 @@ public class FirestoreController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // 씬 전환 시 파괴되지 않도록 설정
+            SingletonManager.Instance.RegisterSingleton(gameObject);
         }
         else
         {
