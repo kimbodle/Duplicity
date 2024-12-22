@@ -164,7 +164,7 @@ public class FirebaseAuthController : MonoBehaviour
                 }
             }
         }
-        return "알 수 없는 오류가 발생했습니다.";
+        return "네트워크 상태를 확인해주세요.";
     }
 
 

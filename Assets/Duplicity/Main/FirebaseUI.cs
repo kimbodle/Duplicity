@@ -1,12 +1,20 @@
 using TMPro;
 using UnityEngine;
 
-public class FirebaseUIManager : MonoBehaviour
+public class FirebaseUI : MonoBehaviour
 {
+    public GameObject LoginUI;
+
+    [Header("Interactive")]
     public TMP_InputField emailInput;
     public TMP_InputField passwordInput;
     public TMP_Text messageText;
     public TMP_Text UserUidText;
+
+    private void Start()
+    {
+        LoginUI.SetActive(false);
+    }
 
     private void UpdateUI(string message, string uid)
     {
@@ -40,5 +48,16 @@ public class FirebaseUIManager : MonoBehaviour
     {
         FirebaseAuthController.Instance.Logout();
         UpdateUI("·Î±×¾Æ¿ôµÊ", string.Empty);
+    }
+
+    //Login
+    public void OpenLoginUI()
+    {
+        LoginUI.SetActive(true);
+    }
+
+    public void CloseLoginUI()
+    {
+        LoginUI.SetActive(false);
     }
 }

@@ -10,7 +10,7 @@ public class Day1Cutscene : MonoBehaviour
     public Button nextButton;
     public Button choiceButton1;
     public Button choiceButton2;
-    public AudioSource soundEffect;
+    public AudioClipData testSound;
 
     public Sprite[] cutsceneImages;
     public float typingSpeed = 0.05f;
@@ -63,6 +63,7 @@ public class Day1Cutscene : MonoBehaviour
 
                 case 1:
                     sceneImage.sprite = cutsceneImages[1];
+                    AudioManager.Instance.PlaySFX(testSound.clip);
                     StartCoroutine(TypeDialogue(dialogues[dialogueIndex]));
                     break;
 

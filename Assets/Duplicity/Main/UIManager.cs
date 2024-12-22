@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-
     public static UIManager Instance { get; private set; }
-    [Header("Login")]
-    public GameObject LoginUI;
 
     [Header("Setting")]
     public Button settingIcon;
@@ -31,7 +28,7 @@ public class UIManager : MonoBehaviour
     [Header("Days")]
     public GameObject dayIntroCanvas;
     public Image dayIntroImage;
-    public List<Sprite> daySprites; // Inspector에서 순서대로 추가: 0 -> Day 1, 1 -> Day 2, 등
+    public List<Sprite> daySprites;
     private Dictionary<int, Sprite> daySpriteDictionary;
 
 
@@ -50,7 +47,6 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        LoginUI.SetActive(false);
         mapUI.SetActive(false);
 
         DeactivateInventory();
@@ -63,16 +59,6 @@ public class UIManager : MonoBehaviour
         InitializeDaySprites();
     }
 
-    //Login
-    public void OpenLoginUI()
-    {
-        LoginUI.SetActive(true);
-    }
-
-    public void CloseLoginUI()
-    {
-        LoginUI.SetActive(false);
-    }
 
     //Setting
     public void ToggleSettingUI()
@@ -83,7 +69,7 @@ public class UIManager : MonoBehaviour
     public void LogoutButton()
     {
         FirebaseAuthController.Instance.Logout();
-        SceneManager.LoadScene("MainScene");
+        SingletonManager.Instance.LogoutAndDestroySingletons();
     }
 
     public void QuitGameButton()

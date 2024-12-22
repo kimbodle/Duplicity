@@ -17,7 +17,6 @@ public class ShelterController : MonoBehaviour
 
     private void ActivateCurrentDayCanvas()
     {
-        Debug.Log(currentDay);
         // 모든 Canvas 비활성화
         foreach (GameObject canvas in DayCanvas)
         {
