@@ -612,7 +612,16 @@ MonoBehaviour:
   nextButton: {fileID: 957346857}
   choiceButton1: {fileID: 1070784351}
   choiceButton2: {fileID: 140217641}
-  testSound: {fileID: 11400000, guid: 9dd9189826c1463479de39f6ad16a0c1, type: 2}
+  Effect:
+  - {fileID: 11400000, guid: 474b078b965919e4daadc3130e1a85ac, type: 2}
+  - {fileID: 11400000, guid: b41e23601531e5743858e9af9df33fbb, type: 2}
+  - {fileID: 11400000, guid: a7b13a476ec913f4d951e9947851c88b, type: 2}
+  - {fileID: 11400000, guid: cbc88b62a62afb84a9173d1f1fe12e2e, type: 2}
+  - {fileID: 11400000, guid: bfd22da63a2751d408f4e0b2816b21b6, type: 2}
+  - {fileID: 11400000, guid: ab654e53b8d383a4aaec31a2c5757fb0, type: 2}
+  - {fileID: 11400000, guid: 15eba54010c49f642a89a65eed2f3352, type: 2}
+  - {fileID: 11400000, guid: 926a28f7e2dccbe4c98fa7a2d7649b24, type: 2}
+  - {fileID: 11400000, guid: 4629efab1c4c5154cbb1fbd8f02af19c, type: 2}
   cutsceneImages:
   - {fileID: 21300000, guid: d4c0d38233416f64c87e38695825e136, type: 3}
   - {fileID: 21300000, guid: e1aaf42344737db45b8928f709e56ac0, type: 3}

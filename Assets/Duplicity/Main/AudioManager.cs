@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float bgmVolume = 1.0f;
     [Range(0f, 1f)] public float sfxVolume = 1.0f;
 
+    [Header("Excluded Scenes")]
+    public string[] excludedScenes;
+
     private Coroutine currentFadeCoroutine;
 
     private void Awake()
@@ -47,18 +50,37 @@ public class AudioManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        PlayBGMForScene(scene.name); // 씬 이름에 따라 배경음악 재생
+        if (IsExcludedScene(scene.name))
+        {
+            StopBGM();
+        }
+        else
+        {
+            PlayBGMForSceneAndDay(scene.name, GameManager.Instance.GetCurrentDay()); // 씬과 Day에 따른 BGM 재생
+        }
     }
 
-    private void PlayBGMForScene(string sceneName, float fadeDuration = 1.0f)
+    private bool IsExcludedScene(string sceneName)
     {
-        // 씬 이름에 맞는 배경음악 검색
-        AudioClip newClip = GetBGMClipForScene(sceneName);
+        foreach (string excludedScene in excludedScenes)
+        {
+            if (excludedScene == sceneName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void PlayBGMForSceneAndDay(string sceneName, int day, float fadeDuration = 1.0f)
+    {
+        // 씬과 Day에 맞는 배경음악 검색
+        AudioClip newClip = GetBGMClipForSceneAndDay(sceneName, day);
 
         // 새로운 배경음악 설정
         if (newClip == null)
         {
-            Debug.Log($"씬 '{sceneName}'에 대한 배경음악이 없음. 기본 배경음악을 재생.");
+            Debug.Log($"씬 '{sceneName}' Day {day}에 대한 배경음악이 없음. 기본 배경음악을 재생.");
             newClip = defaultBGM;
         }
 
@@ -74,16 +96,23 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private AudioClip GetBGMClipForScene(string sceneName)
+    private AudioClip GetBGMClipForSceneAndDay(string sceneName, int day)
     {
         foreach (var sceneBGM in sceneBGMs)
         {
-            if (sceneBGM.sceneName == sceneName)
+            if (sceneBGM.sceneName == sceneName && sceneBGM.day == day)
             {
                 return sceneBGM.bgmClip;
             }
+            else if(sceneName == "GameOverScene")
+            {
+                if (sceneBGM.sceneName == sceneName)
+                {
+                    return sceneBGM.bgmClip;
+                }
+            }  
         }
-        return null; // 씬 이름과 매칭되는 배경음악이 없으면 null 반환
+        return null; // 씬과 Day 이름에 매칭되는 배경음악이 없으면 null 반환
     }
 
     private IEnumerator FadeToNewBGM(AudioClip newClip, float fadeDuration)
@@ -109,6 +138,13 @@ public class AudioManager : MonoBehaviour
         }
         bgmSource.volume = bgmVolume;
     }
+    private void StopBGM()
+    {
+        if (currentFadeCoroutine != null) StopCoroutine(currentFadeCoroutine);
+        bgmSource.Stop();
+        bgmSource.clip = null;
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null)
@@ -120,6 +156,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("효과음 클립이 null입니다.");
         }
     }
+   
+
 
     public void SetBGMVolume(float volume)
     {

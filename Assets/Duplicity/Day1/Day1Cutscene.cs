@@ -10,7 +10,7 @@ public class Day1Cutscene : MonoBehaviour
     public Button nextButton;
     public Button choiceButton1;
     public Button choiceButton2;
-    public AudioClipData testSound;
+    public AudioClipData[] Effect;
 
     public Sprite[] cutsceneImages;
     public float typingSpeed = 0.05f;
@@ -23,7 +23,7 @@ public class Day1Cutscene : MonoBehaviour
     private Day1Controller day1Controller;
 
     private string[] dialogues = {
-        "연구중인 로라",
+        ".... ",
         "쿵 -",
         "?… 이게 무슨 소리지?\n연구소 밖으로 나가봐야 하는 걸까..?",
         "??????????.....",
@@ -58,12 +58,16 @@ public class Day1Cutscene : MonoBehaviour
             {
                 case 0:
                     sceneImage.sprite = cutsceneImages[0];
+                    StartCoroutine(PlaySoundWithDelay(Effect[0].clip, 3f));
+                    StartCoroutine(PlaySoundWithDelay(Effect[1].clip, 3f));
+                    StartCoroutine(PlaySoundWithDelay(Effect[2].clip, 3f));
                     StartCoroutine(TypeDialogue(dialogues[dialogueIndex]));
                     break;
 
                 case 1:
                     sceneImage.sprite = cutsceneImages[1];
-                    AudioManager.Instance.PlaySFX(testSound.clip);
+                    AudioManager.Instance.PlaySFX(Effect[4].clip);
+                    StartCoroutine(PlaySoundWithDelay(Effect[3].clip, 2.5f));
                     StartCoroutine(TypeDialogue(dialogues[dialogueIndex]));
                     break;
 
@@ -73,11 +77,15 @@ public class Day1Cutscene : MonoBehaviour
                     break;
 
                 case 3:
+                    AudioManager.Instance.PlaySFX(Effect[5].clip);
+                    AudioManager.Instance.PlaySFX(Effect[6].clip);
+                    StartCoroutine(PlaySoundWithDelay(Effect[7].clip, 1f));
                     sceneImage.sprite = cutsceneImages[2];
                     StartCoroutine(TypeDialogue(dialogues[dialogueIndex]));
                     break;
 
                 case 4:
+                    AudioManager.Instance.PlaySFX(Effect[8].clip);
                     StartCoroutine(TypeDialogue(dialogues[dialogueIndex]));
                     break;
 
@@ -89,6 +97,11 @@ public class Day1Cutscene : MonoBehaviour
 
             dialogueIndex++;
         }
+    }
+    private IEnumerator PlaySoundWithDelay(AudioClip clip, float delay)
+    {
+        yield return new WaitForSeconds(delay); // 지연 시간 대기
+        AudioManager.Instance.PlaySFX(clip);    // 효과음 재생
     }
 
     IEnumerator TypeDialogue(string dialogue)
@@ -137,7 +150,10 @@ public class Day1Cutscene : MonoBehaviour
             else
             {
                 Debug.Log("Game Over: 나가지 않는다 선택");
-                EndingManager.Instance.LoadEnding("GameOver", "나가지 않는다", 0);
+                FadeManager.Instance.StartFadeOut(() =>
+                {
+                    EndingManager.Instance.LoadEnding("GameOver", "나가지 않는다", 0);
+                }, true, 3f);
             }
         }
         else
@@ -145,7 +161,10 @@ public class Day1Cutscene : MonoBehaviour
             if (choice == 1)
             {
                 Debug.Log("Game Over: 맞서 싸운다 선택");
-                EndingManager.Instance.LoadEnding("GameOver", "맞서 싸운다", 1);
+                FadeManager.Instance.StartFadeOut(() =>
+                {
+                    EndingManager.Instance.LoadEnding("GameOver", "맞서 싸운다", 1);
+                }, true, 3f);
             }
             else
             {

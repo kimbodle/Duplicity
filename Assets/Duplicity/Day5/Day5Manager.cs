@@ -12,7 +12,7 @@ public class Day5Manager : MonoBehaviour
     void Start()
     {
         BlackImage.gameObject.SetActive(true);
-        timer.gameObject.SetActive(true );
+        timer.gameObject.SetActive(true);
         
         if(DialogManager.Instance != null)
         {

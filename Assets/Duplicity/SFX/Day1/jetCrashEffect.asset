@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12ea8c63fec55c4295d2155c7ed4963, type: 3}
+  m_Name: jetCrashEffect
+  m_EditorClassIdentifier: 
+  clipName: jetCrashEffect
+  clip: {fileID: 8300000, guid: 93ec8c13bda221d4fb18156d8c2f3afc, type: 3}

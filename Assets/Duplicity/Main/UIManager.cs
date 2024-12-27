@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject dayIntroCanvas;
     public Image dayIntroImage;
     public List<Sprite> daySprites;
+    public AudioClipData dayIntroSound;
     private Dictionary<int, Sprite> daySpriteDictionary;
 
 
@@ -155,6 +156,7 @@ public class UIManager : MonoBehaviour
         {
             dayIntroCanvas.SetActive(true);
             dayIntroImage.sprite = daySprite;
+            AudioManager.Instance.PlaySFX(dayIntroSound.clip);
             StartCoroutine(DisplayDayIntroCoroutine());
         }
         else
@@ -165,7 +167,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator DisplayDayIntroCoroutine()
     {
-        yield return new WaitForSeconds(3f); // 예시로 3초 대기
+        yield return new WaitForSeconds(3f);
         dayIntroCanvas.SetActive(false);
     }
 }
