@@ -8,6 +8,7 @@ public class Day7MissionManager : MonoBehaviour
     private IMission[] missions; // 내부적으로 IMission 인터페이스로 변환
     //private bool missionCompleted = false;
     public RegenStorageMissionTimer timer;
+    public Dialog dialog;
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class Day7MissionManager : MonoBehaviour
         Debug.Log("전체 획득 미션 성공");
         timer.CompleteMission();
         GameManager.Instance.GetCurrentDayController().CompleteTask("AllMissionClear");
+        DialogManager.Instance.PlayerMessageDialog(dialog);
         //missionCompleted = true;
 
     }

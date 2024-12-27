@@ -45,14 +45,21 @@ public class MissionTimer : MonoBehaviour
         {
             if(EndingManager.Instance != null)
             {
-                EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 2);
+                FadeManager.Instance.StartFadeOut(() =>
+                {
+                    EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 2);
+                }, true, 3f);
             }
         }
         if(currentDay == 8)
         {
             if(EndingManager.Instance != null)
             {
-                EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 8);
+                FadeManager.Instance.StartFadeOut(() =>
+                {
+                    EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 8);
+                }, true, 3f);
+                
             }
         }
     }

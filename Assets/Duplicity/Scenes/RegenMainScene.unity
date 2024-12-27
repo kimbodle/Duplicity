@@ -298,6 +298,7 @@ MonoBehaviour:
   - {fileID: 1748943496}
   - {fileID: 975112514}
   timer: {fileID: 182922538}
+  dialog: {fileID: 11400000, guid: 03777f84f9f2b984ab5a91ef93960365, type: 2}
 --- !u!114 &182922538
 MonoBehaviour:
   m_ObjectHideFlags: 0
