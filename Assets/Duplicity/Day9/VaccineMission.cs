@@ -206,7 +206,10 @@ public class VaccineMission : MonoBehaviour
                 {
                     if (EndingManager.Instance != null)
                     {
-                        EndingManager.Instance.LoadEnding("Ending", "¾ÆÇÄ ¾îÂ¼±¸", 2);
+                        FadeManager.Instance.StartFadeOut(() =>
+                        {
+                            EndingManager.Instance.LoadEnding("Ending", "¾ÆÇÄ ¾îÂ¼±¸", 2);
+                        }, true, 3f);
                     }
                 }, true, 3f);
             }
@@ -217,7 +220,10 @@ public class VaccineMission : MonoBehaviour
             {
                 if (EndingManager.Instance != null)
                 {
-                    EndingManager.Instance.LoadEnding("GameOver", "½ÇÇè Æ²¸²", 9);
+                    FadeManager.Instance.StartFadeOut(() =>
+                    {
+                        EndingManager.Instance.LoadEnding("GameOver", "½ÇÇè Æ²¸²", 9);
+                    }, true, 3f);
                 }
             }, true, 3f);
         }

@@ -35,7 +35,7 @@ public class SignMisisonTimer : MonoBehaviour
     void MissionFailed()
     {
         Debug.Log("미션 실패");
-        EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 7);
+        FadeManager.Instance.StartFadeOut(() => { EndingManager.Instance.LoadEnding("GameOver", "타임 오버", 7); }, true, 3f);
     }
 
     public void CompleteMission()
