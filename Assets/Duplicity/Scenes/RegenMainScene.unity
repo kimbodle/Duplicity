@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fb0c68871cdb841bb82aa7988edc04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 120
+  timeLimit: 600
   timerText: {fileID: 8557076994879281903}
   isMissionActive: 0
   dialog: {fileID: 0}
@@ -3265,7 +3265,9 @@ MonoBehaviour:
   cabinetOpenPanel: {fileID: 1973882788}
   key: {fileID: 547304534}
   keyItem: {fileID: 11400000, guid: c0cfaa4e90ef3e9489af2fd5ca86fd05, type: 2}
-  dialog: {fileID: 0}
+  dialog: {fileID: 11400000, guid: 0509c32d7cf84034fa944a496a1559d6, type: 2}
+  secretBook: {fileID: 11400000, guid: eccd017f481f34040847ace922664d07, type: 2}
+  openSecretBook: {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
 --- !u!1 &870837802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,10 +4507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionMessage: "\uB9C8\uB9AC\uC544\uC758 \uAC1C\uC778 \uCE90\uBE44\uB137"
   CabinetPasswordPanel: {fileID: 855976853}
-  dialog: {fileID: 11400000, guid: 0509c32d7cf84034fa944a496a1559d6, type: 2}
   closeButton: {fileID: 1652763526}
-  secretBook: {fileID: 11400000, guid: eccd017f481f34040847ace922664d07, type: 2}
-  openSecretBook: {fileID: 11400000, guid: c4a1ff74027502c49a44f268d1ee9f24, type: 2}
 --- !u!1001 &1191797390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10429,10 +10428,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.3
-  m_fontSizeBase: 36
+  m_fontSize: 46
+  m_fontSizeBase: 46
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0

@@ -131,7 +131,10 @@ public class PatrolGuard : MonoBehaviour
         Debug.Log("게임 오버");
         if(EndingManager.Instance != null)
         {
-            EndingManager.Instance.LoadEnding("GameOver", "잠입 실패", 5);
+            FadeManager.Instance.StartFadeOut(() =>
+            {
+                EndingManager.Instance.LoadEnding("GameOver", "잠입 실패", 5);
+            }, true, 3f);
         }
     }
 

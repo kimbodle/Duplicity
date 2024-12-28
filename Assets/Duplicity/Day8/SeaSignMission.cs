@@ -100,7 +100,7 @@ public class SeaSignMission : MonoBehaviour
             Debug.Log("틀렸습니다. 게임 오버!");
             if (EndingManager.Instance != null)
             {
-                EndingManager.Instance.LoadEnding("GameOver", "길을 잃다.", 7);
+                FadeManager.Instance.StartFadeOut(() => { EndingManager.Instance.LoadEnding("GameOver", "길을 잃다.", 7); }, true, 3f);
             }
         }
     }

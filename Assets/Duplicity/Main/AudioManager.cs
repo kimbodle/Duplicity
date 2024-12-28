@@ -104,7 +104,7 @@ public class AudioManager : MonoBehaviour
             {
                 return sceneBGM.bgmClip;
             }
-            else if(sceneName == "GameOverScene")
+            else if(sceneName == "GameOverScene" || sceneName == "MainScene")
             {
                 if (sceneBGM.sceneName == sceneName)
                 {

@@ -16,8 +16,13 @@ public class CabinetMission : MonoBehaviour,IMission
     //public TMP_InputField passwordInputField;
     //public Button confirmButton;
     public Dialog dialog;
-    public bool IsMissionCompleted { get; private set; }
+
+    [Space(10)]
+    public Item secretBook;
+    public Item openSecretBook;
+    [Space(10)]
     public const string correctPassword = "0428"; // 정답 단어
+    public bool IsMissionCompleted { get; private set; }
 
     void Start()
     {
@@ -67,10 +72,30 @@ public class CabinetMission : MonoBehaviour,IMission
         {
             InventoryManager.Instance.AddItemToInventory(keyItem);
             //GameManager.Instance.GetCurrentDayController().CompleteTask("GetKey");
-
             missionManager.CheckAllMission();
+            if (dialog != null)
+            {
+                DialogManager.Instance.PlayerMessageDialog(dialog);
+                ReplaceItemExample();
+            }
         }
 
         Destroy(key);
+    }
+
+
+    void ReplaceItemExample()
+    {
+        Item targetItem = secretBook; // 교체할 대상 아이템
+        Item newItem = openSecretBook; // 새로 추가할 아이템
+
+        if (InventoryManager.Instance.ReplaceItem(targetItem, newItem))
+        {
+            Debug.Log($"아이템 교체 성공 {targetItem.itemName} -> {newItem.itemName}.");
+        }
+        else
+        {
+            Debug.Log($"{targetItem.itemName}아이템이 인벤토리에 존재하지 않음");
+        }
     }
 }
