@@ -12212,6 +12212,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 337
       objectReference: {fileID: 0}
+    - target: {fileID: 4421117897034610422, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4469658814936084158, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -12226,7 +12230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346324608637277835, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954013706896657821, guid: 638d8c307194d364b9f6418a5bcaef94, type: 3}
       propertyPath: m_LocalPosition.x

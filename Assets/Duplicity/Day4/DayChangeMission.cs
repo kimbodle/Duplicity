@@ -23,12 +23,20 @@ public class DayChangeMission : MonoBehaviour, IMission
         if (currentDayIndex < days.Length - 1)
         {
             currentDayIndex++;
-            dayText.text = days[currentDayIndex];
-            if (currentDayIndex == days.Length - 1)
-            {
-                IsMissionCompleted = true;
-                Debug.Log("요일 변경 서브 미션 통과!");
-            }
+        }
+        else
+        {
+            currentDayIndex = 0; // 월요일로 초기화
+            IsMissionCompleted = false; // 미션 완료 상태 초기화
+            Debug.Log("요일이 월요일로 리셋되고 미션 상태 초기화!");
+        }
+
+        dayText.text = days[currentDayIndex];
+
+        if (currentDayIndex == days.Length - 1)
+        {
+            IsMissionCompleted = true; // 금요일이면 미션 완료
+            Debug.Log("요일 변경 서브 미션 통과!");
         }
     }
 

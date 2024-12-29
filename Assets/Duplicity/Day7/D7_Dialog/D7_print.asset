@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e4b443f8cf3864a9789036c485d345, type: 3}
+  m_Name: D7_print
+  m_EditorClassIdentifier: 
+  sentences:
+  - "\uCD9C\uB825\uD55C \uC5F0\uAD6C\uC790\uB8CC\uB97C\n\uAC00\uBC29\uC5D0 \uB123\uC790."
+  isPlayerSpeaking: 01
+  characterSprite: {fileID: 0}

@@ -25,6 +25,7 @@ public class Day7ComputerMission : MonoBehaviour
     public GameObject printedDocument;
     [Space(10)]
     public Dialog dialog;
+    public Dialog printDialog;
 
     private const string correctPassword = "0916";
 
@@ -122,7 +123,7 @@ public class Day7ComputerMission : MonoBehaviour
             {
                 Debug.LogError($"인덱스 {documentIndex}에 해당하는 printedDocument 이미지가 없습니다.");
             }
-
+            DialogManager.Instance.PlayerMessageDialog(printDialog);
             // 프린트 버튼은 한 번만 사용 가능하도록 제거
             Destroy(printButton);
         }

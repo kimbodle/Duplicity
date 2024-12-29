@@ -9,7 +9,7 @@ public class RefuseRabbit : MonoBehaviour
     public Dialog dialog; // 해당 캐릭터의 다이얼로그
     //public Sprite characterSprite; // 해당 캐릭터의 이미지
 
-    private bool isTalk= false;
+    public bool isTalk= false;
 
     private DialogManager dialogManager;
     private DayController dayController;

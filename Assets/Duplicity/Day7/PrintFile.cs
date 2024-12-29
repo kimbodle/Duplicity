@@ -15,6 +15,7 @@ public class PrintFile : MonoBehaviour, IMission
     {
         IsMissionCompleted = false;
         Button button = printItem.GetComponentInChildren<Button>(true); // 비활성화된 상태에서도 검색
+        /*
         if (button != null)
         {
             button.onClick.AddListener(() => GetPrint(0));
@@ -22,7 +23,7 @@ public class PrintFile : MonoBehaviour, IMission
         else
         {
             Debug.LogError("비활성화된 상태에서도 Button을 찾을 수 없습니다.");
-        }
+        }*/
     }
     public void Initialize()
     {

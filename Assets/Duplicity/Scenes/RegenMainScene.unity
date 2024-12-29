@@ -5578,6 +5578,7 @@ MonoBehaviour:
   printButton: {fileID: 14745310}
   printedDocument: {fileID: 1901586467}
   dialog: {fileID: 11400000, guid: 60157e621d13e3446981fa4b8b5ba9ed, type: 2}
+  printDialog: {fileID: 11400000, guid: 1d53b381ff028f14fbfd9a094a06da72, type: 2}
 --- !u!114 &1402866412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9191,7 +9192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &1503669799515820819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10483,13 +10484,25 @@ PrefabInstance:
       value: Check Button
       objectReference: {fileID: 0}
     - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
     - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -5604219792238310682, guid: 70137cdbc47eb6a458621c10ba016736, type: 2}
+    - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5909839901765629619, guid: 71ce06ab2f79b3f4a817ec2decfc21dd, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

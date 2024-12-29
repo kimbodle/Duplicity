@@ -14,6 +14,8 @@ public class EndingAlbumHandler : MonoBehaviour
     [Space(10)]
     [SerializeField] private GameObject endingPanel;
     [SerializeField] private Image popupImage;
+    [Space(10)]
+    [SerializeField] private GameObject loginRequiredMessageUI;
 
     private Dictionary<string, GameObject> endingImages = new Dictionary<string, GameObject>();
 
@@ -110,6 +112,30 @@ public class EndingAlbumHandler : MonoBehaviour
 
     public void TogglEndingAlbumUI()
     {
+        if (!FirebaseAuthController.Instance.IsLoggedIn()) // 로그인 상태 확인
+        {
+            ShowLoginRequiredMessage();
+            return;
+        }
+
         endingAlbumUI.SetActive(!endingAlbumUI.activeSelf);
+    }
+    private void ShowLoginRequiredMessage()
+    {
+        if (loginRequiredMessageUI != null)
+        {
+            loginRequiredMessageUI.SetActive(true);
+            StartCoroutine(HideLoginRequiredMessageAfterDelay());
+        }
+        else
+        {
+            Debug.LogWarning("로그인 요청 메시지 UI가 설정되지 않았습니다.");
+        }
+    }
+
+    private IEnumerator HideLoginRequiredMessageAfterDelay()
+    {
+        yield return new WaitForSeconds(2f); // 2초 후 메시지 비활성화
+        loginRequiredMessageUI.SetActive(false);
     }
 }
