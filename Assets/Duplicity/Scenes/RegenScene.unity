@@ -310,7 +310,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 181.5261, y: 181.5261}
+  m_SizeDelta: {x: 288.5145, y: 288.5145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311523160
 MonoBehaviour:
@@ -2534,6 +2534,7 @@ GameObject:
   - component: {fileID: 2085349401}
   - component: {fileID: 2085349400}
   - component: {fileID: 2085349399}
+  - component: {fileID: 2085349402}
   m_Layer: 5
   m_Name: Flash Button
   m_TagString: Untagged
@@ -2631,14 +2632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.88487893, g: 0.89812833, b: 0.9150943, a: 1}
+  m_Color: {r: 0.88487893, g: 0.89812833, b: 0.9150943, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9959c279218d14a408200b78beb39b56, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2656,6 +2657,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085349397}
   m_CullTransparentMesh: 1
+--- !u!114 &2085349402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085349397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &603957557171603175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1694813235150336199, guid: dc68f03eaaaf94041af74cd8ae96870e, type: 3}

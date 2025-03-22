@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4583237396057912457}
   - component: {fileID: 5119229569058702269}
   - component: {fileID: 8892520320844911302}
+  - component: {fileID: 5189027337143000261}
   m_Layer: 5
   m_Name: Check Button
   m_TagString: Untagged
@@ -255,3 +256,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5189027337143000261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2824480564504135874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

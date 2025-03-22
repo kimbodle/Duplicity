@@ -9,12 +9,12 @@ public class EndingImage : MonoBehaviour
     [Header("GameOver / Ending")]
     public Image endingBackgroundImage; // 배경 이미지 오브젝트
     public Sprite[] EndingBackgrounds; // 엔딩 배경 이미지 배열
-    public TMP_Text endingMessageText; // 메시지 텍스트
+    public GameObject endingMessagePanel;
     public Button retryButton; // 재시작 버튼
 
     private void Start()
     {
- 
+        endingMessagePanel.gameObject.SetActive(false);
         // EndingManager의 엔딩 인덱스와 메시지로 UI 설정
         var endingManager = EndingManager.Instance;
         int endingIndex = endingManager.endingIndex;
@@ -40,14 +40,6 @@ public class EndingImage : MonoBehaviour
         {
             Debug.LogWarning("유효하지 않은 엔딩 인덱스");
         }
-        /*
-        // 디버깅용 엔딩 메시지 설정
-        if (endingMessageText != null)
-        {
-            endingMessageText.text = endingManager.endingMessage;
-            endingMessageText.gameObject.SetActive(true);
-        }
-        */
         retryButton.onClick.AddListener(OnClickRetryButton);
 
         retryButton.gameObject.SetActive(false); // 초기에는 비활성화
@@ -58,6 +50,10 @@ public class EndingImage : MonoBehaviour
     {
         yield return new WaitForSeconds(2f); // 2초 대기
         retryButton.gameObject.SetActive(true); // 2초 후 버튼 활성화
+        if (GameManager.Instance.GetCurrentDay() == 8 && EndingManager.Instance.endingIndex == 1)
+        {
+            endingMessagePanel.gameObject.SetActive(true);
+        }
     }
 
     public void OnClickRetryButton()
@@ -78,7 +74,6 @@ public class EndingImage : MonoBehaviour
 
     public void CloseRetryUI()
     {
-        retryButton.gameObject.SetActive(false);
-        endingMessageText.gameObject.SetActive(false);
+        endingMessagePanel.gameObject.SetActive(false);
     }
 }

@@ -15,6 +15,14 @@ public class MissionTimer : MonoBehaviour
     private void Start()
     {
         currentDay = GameManager.Instance.GetCurrentDay();
+        if (currentDay == 4)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+        }
     }
     void Update()
     {
