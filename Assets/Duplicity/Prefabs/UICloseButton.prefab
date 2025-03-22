@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5173640737910598320}
   - component: {fileID: 5640368280432709658}
   - component: {fileID: 705976286589286674}
+  - component: {fileID: 5036756760540475162}
   m_Layer: 5
   m_Name: UICloseButton
   m_TagString: Untagged
@@ -267,3 +268,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5036756760540475162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7169959522792676205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

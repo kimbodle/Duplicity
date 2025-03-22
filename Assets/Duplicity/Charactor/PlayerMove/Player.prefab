@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 3891069719407761403}
   - component: {fileID: 7028096640475425887}
   - component: {fileID: 4452305502298646478}
+  - component: {fileID: 6642735667688451033}
   m_Layer: 5
   m_Name: Interation Button
   m_TagString: Untagged
@@ -338,6 +339,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6642735667688451033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552066893549744462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba03ace65102904f82fcbeabe10872d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3280974685090414501
 GameObject:
   m_ObjectHideFlags: 0

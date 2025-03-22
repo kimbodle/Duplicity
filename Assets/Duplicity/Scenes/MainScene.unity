@@ -2608,6 +2608,7 @@ GameObject:
   - component: {fileID: 473748124}
   - component: {fileID: 473748123}
   - component: {fileID: 473748122}
+  - component: {fileID: 473748125}
   m_Layer: 5
   m_Name: Sign In Button
   m_TagString: Untagged
@@ -2729,6 +2730,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473748120}
   m_CullTransparentMesh: 1
+--- !u!114 &473748125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473748120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &488839740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,6 +3099,8 @@ MonoBehaviour:
   excludedScenes:
   - Day0Scene
   - Day1Scene
+  UIButtonSound: {fileID: 8300000, guid: c4b4d8b97ce6c8b47893581595ea7624, type: 3}
+  InteractionButtonSound: {fileID: 8300000, guid: 83879105f73f7444b95b402b4c440d48, type: 3}
 --- !u!114 &514452997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,6 +4170,7 @@ GameObject:
   - component: {fileID: 738499101}
   - component: {fileID: 738499100}
   - component: {fileID: 738499099}
+  - component: {fileID: 738499102}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -4276,6 +4292,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738499097}
   m_CullTransparentMesh: 1
+--- !u!114 &738499102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738499097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793153347
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,6 +6203,7 @@ GameObject:
   - component: {fileID: 1024593054}
   - component: {fileID: 1024593053}
   - component: {fileID: 1024593052}
+  - component: {fileID: 1024593055}
   m_Layer: 5
   m_Name: Logout Button
   m_TagString: Untagged
@@ -6296,6 +6325,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024593050}
   m_CullTransparentMesh: 1
+--- !u!114 &1024593055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024593050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1035669753
 GameObject:
   m_ObjectHideFlags: 0
@@ -7319,6 +7360,7 @@ GameObject:
   - component: {fileID: 1216614386}
   - component: {fileID: 1216614385}
   - component: {fileID: 1216614384}
+  - component: {fileID: 1216614387}
   m_Layer: 5
   m_Name: Setting Icon Button
   m_TagString: Untagged
@@ -7439,6 +7481,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216614382}
   m_CullTransparentMesh: 1
+--- !u!114 &1216614387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216614382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1229944889
 GameObject:
   m_ObjectHideFlags: 0
@@ -9632,6 +9686,7 @@ GameObject:
   - component: {fileID: 1680168486}
   - component: {fileID: 1680168485}
   - component: {fileID: 1680168484}
+  - component: {fileID: 1680168487}
   m_Layer: 5
   m_Name: Sign Up Button
   m_TagString: Untagged
@@ -9753,6 +9808,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680168482}
   m_CullTransparentMesh: 1
+--- !u!114 &1680168487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680168482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1689375614
 GameObject:
   m_ObjectHideFlags: 0
@@ -10472,6 +10539,7 @@ GameObject:
   - component: {fileID: 1982236565}
   - component: {fileID: 1982236564}
   - component: {fileID: 1982236563}
+  - component: {fileID: 1982236566}
   m_Layer: 5
   m_Name: MapIconButton
   m_TagString: Untagged
@@ -10593,6 +10661,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982236561}
   m_CullTransparentMesh: 1
+--- !u!114 &1982236566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982236561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992201558
 GameObject:
   m_ObjectHideFlags: 0
@@ -10953,6 +11033,7 @@ GameObject:
   - component: {fileID: 2053488106}
   - component: {fileID: 2053488105}
   - component: {fileID: 2053488104}
+  - component: {fileID: 2053488107}
   m_Layer: 5
   m_Name: HistoryIcon Button
   m_TagString: Untagged
@@ -11073,6 +11154,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053488102}
   m_CullTransparentMesh: 1
+--- !u!114 &2053488107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053488102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064671256
 GameObject:
   m_ObjectHideFlags: 0
@@ -13046,6 +13139,7 @@ GameObject:
   - component: {fileID: 511094045995162336}
   - component: {fileID: 934873144372993064}
   - component: {fileID: 7807838701464459192}
+  - component: {fileID: 8283027437728361483}
   m_Layer: 5
   m_Name: Inventory Icon Button
   m_TagString: Untagged
@@ -13053,6 +13147,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8283027437728361483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283027437728361482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8382617299973410429
 RectTransform:
   m_ObjectHideFlags: 0

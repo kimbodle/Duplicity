@@ -21,6 +21,10 @@ public class AudioManager : MonoBehaviour
     [Header("Excluded Scenes")]
     public string[] excludedScenes;
 
+    [Header("SFX")]
+    public AudioClip UIButtonSound;
+    public AudioClip InteractionButtonSound;
+
     private Coroutine currentFadeCoroutine;
 
     private void Awake()
@@ -156,7 +160,29 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("효과음 클립이 null입니다.");
         }
     }
-   
+    public void PlayUIButton()
+    {
+        if (UIButtonSound != null)
+        {
+            sfxSource.PlayOneShot(UIButtonSound); // 효과음 재생
+        }
+        else
+        {
+            Debug.LogWarning("효과음 클립이 null입니다.");
+        }
+    }
+    public void PlayInteractionButton()
+    {
+        if (InteractionButtonSound != null)
+        {
+            sfxSource.PlayOneShot(InteractionButtonSound); // 효과음 재생
+        }
+        else
+        {
+            Debug.LogWarning("효과음 클립이 null입니다.");
+        }
+    }
+
 
 
     public void SetBGMVolume(float volume)
