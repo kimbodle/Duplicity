@@ -114,7 +114,11 @@ public class UIManager : MonoBehaviour
     {
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
-    
+    public void DeactInventoryUI()
+    {
+        inventoryUI.SetActive(false);
+    }
+
     //DialogHistorySystem
     public void ActiveDialogHistoryIcon()
     {

@@ -26,6 +26,7 @@ public class VaccineDropzone : MonoBehaviour, IDropHandler
             {
                 Debug.Log($"{slot.item.itemName} 드롭 완료! {missionName} 미션 수행!");
                 slot.ClearSlot();
+                AudioManager.Instance.PlayUIButton();
 
                 // 이미지 변경
                 if (dropZoneImage != null && itemDroppedSprite != null)

@@ -10,6 +10,7 @@ public class PhotoMissionManager : MonoBehaviour
     public GameObject WallCrackPanel;
     public GameObject SecretNotePanel;
     [Space(10)]
+    public AudioClip destorySound;
     private PhotoMissionTimer timer;
 
     private void Start()
@@ -65,6 +66,8 @@ public class PhotoMissionManager : MonoBehaviour
             Debug.Log("사진 미션 성공!");
             timer.CompleteMission();
             WallCrackPanel.SetActive(true);
+            AudioManager.Instance.PlaySFX(destorySound);
+            UIManager.Instance.DeactInventoryUI();
         }
         else
         {

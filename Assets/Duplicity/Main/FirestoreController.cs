@@ -24,12 +24,13 @@ public class FirestoreController : MonoBehaviour
         {
             Destroy(gameObject); // 중복 인스턴스가 생성되면 파괴
         }
+        db = FirebaseFirestore.DefaultInstance;
+        authController = GetComponent<FirebaseAuthController>();
     }
 
     void Start()
     {
-        db = FirebaseFirestore.DefaultInstance;
-        authController = GetComponent<FirebaseAuthController>();
+        
     }
 
     public void SaveGameState(int currentDay, string currentScene,
