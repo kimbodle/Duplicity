@@ -31,12 +31,13 @@ public class FirebaseAuthController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        gameManager = FindObjectOfType<GameManager>();
+        InitializeFirebase();
     }
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        InitializeFirebase();
+        
     }
 
     // Firebase 초기화 메서드

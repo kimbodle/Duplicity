@@ -8,7 +8,6 @@ public class Day5Manager : MonoBehaviour
     public Dialog Intro;
     public Image BlackImage;
     public PhotoMissionTimer timer;
-    // Start is called before the first frame update
     void Start()
     {
         BlackImage.gameObject.SetActive(true);

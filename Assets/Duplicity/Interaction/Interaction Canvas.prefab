@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigPosterPanel: {fileID: 3686715510598905592}
   bigPosterImage: {fileID: 5802702530477397238}
+  currentPhotoItem: {fileID: 0}
 --- !u!114 &8891320389394459270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ GameObject:
   - component: {fileID: 3282325359090451713}
   - component: {fileID: 5802702530477397238}
   - component: {fileID: 6834299445900768821}
+  - component: {fileID: 6305823353714445066}
   m_Layer: 5
   m_Name: Poster Big Image
   m_TagString: Untagged
@@ -348,3 +350,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6305823353714445066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083909566159101857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

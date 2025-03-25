@@ -11,18 +11,20 @@ public class Frame : MonoBehaviour
     {
         frameImage.color = new Color(1, 1, 1, 0); // 투명
     }
-    public void SetPhoto(Item item)
+    public bool SetPhoto(Item item)
     {
+        if (currentItem != null) return false; // 이미 사진이 있으면 실패 반환
+
         frameImage.color = Color.white;
         currentItem = item;
         frameImage.sprite = item.itemIcon;
 
         // PhotoMissionManager에 알림
-        if (photoMissionManager != null)
-        {
-            photoMissionManager.OnPhotoPlaced();
-        }
+        photoMissionManager?.OnPhotoPlaced();
+
+        return true; // 성공적으로 사진이 걸림
     }
+
 
     public void ResetFrame()
     {

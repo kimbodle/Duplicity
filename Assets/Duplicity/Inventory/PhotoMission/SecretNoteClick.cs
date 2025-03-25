@@ -7,6 +7,7 @@ public class SecretNoteClick : MonoBehaviour
     public GameObject[] gamePlayeObject;
     public GameObject ending;
     public Dialog dialog;
+    public AudioClip fireSound;
 
     public void NoteClick()
     {
@@ -30,6 +31,7 @@ public class SecretNoteClick : MonoBehaviour
             canvas.SetActive(false);
         }
         ending.SetActive(true);
+        AudioManager.Instance.PlaySFX(fireSound);
 
     }
 }

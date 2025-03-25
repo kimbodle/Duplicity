@@ -384,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 6b32c8f2cc560f44595f614a6bf31336, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &106862940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 7407e1d6ada376b47b11be8366dfa880, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &142062360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 7e7f67f742f74304da3863943dbc406a, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &619715858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: ac61357414f8b794890418077feaa998, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &870378159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,6 +1551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 133dedd0599ec494a853b141088c252c, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &960720061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,6 +1764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 6713492f53a0d80489aa7585d2fcf1fe, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &1162713472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1948,6 +1954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: af4d4eb785a00f04ab4e1319f3b7694f, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &1404744822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,6 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 6e71c60f640a16845b4f365b5a70ed60, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &1839438279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,6 +2182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 92230dc34a5ae2543b8962eb8610c6ba, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &1847197566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,6 +2318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: 320ea44780373ff4bbc422947f7a5c6d, type: 2}
   isTalk: 0
+  touchSound: {fileID: 8300000, guid: f2baa308ef4f68e4ab4759c6cad11479, type: 3}
 --- !u!114 &1957985209
 MonoBehaviour:
   m_ObjectHideFlags: 0

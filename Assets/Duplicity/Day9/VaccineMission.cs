@@ -103,6 +103,7 @@ public class VaccineMission : MonoBehaviour
         }
 
         CompleteMission("AddRegen");
+        AudioManager.Instance.PlayUIButton();
         Debug.Log("리젠 추가 완료!");
     }
     private void UpdateChemicalSequenceDisplay()

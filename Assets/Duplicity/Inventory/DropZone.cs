@@ -11,8 +11,14 @@ public class DropZone : MonoBehaviour, IDropHandler
 
         if (slot != null && slot.item != null)
         {
-            frame.SetPhoto(slot.item);
-            slot.ClearSlot(); // 아이템 사용 후 슬롯 비움
+            bool success = frame.SetPhoto(slot.item);
+
+            if (success)
+            {
+                slot.ClearSlot(); // 사진이 걸린 경우에만 슬롯 비움
+                AudioManager.Instance.PlayUIButton();
+            }
         }
     }
+
 }

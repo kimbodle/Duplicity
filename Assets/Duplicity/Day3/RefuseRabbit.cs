@@ -11,6 +11,8 @@ public class RefuseRabbit : MonoBehaviour
 
     public bool isTalk= false;
 
+    public AudioClip touchSound;
+
     private DialogManager dialogManager;
     private DayController dayController;
     private Button interactionButton; // UI ButtonÀ» ÂüÁ¶
@@ -36,6 +38,7 @@ public class RefuseRabbit : MonoBehaviour
     {
         if (dialogManager != null)
         {
+            AudioManager.Instance.PlaySFX(touchSound);
             dialogManager.StartDialog(dialog, dialog.characterSprite);
             if (isTalk == false)
             {

@@ -1468,7 +1468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &256224979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1489,10 +1489,10 @@ RectTransform:
   - {fileID: 8850321710702871331}
   m_Father: {fileID: 632085050}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256224980
 MonoBehaviour:
@@ -5966,6 +5966,7 @@ GameObject:
   - component: {fileID: 826755364}
   - component: {fileID: 826755363}
   - component: {fileID: 826755362}
+  - component: {fileID: 826755365}
   m_Layer: 5
   m_Name: Day Change Image
   m_TagString: Untagged
@@ -6075,6 +6076,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826755359}
   m_CullTransparentMesh: 1
+--- !u!114 &826755365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826755359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b195482af5fcf6b43b27ccd1a035ae75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &837285150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8546,6 +8559,7 @@ GameObject:
   - component: {fileID: 1442610982}
   - component: {fileID: 1442610981}
   - component: {fileID: 1442610983}
+  - component: {fileID: 1442610984}
   m_Layer: 5
   m_Name: FinalButton
   m_TagString: Untagged
@@ -8654,6 +8668,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1442610984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442610979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba03ace65102904f82fcbeabe10872d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459662434
 GameObject:
   m_ObjectHideFlags: 0
@@ -9267,7 +9293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516285334
 RectTransform:
   m_ObjectHideFlags: 0
