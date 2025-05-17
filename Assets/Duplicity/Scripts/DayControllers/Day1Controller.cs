@@ -6,9 +6,6 @@ public class Day1Controller : DayController
 {
     public override void Initialize(string currentTask)
     {
-        //Day1 => Intro Initialize ºÒÇÊ¿ä
-        Debug.Log("Day1Controller");
-        //throw new System.NotImplementedException();
     }
     public override void CompleteTask(string task)
     {

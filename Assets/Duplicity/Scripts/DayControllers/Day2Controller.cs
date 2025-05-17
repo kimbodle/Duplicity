@@ -17,20 +17,12 @@ public class Day2Controller : DayController
         gameManager = GameManager.Instance;
         if (gameManager == null)
         {
-            Debug.LogError("GameManager is null");
             return;
         }
         MapManager.Instance.InitializeMapRegions();
-        // GameManager에서 gameState를 가져와 사용
-        //엥 이건 틀린 것 같음 이미 DayController에 정의 되어있음
-        //gameState = gameManager.gameState;
-
-        //taskHandler = GetComponent<TaskHandler>();
-
         // Task 진행 상황 로드
         LoadProgress(currentTask);
 
-        Debug.Log("Day2 시작");
     }
 
     public override void CompleteTask(string task)
@@ -47,7 +39,6 @@ public class Day2Controller : DayController
                 break;
 
             default:
-                Debug.LogWarning($"알 수 없는 task: {task}");
                 break;
         }
 
@@ -62,7 +53,6 @@ public class Day2Controller : DayController
 
     public override void MapIconClick(string regionName)
     {
-        Debug.Log("MapClick 됐어요");
         if(regionName == "ShelterScene") 
         {
             GameManager.Instance.CompleteTask("ShelterScene");

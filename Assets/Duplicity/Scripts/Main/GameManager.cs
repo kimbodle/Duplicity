@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public string currentTask = "Start";
     public string currentScene = "Day0Scene";
     public bool isInitializingGameState = false;
+
     public Dictionary<string, bool> gameState = new Dictionary<string, bool>();
     //엔딩
     public Dictionary<string, bool> endingAlbum = new Dictionary<string, bool>();
@@ -82,6 +83,10 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.ActiveInventory();
         }
+    }
+    public static class InputBlocker
+    {
+        public static bool IsInteractionBlocked = false;
     }
 
     //Day의 모든 Task를 완료 했을 시 따로 호출

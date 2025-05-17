@@ -48,7 +48,6 @@ public class ComputerManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("잘못된 비밀번호입니다.");
             passwordInputField.text = "";
             //틀린 알림음
         }

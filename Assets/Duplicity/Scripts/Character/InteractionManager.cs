@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static GameManager;
 
 public class InteractionManager : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class InteractionManager : MonoBehaviour
 
     public void ShowInteractionUI(string message)
     {
-        Debug.Log("ShowInteractionUI 발동!");
         interactButton.SetActive(true);
         interactionText.gameObject.SetActive(true);
         interactionText.text = message; // 메시지 설정
@@ -42,9 +42,11 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
+        if (InputBlocker.IsInteractionBlocked) return;
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
             OnInteractButtonClicked();
+            AudioManager.Instance.PlayInteractionButton();
         }
     }
 
@@ -61,7 +63,6 @@ public class InteractionManager : MonoBehaviour
         if (isInteraction)
         {
             IInteractable interactable = collision.GetComponent<IInteractable>();
-            Debug.Log(interactable != null ? "상호작용 가능한 오브젝트 발견" : "상호작용 가능한 오브젝트 없음");
             if (interactable != null)
             {
                 currentInteractable = interactable;
@@ -70,7 +71,6 @@ public class InteractionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("isInteraction is false");
         }
     }
 

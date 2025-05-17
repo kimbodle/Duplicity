@@ -22,9 +22,6 @@ public class Day0IntroPlay : MonoBehaviour
 
     private void HandleDialogEnd()
     {
-        // 다이얼로그가 끝났을 때 실행할 코드
-        Debug.Log("다이얼로그가 종료되었습니다.");
-
         day0controller.CompleteTask("Intro");
         GameManager.Instance.CompleteTask("Day1Scene");
     }

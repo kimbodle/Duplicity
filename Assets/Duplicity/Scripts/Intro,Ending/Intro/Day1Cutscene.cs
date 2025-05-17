@@ -42,6 +42,20 @@ public class Day1Cutscene : MonoBehaviour
         choiceButton2.gameObject.SetActive(false);
     }
 
+    void Update()
+    {
+        // 안드로이드가 아닐 때만 키 입력 허용
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            // 대사 진행 중이 아니고, 선택지 처리 중도 아니면
+            if (Input.GetKeyDown(KeyCode.Space) && !isTyping && !isChoiceProcessing)
+            {
+                OnNextButtonClick();
+                AudioManager.Instance.PlayUIButton();
+            }
+        }
+    }
+
     public void OnNextButtonClick()
     {
         if (!isTyping)
@@ -149,7 +163,6 @@ public class Day1Cutscene : MonoBehaviour
             }
             else
             {
-                Debug.Log("Game Over: 나가지 않는다 선택");
                 FadeManager.Instance.StartFadeOut(() =>
                 {
                     EndingManager.Instance.LoadEnding("GameOver", "나가지 않는다", 0);
@@ -160,7 +173,6 @@ public class Day1Cutscene : MonoBehaviour
         {
             if (choice == 1)
             {
-                Debug.Log("Game Over: 맞서 싸운다 선택");
                 FadeManager.Instance.StartFadeOut(() =>
                 {
                     EndingManager.Instance.LoadEnding("GameOver", "맞서 싸운다", 1);

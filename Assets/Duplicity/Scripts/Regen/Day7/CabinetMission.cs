@@ -60,7 +60,6 @@ public class CabinetMission : MonoBehaviour,IMission
         }
         else
         {
-            Debug.Log("입력 필드 서브 미션 실패. 다시 시도하세요.");
         }
     }
     //Key -> Onclick 이벤트 연결

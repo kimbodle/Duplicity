@@ -36,7 +36,6 @@ public class CollectedItem : MonoBehaviour, IInteractable
         }
         else
         {
-            Debug.Log("플레이어 못찾음");
             InventoryManager.Instance.AddItemToInventory(item);
         }
     }
@@ -58,25 +57,7 @@ public class CollectedItem : MonoBehaviour, IInteractable
 
     void IInteractable.ResetTask()
     {
-        Debug.Log("아이템 리셋");
+
     }
-    /*
-     * private void CompletCollectItem()
-    {
-        GameObject player = GameObject.FindWithTag("Player"); // 플레이어 찾기
-        if (player != null && player.GetComponent<ItemCollector>() != null)
-        {
-            player.GetComponent<ItemCollector>().CollectItem();
-            if(currentDay == 7)
-            {
-                InventoryManager.Instance.AddItemToInventory(item);
-            }
-            Destroy(gameObject); // 아이템을 수집하고 파괴
-        }
-        else
-        {
-            Debug.Log("플레이어 못찾음");
-        }
-    }
-    */
+  
 }

@@ -84,7 +84,6 @@ public class AudioManager : MonoBehaviour
         // 새로운 배경음악 설정
         if (newClip == null)
         {
-            Debug.Log($"씬 '{sceneName}' Day {day}에 대한 배경음악이 없음. 기본 배경음악을 재생.");
             newClip = defaultBGM;
         }
 
@@ -93,10 +92,6 @@ public class AudioManager : MonoBehaviour
             // 페이드 전환 시작
             if (currentFadeCoroutine != null) StopCoroutine(currentFadeCoroutine);
             currentFadeCoroutine = StartCoroutine(FadeToNewBGM(newClip, fadeDuration));
-        }
-        else
-        {
-            Debug.LogWarning("기본 배경음악이 설정되지 않음");
         }
     }
 
@@ -155,10 +150,6 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(clip); // 효과음 재생
         }
-        else
-        {
-            Debug.LogWarning("효과음 클립이 null입니다.");
-        }
     }
     public void PlayUIButton()
     {
@@ -166,20 +157,12 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(UIButtonSound); // 효과음 재생
         }
-        else
-        {
-            Debug.LogWarning("효과음 클립이 null입니다.");
-        }
     }
     public void PlayInteractionButton()
     {
         if (InteractionButtonSound != null)
         {
             sfxSource.PlayOneShot(InteractionButtonSound); // 효과음 재생
-        }
-        else
-        {
-            Debug.LogWarning("효과음 클립이 null입니다.");
         }
     }
 
