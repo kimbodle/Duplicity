@@ -5,7 +5,8 @@ using UnityEngine;
 public class Day9Manager : MonoBehaviour
 {
     public Item[] items;
-    // Start is called before the first frame update
+    public GameObject shakeButton;
+
     void Start()
     {
         if (InventoryManager.Instance != null)
@@ -14,6 +15,17 @@ public class Day9Manager : MonoBehaviour
             {
                 InventoryManager.Instance.AddItemToInventory(item);
             }
+        }
+        // 모바일(Android, iOS)이 아니면 버튼을 활성화
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            if (shakeButton != null)
+                shakeButton.SetActive(true);
+        }
+        else
+        {
+            if (shakeButton != null)
+                shakeButton.SetActive(false);
         }
     }
 

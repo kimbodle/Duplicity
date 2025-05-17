@@ -38,26 +38,46 @@ public class FirebaseAuthController : MonoBehaviour
     // Firebase 초기화 메서드
     void InitializeFirebase()
     {
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+#if UNITY_STANDALONE || UNITY_EDITOR
+        Debug.Log("Firebase: 데스크탑 수동 초기화");
+
+        try
         {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == Firebase.DependencyStatus.Available)
+            auth = FirebaseAuth.DefaultInstance;
+            firestoreController = FirestoreController.Instance;
+            auth.StateChanged += AuthStateChanged;
+            AuthStateChanged(this, null);
+            CheckAndLogoutIfLoggedIn();
+
+            Debug.Log("Firebase 데스크탑 초기화 완료");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Firebase 초기화 예외 발생: " + e.Message);
+        }
+
+#else
+        Debug.Log("Firebase: 모바일 자동 초기화");
+
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        {
+            var status = task.Result;
+            if (status == DependencyStatus.Available)
             {
-                // Firebase가 사용 가능할 때 FirebaseAuth 초기화
                 auth = FirebaseAuth.DefaultInstance;
                 firestoreController = FirestoreController.Instance;
                 auth.StateChanged += AuthStateChanged;
                 AuthStateChanged(this, null);
-
-                // FirebaseAuth가 초기화된 후 로그인 상태 확인
                 CheckAndLogoutIfLoggedIn();
             }
             else
             {
-                Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
+                Debug.LogError("Firebase 초기화 실패: " + status);
             }
         });
+#endif
     }
+
     // 로그인 상태 확인 후 로그아웃
     private void CheckAndLogoutIfLoggedIn()
     {

@@ -20,7 +20,6 @@ public class ChemicalButton : MonoBehaviour
         {
             VaccineMission.Instance.AddChemical(color);
             AudioManager.Instance.PlayUIButton();
-            Debug.Log($"{color} 시약 추가!");
         }
     }
 }

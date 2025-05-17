@@ -12,8 +12,6 @@ public class Day4Controller : DayController
     {
         if (isFirst == false)
         {
-            //Day4 후속 처리 필요 없음
-            Debug.Log("Day4 시작");
             allRabbitCount = 2;
             talkRabbitCount = 0;
 
@@ -75,7 +73,6 @@ public class Day4Controller : DayController
             {
                 if (SceneManager.GetActiveScene().name == regionName)
                 {
-                    Debug.Log("현재 씬");
                     //SceneManager.LoadScene("LibraryScene");
                 }
                 else

@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -698,6 +698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  variableJoystickUI: {fileID: 0}
+  forceMobileInput: 0
 --- !u!114 &4831967624360147937
 MonoBehaviour:
   m_ObjectHideFlags: 0

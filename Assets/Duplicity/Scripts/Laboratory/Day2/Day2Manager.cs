@@ -27,9 +27,6 @@ public class Day2Manager : MonoBehaviour
     }
     private void HandleDialogEnd()
     {
-
-        Debug.Log("다이얼로그가 종료되었습니다.");
-
         //다이얼로그 종료 후 아이템 수집 미션 활성화
         if(dialogIndex == 0)
         {
@@ -41,7 +38,6 @@ public class Day2Manager : MonoBehaviour
         if (dialogIndex == 1)
         {
             //지도 활성화
-            Debug.Log("지도 활성화");
             UIManager.Instance.ActiveMapIcon();
             MapManager.Instance.UnlockRegion("ShelterScene");
         }

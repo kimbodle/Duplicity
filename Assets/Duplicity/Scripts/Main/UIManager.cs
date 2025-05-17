@@ -99,7 +99,6 @@ public class UIManager : MonoBehaviour
     //Inventory
     public void ActiveInventory()
     {
-        Debug.Log("인벤토리 활성화");
         inventoryManager.SetActive(true);
         inventoryIconButton.gameObject.SetActive(true);
     }
@@ -166,7 +165,6 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"이미지가 없는 Day: {currentDay}");
         }
     }
 

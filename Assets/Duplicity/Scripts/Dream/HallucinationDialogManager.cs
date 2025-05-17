@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using static GameManager;
 
 public class HallucinationDialogManager : MonoBehaviour
 {

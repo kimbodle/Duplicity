@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -710,6 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  variableJoystickUI: {fileID: 203824034903062745}
+  forceMobileInput: 0
 --- !u!114 &4831967624360147937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,5 +847,10 @@ PrefabInstance:
 --- !u!224 &203824034903062744 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
+  m_PrefabInstance: {fileID: 3965494420650319468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &203824034903062745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230, type: 3}
   m_PrefabInstance: {fileID: 3965494420650319468}
   m_PrefabAsset: {fileID: 0}

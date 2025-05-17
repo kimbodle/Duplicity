@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,20 +5,43 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 3f;
-    private Vector2 movement; // Vector2로 이동 방향을 저장
-    private new Rigidbody2D rigidbody2D; // Rigidbody2D 참조
-    private Animator animator; // Animator 참조
-    private VariableJoystick variableJoystick; // VariableJoystick 참조
+    private Vector2 movement;
+    private new Rigidbody2D rigidbody2D;
+    private Animator animator;
+
+    // 모바일에서만 사용될 조이스틱
+    [SerializeField] private GameObject variableJoystickUI; // UI 오브젝트
+    private VariableJoystick variableJoystick; // 조이스틱 컴포넌트
+    private bool isMobile;
+    [SerializeField] private bool forceMobileInput = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        variableJoystick = FindObjectOfType<VariableJoystick>(); // VariableJoystick 찾기
+
+        // 플랫폼 확인
+#if UNITY_ANDROID || UNITY_IOS
+    isMobile = true;
+#else
+        isMobile = forceMobileInput; // 에디터에서도 강제 가능
+#endif
+
+        if (isMobile)
+        {
+            if (variableJoystickUI != null)
+                variableJoystick = variableJoystickUI.GetComponent<VariableJoystick>();
+        }
+        else
+        {
+            if (variableJoystickUI != null)
+                variableJoystickUI.SetActive(false);
+        }
     }
 
     void Update()
     {
+        UpdateInput();
         UpdateMoveState();
     }
 
@@ -28,28 +50,35 @@ public class MoveController : MonoBehaviour
         MoveCharacter();
     }
 
+    void UpdateInput()
+    {
+        if (isMobile && variableJoystick != null)
+        {
+            // 모바일: 조이스틱 입력
+            movement.x = variableJoystick.Horizontal;
+            movement.y = variableJoystick.Vertical;
+        }
+        else
+        {
+            // PC: 키보드 입력
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
+
+        movement.Normalize(); // 대각선 이동 속도 보정
+    }
+
     void MoveCharacter()
     {
-        // VariableJoystick을 사용하여 입력 처리
-        movement.x = variableJoystick.Horizontal; // 수평 입력
-        movement.y = variableJoystick.Vertical; // 수직 입력
-
-        movement.Normalize(); // 대각선 이동 속도 유지
-
-        rigidbody2D.velocity = movement * movementSpeed; // Rigidbody2D 속도 설정
+        rigidbody2D.velocity = movement * movementSpeed;
     }
 
     private void UpdateMoveState()
     {
-        if (Mathf.Approximately(movement.x, 0) && Mathf.Approximately(movement.y, 0))
-        {
-            animator.SetBool("isMove", false); // 이동 중이 아닐 때
-        }
-        else
-        {
-            animator.SetBool("isMove", true); // 이동 중일 때
-        }
-        animator.SetFloat("xDir", movement.x); // x 방향 애니메이션 값 설정
-        animator.SetFloat("yDir", movement.y); // y 방향 애니메이션 값 설정
+        bool isMoving = !Mathf.Approximately(movement.x, 0) || !Mathf.Approximately(movement.y, 0);
+
+        animator.SetBool("isMove", isMoving);
+        animator.SetFloat("xDir", movement.x);
+        animator.SetFloat("yDir", movement.y);
     }
 }

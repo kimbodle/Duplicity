@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameManager;
 
 public class DialogManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class DialogManager : MonoBehaviour
     private Sprite currentCharacterSprite; // 현재 대화 중인 캐릭터 이미지
     private string currentSentence; // 현재 문장
     private bool currentIsPlayerSpeaking; // 현재 화자 정보
+
+    private bool isStartingFromQueue = false;
 
 
     // 다이얼로그 종료 이벤트
@@ -62,26 +65,43 @@ public class DialogManager : MonoBehaviour
         nextButton.gameObject.SetActive(false); // 버튼을 처음에는 비활성화
     }
 
+    private void Update()
+    {
+        if (!isDialogActive) return;
+
+        if (Input.GetKeyDown(KeyCode.Space)) // 스페이스바 입력 감지
+        {
+            if (isTyping)
+            {
+                SkipDialog(); // 타이핑 중이면 즉시 출력
+            }
+            else
+            {
+                DisplayNextSentence(); // 타이핑이 끝났으면 다음 문장으로
+                AudioManager.Instance.PlayUIButton();
+            }
+        }
+    }
+
     public void StartDialog(Dialog dialog, Sprite characterSprite)
     {
-        // 다이얼로그가 진행 중이면 큐에 저장
-        if (isDialogActive || isTyping)
+        if ((isDialogActive || isTyping) && !isStartingFromQueue)
         {
             dialogQueue.Enqueue((dialog, characterSprite));
             return;
         }
 
-        // 히스토리에 Dialog 저장 (중복 방지)
+        isStartingFromQueue = false; // 큐에서 시작한 경우에는 중복 큐 방지
+
         if (!dialogHistory.Contains(dialog))
         {
             dialogHistory.Add(dialog);
         }
 
-        // 다이얼로그 시작
         isDialogActive = true;
         dialogPanel.SetActive(true);
-        currentCharacterSprite = characterSprite; // 현재 캐릭터 이미지를 저장
-        characterImage.sprite = characterSprite; // 다이얼로그 시작 시 캐릭터 이미지 설정
+        currentCharacterSprite = characterSprite;
+        characterImage.sprite = characterSprite;
         sentenceQueue.Clear();
 
         for (int i = 0; i < dialog.sentences.Length; i++)
@@ -90,9 +110,10 @@ public class DialogManager : MonoBehaviour
             sentenceQueue.Enqueue((dialog.sentences[i], isPlayerSpeaking));
         }
 
-        nextButton.gameObject.SetActive(false); // 버튼 비활성화
-        DisplayNextSentence(); // 첫 문장 표시
+        nextButton.gameObject.SetActive(false);
+        DisplayNextSentence();
     }
+
 
     public void DisplayNextSentence()
     {
@@ -136,20 +157,20 @@ public class DialogManager : MonoBehaviour
     private void EndDialog()
     {
         dialogPanel.SetActive(false);
-        nextButton.gameObject.SetActive(false); // 다이얼로그 종료 후 버튼 비활성화
-        isTyping = false; // 다이얼로그 종료 시에도 false로 설정
-        isDialogActive = false; // 다이얼로그가 종료되면 비활성 상태로 설정
+        nextButton.gameObject.SetActive(false);
+        isTyping = false;
+        isDialogActive = false;
 
-        // 다이얼로그 종료 이벤트 호출
         OnDialogEnd?.Invoke();
 
-        // 대기 중인 다이얼로그가 있으면 자동으로 시작
         if (dialogQueue.Count > 0)
         {
             (Dialog nextDialog, Sprite nextSprite) = dialogQueue.Dequeue();
+            isStartingFromQueue = true;
             StartDialog(nextDialog, nextSprite);
         }
     }
+
 
     public void UpdateHistoryUI()
     {
@@ -173,12 +194,6 @@ public class DialogManager : MonoBehaviour
                 bool isPlayerSpeaking = dialog.isPlayerSpeaking[i];
                 characterImage.sprite = isPlayerSpeaking ? lauraImage : dialog.characterSprite;
 
-                /*
-                // 텍스트 설정
-                dialogText.text = isPlayerSpeaking
-                    ? $"<color=blue>Player:</color> {dialog.sentences[i]}"
-                    : $"<color=green>NPC:</color> {dialog.sentences[i]}";
-                */
                 dialogText.text = dialog.sentences[i];
             }
         }
@@ -205,7 +220,6 @@ public class DialogManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        Debug.Log("대화 히스토리가 초기화");
     }
 
     public void SkipDialog()
@@ -224,35 +238,6 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-
-
-    /*
-    public void SkipDialog()
-    {
-        //if (!allowSkip) return;
-        if (isTyping)
-        {
-            // 타이핑 즉시 완료
-            StopAllCoroutines();
-            dialogText.text = sentenceQueue.Peek().sentence; // 현재 문장 완성
-            isTyping = false;
-            nextButton.gameObject.SetActive(true); // 버튼 활성화
-        }
-        /*
-        else if (sentenceQueue.Count > 0)
-        {
-            // 다음 문장으로 이동
-            DisplayNextSentence();
-        }
-        else
-        {
-            // 대화 종료
-            EndDialog();
-        }
-    }
-*/
-
-
     public void PlayerMessageDialog(Dialog dialog)
     {
         StartDialog(dialog, lauraImage);
@@ -266,7 +251,6 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("유효하지 않은 조언 메시지 인덱스");
         }
     }
 }

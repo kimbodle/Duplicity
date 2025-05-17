@@ -12,7 +12,6 @@ public class Day3Controller : DayController
         if(isFirst == false)
         {
             //Day3 후속 처리 필요 없음
-            Debug.Log("Day3 시작");
             allRabbitCount = 2;
             talkRabbitCount = 0;
 
@@ -103,7 +102,6 @@ public class Day3Controller : DayController
         }
         else
         {
-            Debug.Log("지금 있는 곳");
         }
     }
     //task가 gameState에 있는지 확인
